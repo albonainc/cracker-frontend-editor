@@ -1,4 +1,14 @@
-import CustomEditor from "./components/editor";
-import Preview from "./components/preview";
-import type { OutputData } from "@editorjs/editorjs";
-export { CustomEditor, Preview, OutputData };
+/// <reference types="react" />
+import type { OutputData as Data } from "@editorjs/editorjs";
+export type OutputData = Data;
+declare const _default: {
+    CustomEditor: import("react").NamedExoticComponent<{
+        id: string;
+        data?: Data;
+        onChange?: (data: Data) => void;
+    }>;
+    Preview: import("react").FC<{
+        data?: Data;
+    }>;
+};
+export default _default;

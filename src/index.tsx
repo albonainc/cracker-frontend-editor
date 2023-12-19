@@ -1,5 +1,7 @@
 import CustomEditor from "./components/editor";
 import Preview from "./components/preview";
-import type { OutputData } from "@editorjs/editorjs";
+import type { OutputData as Data } from "@editorjs/editorjs";
 
-export { CustomEditor, Preview, OutputData };
+export type OutputData = Data;
+
+export default { CustomEditor, Preview };
