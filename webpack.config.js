@@ -7,7 +7,7 @@ export default {
   entry: "./src/index.tsx", // あなたのエントリーポイント
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "cracker-frontend-editor.js", // 出力ファイル名
+    filename: "index.js", // 出力ファイル名
     libraryTarget: "umd",
     globalObject: "this",
   },
