@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Bundler",
-    "module": "esnext",
-    "target": "es6",
-    "outDir": "./public/packs/js",
-    "strict": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
     "declaration": true,
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "moduleResolution": "bundler",
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react"
   },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+  "include": ["./src/**/*"]
 }

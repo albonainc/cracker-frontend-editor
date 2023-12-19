@@ -138,10 +138,12 @@ export default class Quote implements BlockTool {
       this.CSS.wrapper,
     ]);
     const quote = this._make("div", [this.CSS.input, this.CSS.text], {
+      // @ts-ignore
       contentEditable: !this.readOnly,
       innerHTML: this.data.text,
     });
     const caption = this._make("div", [this.CSS.input, this.CSS.caption], {
+      // @ts-ignore
       contentEditable: !this.readOnly,
       innerHTML: this.data.caption,
     });

@@ -112,6 +112,7 @@ export default class Embed implements BlockTool {
     const wrapper = this.make("div", this.CSS.baseClass);
     const container = this.make("div", this.CSS.container);
     const caption = this.make("div", [this.CSS.container, this.CSS.input], {
+      // @ts-ignore
       contentEditable: `${!this.readOnly}`,
     });
     const template = document.createElement("template");
@@ -181,6 +182,7 @@ export default class Embed implements BlockTool {
 
     this.nodes.progress = this.make("label", this.CSS.progress);
     this.nodes.input = this.make("div", [this.CSS.input, this.CSS.inputEl], {
+      // @ts-ignore
       contentEditable: !this.readOnly,
     });
 
@@ -380,6 +382,7 @@ export default class Embed implements BlockTool {
 
     for (const attrName in attributes) {
       const key = attrName as keyof HTMLElement;
+      // @ts-ignore
       const value = (attributes as HTMLElement)[key];
       if (value !== undefined) {
         // @ts-ignore
