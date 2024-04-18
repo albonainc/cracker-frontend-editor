@@ -1,44 +1,50 @@
-import parse from "html-react-parser";
-import type { OutputData } from "@editorjs/editorjs";
-import edjsHTML from "editorjs-html";
-import { paymentLineParser } from "./tools/paymentLine";
+import type { OutputBlockData } from '@editorjs/editorjs'
+import type { HeaderData } from '@editorjs/header'
+import React from 'react'
+
 import {
+  Parser,
+  paragraphParser,
   imageParser,
   linkParser,
   headerParser,
   listParser,
   embedParser,
   quoteParser,
-} from "../components/viewTools";
-import React from "react";
+  paymentLineParser,
+  parser,
+  indexParser,
+} from './previewTools'
 
-export type ViewType<T> = {
-  data: T;
-  id: string;
-  type: string;
-};
+const editorParser = parser({
+  paragraph: paragraphParser as unknown as Parser,
+  header: headerParser as unknown as Parser,
+  list: listParser as unknown as Parser,
+  payment: paymentLineParser as unknown as Parser,
+  image: imageParser as unknown as Parser,
+  link: linkParser as unknown as Parser,
+  embed: embedParser as unknown as Parser,
+  quote: quoteParser as unknown as Parser,
+})
 
-export type Parser<T> = (data: ViewType<T>) => string;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Props<Type extends string = string, Data extends object = any> = {
+  blocks?: OutputBlockData<Type, Data>[]
+}
 
-export const edjsParser = edjsHTML({
-  header: headerParser,
-  list: listParser,
-  payment: paymentLineParser,
-  image: imageParser,
-  link: linkParser,
-  embed: embedParser,
-  quote: quoteParser,
-});
+const Preview: React.FC<Props> = ({ blocks }) => {
+  if (!blocks) return <div />
+  const html = editorParser.parse(blocks)
+  return <div className="w-full">{html}</div>
+}
 
-type Props = {
-  data?: OutputData;
-};
+const Index: React.FC<Props> = ({ blocks }) => {
+  if (!blocks) return <div />
+  // filterしてるのでasで型キャスト
+  const html = indexParser(
+    blocks.filter((block) => block.type === 'header') as OutputBlockData<'header', HeaderData>[],
+  )
+  return <div className="w-full">{html}</div>
+}
 
-const Preview: React.FC<Props> = ({ data }) => {
-  if (!data) return <div />;
-  const html = edjsParser.parse(data);
-
-  return <div className="w-full">{parse(html.join(""))}</div>;
-};
-
-export default Preview;
+export { Preview, Index }

@@ -1,4 +1,4 @@
-declare module "@editorjs/link" {
+declare module '@editorjs/link' {
   /**
    * @typedef {object} metaData
    * @description Fetched link meta data
@@ -7,10 +7,12 @@ declare module "@editorjs/link" {
    * @property {string} description - link's description
    */
   type metaData = {
-    image: string;
-    title: string;
-    description: string;
-  };
+    image: {
+      url: string
+    }
+    title: string
+    description: string
+  }
 
   /**
    * @typedef {object} LinkToolData
@@ -19,9 +21,9 @@ declare module "@editorjs/link" {
    * @property {metaData} meta — fetched link data
    */
   type LinkToolData = {
-    link: string;
-    meta: metaData;
-  };
+    link: string
+    meta: metaData
+  }
 
   /**
    * @typedef {object} LinkToolConfig
@@ -29,9 +31,10 @@ declare module "@editorjs/link" {
    * @property {object} headers - the headers used in the GET request
    */
   type LinkToolConfig = {
-    endpoint: string;
-    headers?: Object;
-  };
+    endpoint: string
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    headers?: Object
+  }
 
   /**
    * @typedef {object} UploadResponseFormat
@@ -43,19 +46,17 @@ declare module "@editorjs/link" {
    * title, description, image, url
    */
   type UploadResponseFormat = {
-    success: 1 | 0;
-    meta: metaData;
-  };
+    success: 1 | 0
+    meta: metaData
+  }
 
-  export default class LinkTool
-    implements import("@editorjs/editorjs").BlockToolConstructable
-  {
+  export default class LinkTool implements import('@editorjs/editorjs').BlockToolConstructable {
     /**
      * Notify core that read-only mode supported
      *
      * @returns {boolean}
      */
-    static get isReadOnlySupported(): boolean;
+    static get isReadOnlySupported(): boolean
 
     /**
      * Get Tool toolbox settings
@@ -64,7 +65,7 @@ declare module "@editorjs/link" {
      *
      * @returns {{icon: string, title: string}}
      */
-    static get toolbox(): { icon: string; title: string };
+    static get toolbox(): { icon: string; title: 'Link' }
 
     /**
      * Allow to press Enter inside the LinkTool input
@@ -72,7 +73,7 @@ declare module "@editorjs/link" {
      * @returns {boolean}
      * @public
      */
-    static get enableLineBreaks(): boolean;
+    static get enableLineBreaks(): boolean
 
     /**
      * @param {object} options - Tool constructor options fot from Editor.js
@@ -82,11 +83,11 @@ declare module "@editorjs/link" {
      * @param {boolean} options.readOnly - read-only mode flag
      */
     new(
-      config: import("@editorjs/editorjs").BlockToolConstructorOptions<
+      config: import('@editorjs/editorjs').BlockToolConstructorOptions<
         LinkToolData,
         LinkToolConfig
-      >
-    ): import("@editorjs/editorjs").BlockTool;
+      >,
+    ): import('@editorjs/editorjs').BlockTool
 
     /**
      * Renders Block content
@@ -95,7 +96,7 @@ declare module "@editorjs/link" {
      *
      * @returns {HTMLDivElement}
      */
-    render(): HTMLDivElement;
+    render(): HTMLDivElement
 
     /**
      * Return Block data
@@ -104,7 +105,7 @@ declare module "@editorjs/link" {
      *
      * @returns {LinkToolData}
      */
-    save(): LinkToolData;
+    save(): LinkToolData
 
     /**
      * Validate Block data
@@ -114,117 +115,117 @@ declare module "@editorjs/link" {
      *
      * @returns {boolean} false if saved data is incorrect, otherwise true
      */
-    validate(): boolean;
+    validate(): boolean
 
     /**
      * Stores all Tool's data
      *
      * @param {LinkToolData} data - data to store
      */
-    set data(data: LinkToolData);
+    set data(data: LinkToolData)
 
     /**
      * Return Tool data
      *
      * @returns {LinkToolData}
      */
-    get data(): LinkToolData;
+    get data(): LinkToolData
 
     /**
      * @returns {object} - Link Tool styles
      */
     get CSS(): {
-      baseClass: string;
-      input: string;
+      baseClass: string
+      input: string
 
       /**
        * Tool's classes
        */
-      container: "link-tool";
-      inputEl: "link-tool__input";
-      inputHolder: "link-tool__input-holder";
-      inputError: "link-tool__input-holder--error";
-      linkContent: "link-tool__content";
-      linkContentRendered: "link-tool__content--rendered";
-      linkImage: "link-tool__image";
-      linkTitle: "link-tool__title";
-      linkDescription: "link-tool__description";
-      linkText: "link-tool__anchor";
-      progress: "link-tool__progress";
-      progressLoading: "link-tool__progress--loading";
-      progressLoaded: "link-tool__progress--loaded";
-    };
+      container: 'link-tool'
+      inputEl: 'link-tool__input'
+      inputHolder: 'link-tool__input-holder'
+      inputError: 'link-tool__input-holder--error'
+      linkContent: 'link-tool__content'
+      linkContentRendered: 'link-tool__content--rendered'
+      linkImage: 'link-tool__image'
+      linkTitle: 'link-tool__title'
+      linkDescription: 'link-tool__description'
+      linkText: 'link-tool__anchor'
+      progress: 'link-tool__progress'
+      progressLoading: 'link-tool__progress--loading'
+      progressLoaded: 'link-tool__progress--loaded'
+    }
 
     /**
      * Prepare input holder
      *
      * @returns {HTMLElement}
      */
-    makeInputHolder(): HTMLElement;
+    makeInputHolder(): HTMLElement
 
     /**
      * Activates link data fetching by url
      *
      * @param {PasteEvent|KeyboardEvent} event - fetching could be fired by a pase or keydown events
      */
-    startFetching(event: ClipboardEvent | KeyboardEvent): void;
+    startFetching(event: ClipboardEvent | KeyboardEvent): void
 
     /**
      * If previous link data fetching failed, remove error styles
      */
-    removeErrorStyle(): void;
+    removeErrorStyle(): void
 
     /**
      * Select LinkTool input content by CMD+A
      *
      * @param {KeyboardEvent} event - keydown
      */
-    selectLinkUrl(event: KeyboardEvent): void;
+    selectLinkUrl(event: KeyboardEvent): void
 
     /**
      * Prepare link preview holder
      *
      * @returns {HTMLElement}
      */
-    prepareLinkPreview(): HTMLElement;
+    prepareLinkPreview(): HTMLElement
 
     /**
      * Compose link preview from fetched data
      *
      * @param {metaData} meta - link meta data
      */
-    showLinkPreview({ image, title, description }: metaData): void;
+    showLinkPreview({ image, title, description }: metaData): void
 
     /**
      * Show loading progress bar
      */
-    showProgress(): void;
+    showProgress(): void
 
     /**
      * Hide loading progress bar
      *
      * @returns {Promise<void>}
      */
-    hideProgress(): Promise<void>;
+    hideProgress(): Promise<void>
 
     /**
      * If data fetching failed, set input error style
      */
-    applyErrorStyle(): void;
+    applyErrorStyle(): void
 
     /**
      * Sends to backend pasted url and receives link data
      *
      * @param {string} url - link source url
      */
-    async fetchLinkData(url: string);
+    async fetchLinkData(url: string)
 
     /**
      * Link data fetching callback
      *
      * @param {UploadResponseFormat} response - backend response
      */
-    onFetch(response: UploadResponseFormat);
+    onFetch(response: UploadResponseFormat)
 
     /**
      * Handle link fetching errors
@@ -233,7 +234,7 @@ declare module "@editorjs/link" {
      *
      * @param {string} errorMessage - message to explain user what he should do
      */
-    fetchingFailed(errorMessage: string);
+    fetchingFailed(errorMessage: string)
 
     /**
      * Helper method for elements creation
@@ -246,7 +247,8 @@ declare module "@editorjs/link" {
     make(
       tagName: string,
       classNames: string | string[] = null,
-      attributes: Object = {}
-    ): HTMLElement;
+      // eslint-disable-next-line @typescript-eslint/ban-types
+      attributes: Object = {},
+    ): HTMLElement
   }
 }

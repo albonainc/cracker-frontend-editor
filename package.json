@@ -1,69 +1,56 @@
 {
   "name": "cracker-frontend-editor",
-  "version": "0.0.1",
-  "source": "src/index.tsx",
-  "main": "dist/index.js",
-  "unpkg": "dist/index.umd.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
+  "version": "1.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
-    "build": "rimraf dist && rollup -c",
-    "lint": "eslint 'src/**/*.{ts,tsx,js,jsx}'",
-    "lint:fix": "yarn lint --fix",
-    "prettier:check": "prettier --check 'src/**/*'",
-    "prettify": "prettier --write 'src/**/*'",
-    "ts-check": "tsc -p tsconfig.json --noEmit"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/desire-power/cracker-frontend-editor.git"
-  },
-  "keywords": [
-    "react",
-    "component"
-  ],
-  "author": "desire-power",
-  "peerDependencies": {
-    "react": ">=16.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.1",
-    "@typescript-eslint/eslint-plugin": "^2.3.2",
-    "@typescript-eslint/parser": "^2.3.2",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.0.6",
-    "eslint": "^6.5.1",
-    "eslint-plugin-react": "^7.15.0",
-    "react": "^16.10.1",
-    "react-docgen-typescript-loader": "^3.2.1",
-    "react-dom": "^16.10.1",
-    "rimraf": "^3.0.0",
-    "rollup": "^4.9.1",
-    "rollup-plugin-scss": "3",
-    "rollup-plugin-typescript2": "^0.34.1",
-    "sass": "^1.69.5",
-    "typescript": "^5.3.3"
+    "dev": "vite",
+    "build": "vite build && tsc",
+    "lint": "eslint --ext .ts,.tsx . && tsc",
+    "lint:fix": "eslint --fix --ext .ts,.tsx . && tsc",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@codexteam/icons": "^0.3.0",
     "@editorjs/editorjs": "^2.28.2",
     "@editorjs/header": "^2.8.1",
-    "@editorjs/image": "^2.8.2",
     "@editorjs/link": "^2.6.2",
     "@editorjs/nested-list": "^1.4.1",
     "@editorjs/paragraph": "^2.11.3",
-    "debounce": "^2.0.0",
+    "classnames": "^2.2.6",
     "editorjs-drag-drop": "^1.1.13",
-    "editorjs-html": "^3.4.3",
-    "html-react-parser": "^5.0.6"
+    "editorjs-embed": "github:desire-power/editorjs-embed#master",
+    "editorjs-image": "github:desire-power/editorjs-image#master",
+    "editorjs-quote": "github:desire-power/editorjs-quote#master",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@types/node": "20.6.3",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "prettier": "^3.0.3",
+    "tailwindcss": "3.3.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "autoprefixer": "10.4.15",
+    "postcss": "8.4.30"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "volta": {
-    "node": "18.16.0",
+    "node": "18.18.0",
     "yarn": "1.22.19"
   }
 }

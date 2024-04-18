@@ -1,0 +1,1 @@
+{"version":3,"file":"paymentLine.d.ts","sourceRoot":"","sources":["../../../src/components/editorTools/paymentLine.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,SAAS,EAAE,aAAa,EAAE,aAAa,EAAE,MAAM,oBAAoB,CAAA;AAejF,MAAM,MAAM,eAAe,GAAG,EAAE,CAAA;AAEhC,cAAM,WAAY,YAAW,SAAS;;IAGpC,MAAM,KAAK,OAAO,IAAI,aAAa,CAKlC;IAED,MAAM,IAAI,WAAW;IAcrB,IAAI,IAAI,aAAa;CAGtB;AAED,eAAe,WAAW,CAAA"}

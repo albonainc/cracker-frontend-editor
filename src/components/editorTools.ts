@@ -3,13 +3,14 @@ import {
   ToolSettings,
   BlockToolConstructable,
 } from "@editorjs/editorjs";
-import LinkTool, { LinkToolConfig } from "@editorjs/link";
 import Header, { HeaderConfig } from "@editorjs/header";
+import LinkTool, { LinkToolConfig } from "@editorjs/link";
 import List, { ListConfig } from "@editorjs/nested-list";
-import Embed, { EmbedConfig } from "../components/tools/embed";
-import ImageTool, { ImageToolConfig } from "@editorjs/image";
-import Quote, { QuoteConfig } from "../components/tools/quote";
-import PaymentLine from "../components/tools/paymentLine";
+import Embed, { EmbedConfig } from "editorjs-embed";
+import ImageTool, { ImageToolConfig } from "editorjs-image";
+import Quote, { QuoteConfig } from "editorjs-quote";
+
+import PaymentLine from "./editorTools/paymentLine";
 
 const header: ToolSettings<HeaderConfig> = {
   class: Header,
@@ -17,7 +18,7 @@ const header: ToolSettings<HeaderConfig> = {
   config: {
     placeholder: "へッダー",
     levels: [2, 3],
-    defaultLevel: 3,
+    defaultLevel: 2,
   },
 };
 
@@ -44,38 +45,41 @@ const embed: ToolSettings<EmbedConfig> = {
 
 const quote: ToolSettings<QuoteConfig> = {
   class: Quote as unknown as BlockToolConstructable,
+  config: {
+    quotePlaceholder: "引用を追加",
+    captionPlaceholder: "キャプションを追加",
+  },
 };
 
-const link: ToolSettings<LinkToolConfig> = {
+const link = (config?: LinkToolConfig): ToolSettings<LinkToolConfig> => ({
   class: LinkTool,
-  config: {
-    endpoint: "http://localhost:3000/api/getMeta", // Your backend endpoint for url data fetching,
-  },
-};
+  config,
+});
 
-const image: ToolSettings<ImageToolConfig> = {
-  class: ImageTool,
-  config: {
-    types: "image/*",
-    endpoints: {
-      byFile: "http://localhost:3000/api/postImage", // Your backend file uploader endpoint
-      byUrl: "http://localhost:3000/api/postImage", // Your endpoint that provides uploading by Url
-    },
-  },
-};
+const image = (config?: ImageToolConfig): ToolSettings<ImageToolConfig> => ({
+  class: ImageTool as unknown as BlockToolConstructable,
+  config: config,
+});
 
-const payment: ToolSettings<{}> = {
+const payment: ToolSettings = {
   class: PaymentLine as unknown as BlockToolConstructable,
 };
 
-export const tools: {
+export type ToolConfigs = {
+  link?: LinkToolConfig;
+  image: ImageToolConfig;
+};
+
+export const generateTool = (
+  config?: ToolConfigs
+): {
   [toolName: string]: ToolConstructable | ToolSettings;
-} = {
+} => ({
   header,
-  link,
+  link: link(config?.link),
   list,
   embed,
-  image,
+  image: image(config?.image),
   quote,
   payment,
-};
+});

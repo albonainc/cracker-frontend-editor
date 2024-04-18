@@ -1,12 +1,12 @@
-declare module "@editorjs/nested-list" {
+declare module '@editorjs/nested-list' {
   /**
    * @typedef {object} ListData
    * @property {string} style - list type 'ordered' or 'unordered'
    * @property {ListItem[]} items - list of first-level elements
    */
   interface ListData {
-    style: "ordered" | "unordered";
-    items: ListItem[];
+    style: 'ordered' | 'unordered'
+    items: ListItem[]
   }
 
   /**
@@ -15,8 +15,8 @@ declare module "@editorjs/nested-list" {
    * @property {ListItem[]} items - sublist items
    */
   interface ListItem {
-    content: string;
-    items: ListItem[];
+    content: string | null
+    items: ListItem[]
   }
 
   /**
@@ -25,21 +25,19 @@ declare module "@editorjs/nested-list" {
    * @property {string} defaultStyle — ordered or unordered
    */
   interface ListConfig {
-    defaultStyle: string;
+    defaultStyle: string
   }
 
   /**
    * NestedList Tool for EditorJS
    */
-  export default class NestedList
-    implements import("@editorjs/editorjs").BlockToolConstructable
-  {
+  export default class NestedList implements import('@editorjs/editorjs').BlockToolConstructable {
     /**
      * Notify core that read-only mode is supported
      *
      * @returns {boolean}
      */
-    static get isReadOnlySupported(): boolean;
+    static get isReadOnlySupported(): boolean
 
     /**
      * Allow to use native Enter behaviour
@@ -47,7 +45,7 @@ declare module "@editorjs/nested-list" {
      * @returns {boolean}
      * @public
      */
-    static get enableLineBreaks(): boolean;
+    static get enableLineBreaks(): boolean
 
     /**
      * Get Tool toolbox settings
@@ -57,9 +55,9 @@ declare module "@editorjs/nested-list" {
      * @returns {{icon: string, title: string}}
      */
     static get toolbox(): {
-      icon: string;
-      title: "List";
-    };
+      icon: string
+      title: 'List'
+    }
 
     /**
      * Render plugin`s main Element and fill it with saved data
@@ -71,11 +69,8 @@ declare module "@editorjs/nested-list" {
      * @param {boolean} params.readOnly - read-only mode flag
      */
     new(
-      config: import("@editorjs/editorjs").BlockToolConstructorOptions<
-        ListData,
-        ListConfig
-      >
-    ): import("@editorjs/editorjs").BlockTool;
+      config: import('@editorjs/editorjs').BlockToolConstructorOptions<ListData, ListConfig>,
+    ): import('@editorjs/editorjs').BlockTool
 
     /**
      * Returns list tag with items
@@ -83,7 +78,7 @@ declare module "@editorjs/nested-list" {
      * @returns {Element}
      * @public
      */
-    render(): HTMLElement;
+    render(): HTMLElement
 
     /**
      * Creates Block Tune allowing to change the list style
@@ -91,23 +86,21 @@ declare module "@editorjs/nested-list" {
      * @public
      * @returns {Array}
      */
-    renderSettings(): import("@editorjs/editorjs/types/tools/tool-settings").TunesMenuConfigItem[];
+    renderSettings(): import('@editorjs/editorjs/types/tools/tool-settings').TunesMenuConfigItem[]
 
     /**
      * On paste sanitzation config. Allow only tags that are allowed in the Tool.
      *
      * @returns {PasteConfig} - paste config.
      */
-    static get pasteConfig():
-      | import("@editorjs/editorjs").PasteConfig
-      | undefined;
+    static get pasteConfig(): import('@editorjs/editorjs').PasteConfig | undefined
 
     /**
      * On paste callback that is fired from Editor.
      *
      * @param {PasteEvent} event - event with pasted data
      */
-    onPaste(event: import("@editorjs/editorjs").PasteEvent);
+    onPaste(event: import('@editorjs/editorjs').PasteEvent)
 
     /**
      * Handle UL, OL and LI tags paste and returns List data
@@ -115,9 +108,7 @@ declare module "@editorjs/nested-list" {
      * @param {HTMLUListElement|HTMLOListElement|HTMLLIElement} element
      * @returns {ListData}
      */
-    pasteHandler(
-      element: HTMLUListElement | HTMLOListElement | HTMLLIElement
-    ): ListData;
+    pasteHandler(element: HTMLUListElement | HTMLOListElement | HTMLLIElement): ListData
 
     /**
      * Renders children list
@@ -126,7 +117,7 @@ declare module "@editorjs/nested-list" {
      * @param {Element} parentItem - where to append
      * @returns {void}
      */
-    appendItems(items: ListItem[], parentItem: HTMLElementTagNameMap);
+    appendItems(items: ListItem[], parentItem: HTMLElementTagNameMap)
 
     /**
      * Renders the single item
@@ -135,14 +126,14 @@ declare module "@editorjs/nested-list" {
      * @param {ListItem[]} [items] - children
      * @returns {Element}
      */
-    createItem(content: string, items: ListItem): HTMLElement;
+    createItem(content: string, items: ListItem): HTMLElement
 
     /**
      * Extracts tool's data from the DOM
      *
      * @returns {ListData}
      */
-    save(): ListData;
+    save(): ListData
 
     /**
      * Append children list to passed item
@@ -150,7 +141,7 @@ declare module "@editorjs/nested-list" {
      * @param {Element} parentItem - item that should contain passed sub-items
      * @param {ListItem[]} items - sub items to append
      */
-    addChildrenList(parentItem: HTMLElement, items: ListItem[]);
+    addChildrenList(parentItem: HTMLElement, items: ListItem[])
 
     /**
      * Creates main <ul> or <ol> tag depended on style
@@ -161,8 +152,8 @@ declare module "@editorjs/nested-list" {
      */
     makeListWrapper(
       style: string = this.listStyle,
-      classes = []
-    ): HTMLOListElement | HTMLUListElement;
+      classes = [],
+    ): HTMLOListElement | HTMLUListElement
 
     /**
      * Styles
@@ -170,28 +161,29 @@ declare module "@editorjs/nested-list" {
      * @returns {object} - CSS classes names by keys
      * @private
      */
-    get CSS(): Object;
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    get CSS(): Object
 
     /**
      * Get list style name
      *
      * @returns {string}
      */
-    get listStyle(): string;
+    get listStyle(): string
 
     /**
      * Set list style
      *
      * @param {string} style - new style to set
      */
-    set listStyle(style: string);
+    set listStyle(style: string)
 
     /**
      * Returns current List item by the caret position
      *
      * @returns {Element}
      */
-    get currentItem(): HTMLElement;
+    get currentItem(): HTMLElement
 
     /**
      * Handles Enter keypress
@@ -199,14 +191,14 @@ declare module "@editorjs/nested-list" {
      * @param {KeyboardEvent} event - keydown
      * @returns {void}
      */
-    enterPressed(event: KeyboardEvent): void;
+    enterPressed(event: KeyboardEvent): void
 
     /**
      * Decrease indentation of the current item
      *
      * @returns {void}
      */
-    unshiftItem(): void;
+    unshiftItem(): void
 
     /**
      * Return the item content
@@ -214,7 +206,7 @@ declare module "@editorjs/nested-list" {
      * @param {Element} item - item wrapper (<li>)
      * @returns {string}
      */
-    getItemContent(item: HTMLElement): string;
+    getItemContent(item: HTMLElement): string
 
     /**
      * Sets focus to the item's content
@@ -223,28 +215,28 @@ declare module "@editorjs/nested-list" {
      * @param {boolean} atStart - where to set focus: at the start or at the end
      * @returns {void}
      */
-    focusItem(item: HTMLElement, atStart: boolean): void;
+    focusItem(item: HTMLElement, atStart: boolean): void
 
     /**
      * Get out from List Tool by Enter on the empty last item
      *
      * @returns {void}
      */
-    getOutOfList(): void;
+    getOutOfList(): void
 
     /**
      * Handle backspace
      *
      * @param {KeyboardEvent} event - keydown
      */
-    backspace(event: KeyboardEvent): void;
+    backspace(event: KeyboardEvent): void
 
     /**
      * Add indentation to current item
      *
      * @param {KeyboardEvent} event - keydown
      */
-    addTab(event: KeyboardEvent): void;
+    addTab(event: KeyboardEvent): void
 
     /**
      * Reduce indentation for current item
@@ -252,7 +244,7 @@ declare module "@editorjs/nested-list" {
      * @param {KeyboardEvent} event - keydown
      * @returns {void}
      */
-    shiftTab(event: KeyboardEvent): void;
+    shiftTab(event: KeyboardEvent): void
 
     /**
      * Convert from list to text for conversionConfig
@@ -260,11 +252,11 @@ declare module "@editorjs/nested-list" {
      * @param {ListData} data
      * @returns {string}
      */
-    static joinRecursive(data: ListData): string;
+    static joinRecursive(data: ListData): string
 
     /**
      * Convert from text to list with import and export list to text
      */
-    static get conversionConfig(): import("@editorjs/editorjs").ConversionConfig;
+    static get conversionConfig(): import('@editorjs/editorjs').ConversionConfig
   }
 }

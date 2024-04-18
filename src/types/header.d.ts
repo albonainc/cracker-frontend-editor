@@ -1,7 +1,7 @@
-type Level = 1 | 2 | 3 | 4 | 5 | 6;
-type Tag = "H1" | "H2" | "H3" | "H4" | "H5" | "H5";
+type Level = 1 | 2 | 3 | 4 | 5 | 6
+type Tag = 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H5'
 
-declare module "@editorjs/header" {
+declare module '@editorjs/header' {
   /**
    * @typedef {object} level
    * @property {number} number - level number
@@ -9,10 +9,10 @@ declare module "@editorjs/header" {
    * @property {string} svg - icon
    */
   type LevelDetail = {
-    number: Level;
-    tag: Tag;
-    svg: string;
-  };
+    number: Level
+    tag: Tag
+    svg: string
+  }
 
   /**
    * @typedef {object} HeaderData
@@ -21,9 +21,9 @@ declare module "@editorjs/header" {
    * @property {number} level - Header's level from 1 to 6
    */
   type HeaderData = {
-    text: string;
-    level: Level;
-  };
+    text: string
+    level: Level
+  }
 
   /**
    * @typedef {object} HeaderConfig
@@ -33,10 +33,10 @@ declare module "@editorjs/header" {
    * @property {number} defaultLevel — default level
    */
   type HeaderConfig = {
-    placeholder: string;
-    levels: Level[];
-    defaultLevel: Level;
-  };
+    placeholder: string
+    levels: Level[]
+    defaultLevel: Level
+  }
 
   /**
    * Header block for the Editor.js.
@@ -46,9 +46,7 @@ declare module "@editorjs/header" {
    * @license MIT
    * @version 2.0.0
    */
-  export default class Header
-    implements import("@editorjs/editorjs").BlockToolConstructable
-  {
+  export default class Header implements import('@editorjs/editorjs').BlockToolConstructable {
     /**
      * Render plugin`s main Element and fill it with saved data
      *
@@ -59,11 +57,8 @@ declare module "@editorjs/header" {
      *   readOnly - read only mode flag
      */
     new(
-      config: import("@editorjs/editorjs").BlockToolConstructorOptions<
-        HeaderData,
-        HeaderConfig
-      >
-    ): import("@editorjs/editorjs").BlockTool;
+      config: import('@editorjs/editorjs').BlockToolConstructorOptions<HeaderData, HeaderConfig>,
+    ): import('@editorjs/editorjs').BlockTool
 
     /**
      * Normalize input data
@@ -73,7 +68,7 @@ declare module "@editorjs/header" {
      * @returns {HeaderData}
      * @private
      */
-    normalizeData(data: HeaderData): HeaderData;
+    normalizeData(data: HeaderData): HeaderData
 
     /**
      * Return Tool's view
@@ -81,21 +76,21 @@ declare module "@editorjs/header" {
      * @returns {HTMLHeadingElement}
      * @public
      */
-    render(): HTMLHeadingElement;
+    render(): HTMLHeadingElement
 
     /**
      * Returns header block tunes config
      *
      * @returns {Array}
      */
-    renderSettings(): import("@editorjs/editorjs").TunesMenuConfigItem[];
+    renderSettings(): import('@editorjs/editorjs').TunesMenuConfigItem[]
 
     /**
      * Callback for Block's settings buttons
      *
      * @param {number} level - level to set
      */
-    setLevel(level: Level);
+    setLevel(level: Level)
 
     /**
      * Method that specified how to merge two Text blocks.
@@ -104,7 +99,7 @@ declare module "@editorjs/header" {
      * @param {HeaderData} data - saved data to merger with current block
      * @public
      */
-    merge(data: HeaderData);
+    merge(data: HeaderData)
 
     /**
      * Validate Text block data:
@@ -114,7 +109,7 @@ declare module "@editorjs/header" {
      * @returns {boolean} false if saved data is not correct, otherwise true
      * @public
      */
-    validate(blockData: HeaderData): boolean;
+    validate(blockData: HeaderData): boolean
 
     /**
      * Extract Tool's data from the view
@@ -123,30 +118,31 @@ declare module "@editorjs/header" {
      * @returns {HeaderData} - saved data
      * @public
      */
-    save(toolsContent: HTMLHeadingElement): HeaderData;
+    save(toolsContent: HTMLHeadingElement): HeaderData
 
     /**
      * Allow Header to be converted to/from other blocks
      */
     static get conversionConfig(): {
-      export: "text"; // use 'text' property for other blocks
-      import: "text"; // fill 'text' property from other block's export string
-    };
+      export: 'text' // use 'text' property for other blocks
+      import: 'text' // fill 'text' property from other block's export string
+    }
 
     /**
      * Sanitizer Rules
      */
     static get sanitize(): {
-      level: false;
-      text: {};
-    };
+      level: false
+      // eslint-disable-next-line @typescript-eslint/ban-types
+      text: {}
+    }
 
     /**
      * Returns true to notify core that read-only is supported
      *
      * @returns {boolean}
      */
-    static get isReadOnlySupported(): boolean;
+    static get isReadOnlySupported(): boolean
 
     /**
      * Get current Tools`s data
@@ -154,7 +150,7 @@ declare module "@editorjs/header" {
      * @returns {HeaderData} Current data
      * @private
      */
-    private get data(): HeaderData;
+    private get data(): HeaderData
 
     /**
      * Store data in plugin:
@@ -164,7 +160,7 @@ declare module "@editorjs/header" {
      * @param {HeaderData} data — data to set
      * @private
      */
-    private set data(data: HeaderData);
+    private set data(data: HeaderData)
 
     /**
      * Get tag for target level
@@ -172,35 +168,35 @@ declare module "@editorjs/header" {
      *
      * @returns {HTMLElement}
      */
-    getTag(): HTMLElement;
+    getTag(): HTMLElement
 
     /**
      * Get current level
      *
      * @returns {level}
      */
-    get currentLevel(): LevelDetail;
+    get currentLevel(): LevelDetail
 
     /**
      * Return default level
      *
      * @returns {level}
      */
-    get defaultLevel(): LevelDetail;
+    get defaultLevel(): LevelDetail
 
     /**
      * Available header levels
      *
      * @returns {level[]}
      */
-    get levels(): LevelDetail[];
+    get levels(): LevelDetail[]
 
     /**
      * Handle H1-H6 tags on paste to substitute it with header Tool
      *
      * @param {PasteEvent} event - event with pasted content
      */
-    onPaste(event: import("@editorjs/editorjs").PasteEvent): void;
+    onPaste(event: import('@editorjs/editorjs').PasteEvent): void
 
     /**
      * Used by Editor.js paste handling API.
@@ -209,12 +205,12 @@ declare module "@editorjs/header" {
      * @returns {{handler: (function(HTMLElement): {text: string}), tags: string[]}}
      */
     static get pasteConfig(): {
-      tags: ["H1", "H2", "H3", "H4", "H5", "H6"];
-    };
+      tags: ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
+    }
 
     static get toolbox(): {
-      icon: IconHeading;
-      title: "Heading";
-    };
+      icon: IconHeading
+      title: 'Heading'
+    }
   }
 }
