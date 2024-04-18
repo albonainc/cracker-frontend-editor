@@ -1,7 +1,7 @@
-/// <reference types="@/types/paragraph" />
-/// <reference types="@/types/linkTool" />
-/// <reference types="@/types/header" />
-/// <reference types="@/types/nestedList" />
+/// <reference types="src/types/paragraph" />
+/// <reference types="src/types/linkTool" />
+/// <reference types="src/types/header" />
+/// <reference types="src/types/nestedList" />
 import type { OutputData } from '@editorjs/editorjs';
 import type { HeaderData } from '@editorjs/header';
 import type { LinkToolData } from '@editorjs/link';

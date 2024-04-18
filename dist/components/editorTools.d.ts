@@ -1,4 +1,4 @@
-/// <reference types="@/types/linkTool" />
+/// <reference types="src/types/linkTool" />
 import { ToolConstructable, ToolSettings } from "@editorjs/editorjs";
 import { LinkToolConfig } from "@editorjs/link";
 import { ImageToolConfig } from "editorjs-image";

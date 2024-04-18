@@ -18,13 +18,8 @@
     },
     "./package.json": "./package.json"
   },
-  "bugs": {
-    "url": "https://github.com/colinhacks/zod/issues"
-  },
-  "description": "TypeScript-first schema declaration and validation library with static type inference",
   "files": [
-    "/lib",
-    "/index.d.ts"
+    "dist"
   ],
   "dependencies": {
     "@editorjs/editorjs": "^2.28.2",

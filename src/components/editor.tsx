@@ -53,4 +53,4 @@ const Editor: React.FC<Props> = ({ id, data, onChange, config }) => {
   return <div id={id} className="w-full" />
 }
 
-export default React.memo(Editor)
+export default Editor
