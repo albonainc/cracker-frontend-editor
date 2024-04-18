@@ -14894,7 +14894,7 @@ const Us = /* @__PURE__ */ Oo(Hs), $s = {
         async onChange() {
           if (t) {
             const a = await i();
-            console.log(a), a && t(a);
+            a && t(a);
           }
         },
         i18n: $s,

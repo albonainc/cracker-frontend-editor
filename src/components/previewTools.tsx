@@ -14,7 +14,6 @@ import type { PaymentLineData } from './editorTools/paymentLine'
 import Styles from './previewTools.module.css'
 import type { OutputBlockData } from '../index'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Parser<Type extends string = string, Data extends object | undefined = undefined> = (
   data: OutputBlockData<Type, Data | undefined>,
 ) => ReactNode

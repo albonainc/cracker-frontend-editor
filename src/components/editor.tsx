@@ -26,7 +26,6 @@ const Editor: React.FC<Props> = ({ id, data, onChange, config }) => {
         async onChange() {
           if (onChange) {
             const res = await save()
-            console.log(res)
             res && onChange(res)
           }
         },
