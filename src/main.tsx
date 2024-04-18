@@ -5,8 +5,6 @@ import Editor from './index'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <div className="h-4">
-      <Editor id="editor" />
-    </div>
+    <Editor id="editor" />
   </React.StrictMode>,
 )
