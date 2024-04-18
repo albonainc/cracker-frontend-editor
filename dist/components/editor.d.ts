@@ -7,6 +7,6 @@ type Props = {
     onChange?: (data: OutputData) => void;
     config?: ToolConfigs;
 };
-declare const _default: React.NamedExoticComponent<Props>;
-export default _default;
+declare const Editor: React.FC<Props>;
+export default Editor;
 //# sourceMappingURL=editor.d.ts.map

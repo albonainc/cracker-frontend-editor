@@ -1,4 +1,4 @@
-import Ge, { Fragment as Fn, useState as Hn, useEffect as Un } from "react";
+import st, { Fragment as Fn, useState as Hn, useEffect as Un } from "react";
 (function() {
   try {
     if (typeof document < "u") {
@@ -3889,7 +3889,7 @@ function Oi() {
   if (fo)
     return qe;
   fo = 1;
-  var r = Ge, e = Symbol.for("react.element"), t = Symbol.for("react.fragment"), o = Object.prototype.hasOwnProperty, n = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, i = { key: !0, ref: !0, __self: !0, __source: !0 };
+  var r = st, e = Symbol.for("react.element"), t = Symbol.for("react.fragment"), o = Object.prototype.hasOwnProperty, n = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, i = { key: !0, ref: !0, __self: !0, __source: !0 };
   function s(a, c, l) {
     var u, d = {}, p = null, k = null;
     l !== void 0 && (p = "" + l), c.key !== void 0 && (p = "" + c.key), c.ref !== void 0 && (k = c.ref);
@@ -3915,7 +3915,7 @@ var We = {};
 var go;
 function Ai() {
   return go || (go = 1, process.env.NODE_ENV !== "production" && function() {
-    var r = Ge, e = Symbol.for("react.element"), t = Symbol.for("react.portal"), o = Symbol.for("react.fragment"), n = Symbol.for("react.strict_mode"), i = Symbol.for("react.profiler"), s = Symbol.for("react.provider"), a = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), l = Symbol.for("react.suspense"), u = Symbol.for("react.suspense_list"), d = Symbol.for("react.memo"), p = Symbol.for("react.lazy"), k = Symbol.for("react.offscreen"), h = Symbol.iterator, g = "@@iterator";
+    var r = st, e = Symbol.for("react.element"), t = Symbol.for("react.portal"), o = Symbol.for("react.fragment"), n = Symbol.for("react.strict_mode"), i = Symbol.for("react.profiler"), s = Symbol.for("react.provider"), a = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), l = Symbol.for("react.suspense"), u = Symbol.for("react.suspense_list"), d = Symbol.for("react.memo"), p = Symbol.for("react.lazy"), k = Symbol.for("react.offscreen"), h = Symbol.iterator, g = "@@iterator";
     function f(m) {
       if (m === null || typeof m != "object")
         return null;
@@ -4067,7 +4067,7 @@ function Ai() {
       }
     }
     var ut = v.ReactCurrentDispatcher, pt;
-    function et(m, S, L) {
+    function Qe(m, S, L) {
       {
         if (pt === void 0)
           try {
@@ -4080,16 +4080,16 @@ function Ai() {
 ` + pt + m;
       }
     }
-    var ft = !1, tt;
+    var ft = !1, et;
     {
       var mn = typeof WeakMap == "function" ? WeakMap : Map;
-      tt = new mn();
+      et = new mn();
     }
     function Zt(m, S) {
       if (!m || ft)
         return "";
       {
-        var L = tt.get(m);
+        var L = et.get(m);
         if (L !== void 0)
           return L;
       }
@@ -4144,7 +4144,7 @@ function Ai() {
                   if (te--, ne--, ne < 0 || $[te] !== le[ne]) {
                     var he = `
 ` + $[te].replace(" at new ", " at ");
-                    return m.displayName && he.includes("<anonymous>") && (he = he.replace("<anonymous>", m.displayName)), typeof m == "function" && tt.set(m, he), he;
+                    return m.displayName && he.includes("<anonymous>") && (he = he.replace("<anonymous>", m.displayName)), typeof m == "function" && et.set(m, he), he;
                   }
                 while (te >= 1 && ne >= 0);
               break;
@@ -4153,8 +4153,8 @@ function Ai() {
       } finally {
         ft = !1, ut.current = J, gn(), Error.prepareStackTrace = K;
       }
-      var Le = m ? m.displayName || m.name : "", ho = Le ? et(Le) : "";
-      return typeof m == "function" && tt.set(m, ho), ho;
+      var Le = m ? m.displayName || m.name : "", ho = Le ? Qe(Le) : "";
+      return typeof m == "function" && et.set(m, ho), ho;
     }
     function bn(m, S, L) {
       return Zt(m, !1);
@@ -4163,46 +4163,46 @@ function Ai() {
       var S = m.prototype;
       return !!(S && S.isReactComponent);
     }
-    function ot(m, S, L) {
+    function tt(m, S, L) {
       if (m == null)
         return "";
       if (typeof m == "function")
         return Zt(m, vn(m));
       if (typeof m == "string")
-        return et(m);
+        return Qe(m);
       switch (m) {
         case l:
-          return et("Suspense");
+          return Qe("Suspense");
         case u:
-          return et("SuspenseList");
+          return Qe("SuspenseList");
       }
       if (typeof m == "object")
         switch (m.$$typeof) {
           case c:
             return bn(m.render);
           case d:
-            return ot(m.type, S, L);
+            return tt(m.type, S, L);
           case p: {
             var P = m, K = P._payload, J = P._init;
             try {
-              return ot(J(K), S, L);
+              return tt(J(K), S, L);
             } catch {
             }
           }
         }
       return "";
     }
-    var nt = Object.prototype.hasOwnProperty, Jt = {}, Qt = v.ReactDebugCurrentFrame;
-    function it(m) {
+    var ot = Object.prototype.hasOwnProperty, Jt = {}, Qt = v.ReactDebugCurrentFrame;
+    function nt(m) {
       if (m) {
-        var S = m._owner, L = ot(m.type, m._source, S ? S.type : null);
+        var S = m._owner, L = tt(m.type, m._source, S ? S.type : null);
         Qt.setExtraStackFrame(L);
       } else
         Qt.setExtraStackFrame(null);
     }
     function kn(m, S, L, P, K) {
       {
-        var J = Function.call.bind(nt);
+        var J = Function.call.bind(ot);
         for (var W in m)
           if (J(m, W)) {
             var $ = void 0;
@@ -4215,7 +4215,7 @@ function Ai() {
             } catch (te) {
               $ = te;
             }
-            $ && !($ instanceof Error) && (it(K), b("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", P || "React class", L, W, typeof $), it(null)), $ instanceof Error && !($.message in Jt) && (Jt[$.message] = !0, it(K), b("Failed %s type: %s", L, $.message), it(null));
+            $ && !($ instanceof Error) && (nt(K), b("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", P || "React class", L, W, typeof $), nt(null)), $ instanceof Error && !($.message in Jt) && (Jt[$.message] = !0, nt(K), b("Failed %s type: %s", L, $.message), nt(null));
           }
       }
     }
@@ -4251,7 +4251,7 @@ function Ai() {
     }, oo, no, mt;
     mt = {};
     function En(m) {
-      if (nt.call(m, "ref")) {
+      if (ot.call(m, "ref")) {
         var S = Object.getOwnPropertyDescriptor(m, "ref").get;
         if (S && S.isReactWarning)
           return !1;
@@ -4259,7 +4259,7 @@ function Ai() {
       return m.ref !== void 0;
     }
     function Sn(m) {
-      if (nt.call(m, "key")) {
+      if (ot.call(m, "key")) {
         var S = Object.getOwnPropertyDescriptor(m, "key").get;
         if (S && S.isReactWarning)
           return !1;
@@ -4328,7 +4328,7 @@ function Ai() {
         var J, W = {}, $ = null, le = null;
         L !== void 0 && (to(L), $ = "" + L), Sn(S) && (to(S.key), $ = "" + S.key), En(S) && (le = S.ref, Tn(S, K));
         for (J in S)
-          nt.call(S, J) && !Cn.hasOwnProperty(J) && (W[J] = S[J]);
+          ot.call(S, J) && !Cn.hasOwnProperty(J) && (W[J] = S[J]);
         if (m && m.defaultProps) {
           var te = m.defaultProps;
           for (J in te)
@@ -4344,7 +4344,7 @@ function Ai() {
     var bt = v.ReactCurrentOwner, io = v.ReactDebugCurrentFrame;
     function Be(m) {
       if (m) {
-        var S = m._owner, L = ot(m.type, m._source, S ? S.type : null);
+        var S = m._owner, L = tt(m.type, m._source, S ? S.type : null);
         io.setExtraStackFrame(L);
       } else
         io.setExtraStackFrame(null);
@@ -4781,7 +4781,7 @@ class Di extends Error {
     Define your custom parser functions as: \x1B[34mhttps://github.com/pavittarx/editorjs-html#extend-for-custom-blocks \x1B[0m`), this.name = "ParseFunctionError";
   }
 }
-const qs = ({ key: r, value: e, onClick: t }) => /* @__PURE__ */ j.jsx(
+const zs = ({ key: r, value: e, onClick: t }) => /* @__PURE__ */ j.jsx(
   "button",
   {
     className: e ? F.payment : F["payment-button"],
@@ -4874,19 +4874,19 @@ const qs = ({ key: r, value: e, onClick: t }) => /* @__PURE__ */ j.jsx(
   link: No,
   embed: Do,
   quote: jo
-}), Ws = ({ blocks: r }) => {
+}), qs = ({ blocks: r }) => {
   if (!r)
     return /* @__PURE__ */ j.jsx("div", {});
   const e = Fi.parse(r);
   return /* @__PURE__ */ j.jsx("div", { className: "w-full", children: e });
-}, Vs = ({ blocks: r }) => {
+}, Ws = ({ blocks: r }) => {
   if (!r)
     return /* @__PURE__ */ j.jsx("div", {});
   const e = ji(
     r.filter((t) => t.type === "header")
   );
   return /* @__PURE__ */ j.jsx("div", { className: "w-full", children: e });
-}, Ys = (r) => {
+}, Vs = (r) => {
   const [e, t] = Hn(0);
   return Un(() => {
     t(r ? Hi(r) : 0);
@@ -4902,7 +4902,7 @@ const qs = ({ key: r, value: e, onClick: t }) => /* @__PURE__ */ j.jsx(
     return (((n = o.content) == null ? void 0 : n.length) ?? 0) + e(o.items);
   }).reduce((o, n) => o + n, 0);
   return e(r);
-}, Vi = (r) => (r == null ? void 0 : r.source.length) ?? 0, Yi = ({ text: r, caption: e }) => r.length + e.length, Ks = (r) => {
+}, Vi = (r) => (r == null ? void 0 : r.source.length) ?? 0, Yi = ({ text: r, caption: e }) => r.length + e.length, Ys = (r) => {
   const e = /https?:\/\/[\w.-]+(:\d+)?\/article\/preview\/[^/\s?]+(?:[/?][^\s]*)?/g;
   let t = !1;
   return typeof r == "string" ? t = !!r.match(e) : r.blocks.forEach((o) => {
@@ -5009,11 +5009,11 @@ const R = {
   BACKWARD: 3,
   FORWARD: 4
 };
-function Qe(r, e, t = "log", o, n = "color: inherit") {
+function Je(r, e, t = "log", o, n = "color: inherit") {
   if (!("console" in window) || !window.console[t])
     return;
   const i = ["info", "log", "warn", "error"].includes(t), s = [];
-  switch (Qe.logLevel) {
+  switch (Je.logLevel) {
     case "ERROR":
       if (t !== "error")
         return;
@@ -5044,11 +5044,11 @@ function Qe(r, e, t = "log", o, n = "color: inherit") {
   } catch {
   }
 }
-Qe.logLevel = "VERBOSE";
+Je.logLevel = "VERBOSE";
 function Zi(r) {
-  Qe.logLevel = r;
+  Je.logLevel = r;
 }
-const X = Qe.bind(window, !1), fe = Qe.bind(window, !0);
+const X = Je.bind(window, !1), fe = Je.bind(window, !0);
 function _e(r) {
   return Object.prototype.toString.call(r).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
 }
@@ -8061,7 +8061,7 @@ function Fr(r, e, t) {
 function Rt(r = !1) {
   Ut(), me == null || me.hide(r);
 }
-function Ze(r, e, t) {
+function Ge(r, e, t) {
   Ut(), me == null || me.onHover(r, e, t);
 }
 function Hr() {
@@ -8114,7 +8114,7 @@ class Ur extends z {
    * @param {TooltipOptions} options - tooltip options
    */
   onHover(e, t, o) {
-    Ze(e, t, o);
+    Ge(e, t, o);
   }
 }
 class $r extends z {
@@ -8691,7 +8691,7 @@ var es = Object.defineProperty, ts = Object.getOwnPropertyDescriptor, os = (r, e
   for (var n = o > 1 ? void 0 : o ? ts(e, t) : e, i = r.length - 1, s; i >= 0; i--)
     (s = r[i]) && (n = (o ? s(e, t, n) : s(n)) || n);
   return o && n && es(e, t, n), n;
-}, Je = /* @__PURE__ */ ((r) => (r.Close = "close", r))(Je || {});
+}, Ze = /* @__PURE__ */ ((r) => (r.Close = "close", r))(Ze || {});
 const ie = class extends dt {
   /**
    * Constructs the instance
@@ -8974,7 +8974,7 @@ class ns extends z {
         nothingFound: ce.ui(ge.ui.popover, "Nothing found"),
         search: ce.ui(ge.ui.popover, "Filter")
       }
-    }), this.popover.on(Je.Close, this.onPopoverClose), this.nodes.wrapper.append(this.popover.getElement()), this.popover.show();
+    }), this.popover.on(Ze.Close, this.onPopoverClose), this.nodes.wrapper.append(this.popover.getElement()), this.popover.show();
   }
   /**
    * Returns root block settings element
@@ -8986,7 +8986,7 @@ class ns extends z {
    * Close Block Settings pane
    */
   close() {
-    this.opened && (this.opened = !1, O.isAtEditor || this.selection.restore(), this.selection.clearSaved(), !this.Editor.CrossBlockSelection.isCrossBlockSelectionStarted && this.Editor.BlockManager.currentBlock && this.Editor.BlockSelection.unselectBlock(this.Editor.BlockManager.currentBlock), this.eventsDispatcher.emit(this.events.closed), this.popover && (this.popover.off(Je.Close, this.onPopoverClose), this.popover.destroy(), this.popover.getElement().remove(), this.popover = null));
+    this.opened && (this.opened = !1, O.isAtEditor || this.selection.restore(), this.selection.clearSaved(), !this.Editor.CrossBlockSelection.isCrossBlockSelectionStarted && this.Editor.BlockManager.currentBlock && this.Editor.BlockSelection.unselectBlock(this.Editor.BlockManager.currentBlock), this.eventsDispatcher.emit(this.events.closed), this.popover && (this.popover.off(Ze.Close, this.onPopoverClose), this.popover.destroy(), this.popover.getElement().remove(), this.popover = null));
   }
   /**
    * Returns list of buttons and inputs inside specified container
@@ -9322,7 +9322,7 @@ var as = Object.defineProperty, ls = Object.getOwnPropertyDescriptor, Qo = (r, e
   for (var n = o > 1 ? void 0 : o ? ls(e, t) : e, i = r.length - 1, s; i >= 0; i--)
     (s = r[i]) && (n = (o ? s(e, t, n) : s(n)) || n);
   return o && n && as(e, t, n), n;
-}, rt = /* @__PURE__ */ ((r) => (r.Opened = "toolbox-opened", r.Closed = "toolbox-closed", r.BlockAdded = "toolbox-block-added", r))(rt || {});
+}, it = /* @__PURE__ */ ((r) => (r.Opened = "toolbox-opened", r.Closed = "toolbox-closed", r.BlockAdded = "toolbox-block-added", r))(it || {});
 const en = class extends dt {
   /**
    * Toolbox constructor
@@ -9371,7 +9371,7 @@ const en = class extends dt {
         search: this.i18nLabels.filter
       },
       items: this.toolboxItemsToBeDisplayed
-    }), this.popover.on(Je.Close, this.onPopoverClose), this.enableShortcuts(), this.nodes.toolbox = this.popover.getElement(), this.nodes.toolbox.classList.add(en.CSS.toolbox), this.nodes.toolbox;
+    }), this.popover.on(Ze.Close, this.onPopoverClose), this.enableShortcuts(), this.nodes.toolbox = this.popover.getElement(), this.nodes.toolbox.classList.add(en.CSS.toolbox), this.nodes.toolbox;
   }
   /**
    * Returns true if the Toolbox has the Flipper activated and the Flipper has selected button
@@ -9385,7 +9385,7 @@ const en = class extends dt {
    */
   destroy() {
     var r;
-    super.destroy(), this.nodes && this.nodes.toolbox && (this.nodes.toolbox.remove(), this.nodes.toolbox = null), this.removeAllShortcuts(), (r = this.popover) == null || r.off(Je.Close, this.onPopoverClose);
+    super.destroy(), this.nodes && this.nodes.toolbox && (this.nodes.toolbox.remove(), this.nodes.toolbox = null), this.removeAllShortcuts(), (r = this.popover) == null || r.off(Ze.Close, this.onPopoverClose);
   }
   /**
    * Toolbox Tool's button click handler
@@ -9684,7 +9684,7 @@ class ds extends z {
     const e = y.make("div");
     e.appendChild(document.createTextNode(ce.ui(ge.ui.toolbar.toolbox, "Add"))), e.appendChild(y.make("div", this.CSS.plusButtonShortcut, {
       textContent: "/"
-    })), Ze(this.nodes.plusButton, e, {
+    })), Ge(this.nodes.plusButton, e, {
       hidingDelay: 400
     }), this.nodes.settingsToggler = y.make("span", this.CSS.settingsToggler, {
       innerHTML: Xr
@@ -9692,7 +9692,7 @@ class ds extends z {
     const t = y.make("div"), o = y.text(ce.ui(ge.ui.blockTunes.toggler, "Click to tune")), n = await cs("Slash", "/");
     t.appendChild(o), t.appendChild(y.make("div", this.CSS.plusButtonShortcut, {
       textContent: ct(`CMD + ${n}`)
-    })), Ze(this.nodes.settingsToggler, t, {
+    })), Ge(this.nodes.settingsToggler, t, {
       hidingDelay: 400
     }), y.append(this.nodes.actions, this.makeToolbox()), y.append(this.nodes.actions, this.Editor.BlockSettings.getElement()), y.append(this.Editor.UI.nodes.wrapper, this.nodes.wrapper);
   }
@@ -9707,11 +9707,11 @@ class ds extends z {
         filter: ce.ui(ge.ui.popover, "Filter"),
         nothingFound: ce.ui(ge.ui.popover, "Nothing found")
       }
-    }), this.toolboxInstance.on(rt.Opened, () => {
+    }), this.toolboxInstance.on(it.Opened, () => {
       this.Editor.UI.nodes.wrapper.classList.add(this.CSS.openedToolboxHolderModifier);
-    }), this.toolboxInstance.on(rt.Closed, () => {
+    }), this.toolboxInstance.on(it.Closed, () => {
       this.Editor.UI.nodes.wrapper.classList.remove(this.CSS.openedToolboxHolderModifier);
-    }), this.toolboxInstance.on(rt.BlockAdded, ({ block: e }) => {
+    }), this.toolboxInstance.on(it.BlockAdded, ({ block: e }) => {
       const { BlockManager: t, Caret: o } = this.Editor, n = t.getBlockById(e.id);
       n.inputs.length === 0 && (n === t.lastBlock ? (t.insertAtEnd(), o.setToBlock(t.lastBlock)) : o.setToBlock(t.nextBlock));
     }), this.toolboxInstance.make();
@@ -9769,7 +9769,7 @@ class ds extends z {
     this.removeAllNodes(), this.toolboxInstance && this.toolboxInstance.destroy();
   }
 }
-var ht = /* @__PURE__ */ ((r) => (r[r.Block = 0] = "Block", r[r.Inline = 1] = "Inline", r[r.Tune = 2] = "Tune", r))(ht || {}), st = /* @__PURE__ */ ((r) => (r.Shortcut = "shortcut", r.Toolbox = "toolbox", r.EnabledInlineTools = "inlineToolbar", r.EnabledBlockTunes = "tunes", r.Config = "config", r))(st || {}), on = /* @__PURE__ */ ((r) => (r.Shortcut = "shortcut", r.SanitizeConfig = "sanitize", r))(on || {}), Pe = /* @__PURE__ */ ((r) => (r.IsEnabledLineBreaks = "enableLineBreaks", r.Toolbox = "toolbox", r.ConversionConfig = "conversionConfig", r.IsReadOnlySupported = "isReadOnlySupported", r.PasteConfig = "pasteConfig", r))(Pe || {}), qt = /* @__PURE__ */ ((r) => (r.IsInline = "isInline", r.Title = "title", r))(qt || {}), nn = /* @__PURE__ */ ((r) => (r.IsTune = "isTune", r))(nn || {});
+var ht = /* @__PURE__ */ ((r) => (r[r.Block = 0] = "Block", r[r.Inline = 1] = "Inline", r[r.Tune = 2] = "Tune", r))(ht || {}), rt = /* @__PURE__ */ ((r) => (r.Shortcut = "shortcut", r.Toolbox = "toolbox", r.EnabledInlineTools = "inlineToolbar", r.EnabledBlockTunes = "tunes", r.Config = "config", r))(rt || {}), on = /* @__PURE__ */ ((r) => (r.Shortcut = "shortcut", r.SanitizeConfig = "sanitize", r))(on || {}), Pe = /* @__PURE__ */ ((r) => (r.IsEnabledLineBreaks = "enableLineBreaks", r.Toolbox = "toolbox", r.ConversionConfig = "conversionConfig", r.IsReadOnlySupported = "isReadOnlySupported", r.PasteConfig = "pasteConfig", r))(Pe || {}), qt = /* @__PURE__ */ ((r) => (r.IsInline = "isInline", r.Title = "title", r))(qt || {}), nn = /* @__PURE__ */ ((r) => (r.IsTune = "isTune", r))(nn || {});
 class Wt {
   /**
    * @class
@@ -9993,7 +9993,7 @@ class hs extends z {
       this.Editor.ConversionToolbar.toggle((t) => {
         !t && this.opened ? this.flipper.activate() : this.opened && this.flipper.deactivate();
       });
-    }), Te() === !1 && Ze(this.nodes.conversionToggler, ce.ui(ge.ui.inlineToolbar.converter, "Convert to"), {
+    }), Te() === !1 && Ge(this.nodes.conversionToggler, ce.ui(ge.ui.inlineToolbar.converter, "Convert to"), {
       placement: "top",
       hidingDelay: 100
     });
@@ -10059,7 +10059,7 @@ class hs extends z {
     );
     i.appendChild(y.text(s)), n && i.appendChild(y.make("div", this.CSS.inlineToolbarShortcut, {
       textContent: ct(n)
-    })), Te() === !1 && Ze(o, i, {
+    })), Te() === !1 && Ge(o, i, {
       placement: "top",
       hidingDelay: 100
     }), t.checkState(O.get());
@@ -13434,7 +13434,7 @@ class Gt extends Wt {
    * config. This is made to allow user to override default tool's toolbox representation (single/multiple entries)
    */
   get toolbox() {
-    const e = this.constructable[Pe.Toolbox], t = this.config[st.Toolbox];
+    const e = this.constructable[Pe.Toolbox], t = this.config[rt.Toolbox];
     if (!ue(e) && t !== !1)
       return t ? Array.isArray(e) ? Array.isArray(t) ? t.map((o, n) => {
         const i = e[n];
@@ -13459,13 +13459,13 @@ class Gt extends Wt {
    * Returns enabled inline tools for Tool
    */
   get enabledInlineTools() {
-    return this.config[st.EnabledInlineTools] || !1;
+    return this.config[rt.EnabledInlineTools] || !1;
   }
   /**
    * Returns enabled tunes for Tool
    */
   get enabledBlockTunes() {
-    return this.config[st.EnabledBlockTunes];
+    return this.config[rt.EnabledBlockTunes];
   }
   /**
    * Returns Tool paste configuration
@@ -14890,9 +14890,9 @@ const js = /* @__PURE__ */ Io(Ds), Fs = {
       }
     }
   }
-}, Hs = ({ id: r, data: e, onChange: t, config: o }) => {
-  const n = Ge.useRef(null);
-  Ge.useEffect(() => {
+}, Ks = ({ id: r, data: e, onChange: t, config: o }) => {
+  const n = st.useRef(null);
+  st.useEffect(() => {
     if (!n.current) {
       const s = new Ps({
         holder: r,
@@ -14923,12 +14923,12 @@ const js = /* @__PURE__ */ Io(Ds), Fs = {
       return n.current.save().then((a) => a);
   };
   return /* @__PURE__ */ j.jsx("div", { id: r, className: "w-full" });
-}, Xs = Ge.memo(Hs);
+};
 export {
-  Vs as Index,
-  Ws as Preview,
+  Ws as Index,
+  qs as Preview,
   Hi as counter,
-  Xs as default,
+  Ks as default,
   Vi as embedCounter,
   Do as embedParser,
   Mi as generateTool,
@@ -14937,7 +14937,7 @@ export {
   $i as imageCounter,
   Ao as imageParser,
   ji as indexParser,
-  Ks as isFoundedPreviewURL,
+  Ys as isFoundedPreviewURL,
   zi as linkCounter,
   No as linkParser,
   Wi as listCounter,
@@ -14945,9 +14945,9 @@ export {
   Ui as paragraphCounter,
   Oo as paragraphParser,
   Fo as parser,
-  qs as paymentButton,
+  zs as paymentButton,
   Pi as paymentLineParser,
   Yi as quoteCounter,
   jo as quoteParser,
-  Ys as useEditorCounter
+  Vs as useEditorCounter
 };
