@@ -1,4 +1,4 @@
-export type * from '@editorjs/editorjs'
+export { type OutputData } from '@editorjs/editorjs'
 export * from '@/components/editorTools'
 export * from '@/components/preview'
 export * from '@/components/previewTools'
