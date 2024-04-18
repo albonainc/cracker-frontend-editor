@@ -4,8 +4,8 @@ export * from './components/preview'
 export * from './components/previewTools'
 export * from './components/countTools'
 export * from './components/searchTools'
-export * from './components/setPaymentLine'
 import Editor from './components/editor'
+import SetPaymentLine from './components/setPaymentLine'
 import './global.css'
 export interface OutputBlockData<
   Type extends string = string,
@@ -18,4 +18,4 @@ export interface OutputBlockData<
   tunes?: { [name: string]: any }
 }
 
-export default Editor
+export { Editor, SetPaymentLine }

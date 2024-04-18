@@ -4,8 +4,8 @@ export * from './components/preview';
 export * from './components/previewTools';
 export * from './components/countTools';
 export * from './components/searchTools';
-export * from './components/setPaymentLine';
 import Editor from './components/editor';
+import SetPaymentLine from './components/setPaymentLine';
 import './global.css';
 export interface OutputBlockData<Type extends string = string, Data extends object | undefined = undefined> {
     id?: string;
@@ -15,5 +15,5 @@ export interface OutputBlockData<Type extends string = string, Data extends obje
         [name: string]: any;
     };
 }
-export default Editor;
+export { Editor, SetPaymentLine };
 //# sourceMappingURL=index.d.ts.map
