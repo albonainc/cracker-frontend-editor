@@ -1,6 +1,6 @@
 import EditorJs, { OutputData, EditorConfig } from '@editorjs/editorjs'
 import DragDrop from 'editorjs-drag-drop'
-import React from 'react'
+import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react'
 
 import { i18n } from '../components/config/i18n'
 import { generateTool, ToolConfigs } from '../components/editorTools'
@@ -11,11 +11,14 @@ type Props = {
   onChange?: (data: OutputData) => void
   config?: ToolConfigs
 }
+interface Editor {
+  save: () => Promise<OutputData>
+}
 
-const Editor: React.FC<Props> = ({ id, data, onChange, config }) => {
-  const editorJs = React.useRef<EditorJs | null>(null)
+const Editor = forwardRef<Editor, Props>(({ id, data, onChange, config }: Props, ref) => {
+  const editorJs = useRef<EditorJs | null>(null)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!editorJs.current) {
       const editor = new EditorJs({
         holder: id,
@@ -44,12 +47,15 @@ const Editor: React.FC<Props> = ({ id, data, onChange, config }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const save = (): Promise<OutputData> | undefined => {
-    if (!editorJs.current?.save) return undefined
-    return editorJs.current.save().then((outputData) => outputData)
+  const save = (): Promise<OutputData> => {
+    return editorJs.current?.save() || Promise.reject('Editor not initialized')
   }
 
+  useImperativeHandle(ref, () => ({
+    save,
+  }))
+
   return <div id={id} className="w-full" />
-}
+})
 
 export default Editor

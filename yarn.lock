@@ -1024,7 +1024,7 @@ editorjs-drag-drop@^1.1.13:
 
 "editorjs-quote@github:desire-power/editorjs-quote#master":
   version "2.6.0"
-  resolved "https://codeload.github.com/desire-power/editorjs-quote/tar.gz/be4c22eed8a5d34f4f931ec7e5fa48eec4fc9e93"
+  resolved "https://codeload.github.com/desire-power/editorjs-quote/tar.gz/054ec84d81644c32dd63350b495938be5309169a"
   dependencies:
     "@codexteam/icons" "^0.0.5"
 

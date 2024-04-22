@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# cracker-frontend-editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 概要
 
-Currently, two official plugins are available:
+このプロジェクトは、EditorJSを使って作成されたカスタムエディタです。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 検証環境作成
 
-## Expanding the ESLint configuration
+1. 必要なパッケージをインストール
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```sh
+  yarn
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. テストサーバー起動
+
+```sh
+  yarn run dev
+```
+
+## ビルド
+
+```sh
+  yarn run build
+```
+
+## プロジェクト構造
+
+- `src/`: エディタ検証環境のソースコード
+- `src/components`: エディタのソースコード
+- `src/components/editor.tsx`: 編集エディタのコンポーネント
+- `src/components/preview.tsx`: 記事データの表示コンポーネント
+- `src/components/searchTools.ts`: 記事データの中から特定の文言などを抽出するためのツール
+- `src/components/setPaymentLine.tsx`: 記事データのブロックの間に有料ラインを設置するためにコンポーネント
+- `src/components/countTools.ts`: 記事データの文字数を計算するためのコンポーネント
+- `src/components/config/`: 記事データの設定情報など
+- `src/types/`: editorjsプラグインの型定義ファイル
+- `src/global.css`: editorjsのcss上書きと、プラグインのcss上書きが記載されています
+- `dist/`: 公開されるファイル。公開用のCI/CD環境が作成された場合は、gitignoreしてください
+
+## 注意
+
+このプロジェクトは多数のeditorjsプラグイン(独自含む)を依存して作成しているため、
+他のプラグインの仕様を変更した場合こちらの環境で検証してください。

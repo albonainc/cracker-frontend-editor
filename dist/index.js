@@ -1,4 +1,4 @@
-import at, { Fragment as Un, useState as To, useEffect as $n, useMemo as it, useCallback as zn } from "react";
+import So, { Fragment as $n, useState as To, useEffect as _o, forwardRef as zn, useRef as qn, useImperativeHandle as Wn, useMemo as it, useCallback as Vn } from "react";
 (function() {
   try {
     if (typeof document < "u") {
@@ -9,7 +9,7 @@ import at, { Fragment as Un, useState as To, useEffect as $n, useMemo as it, use
     console.error("vite-plugin-css-injected-by-js", e);
   }
 })();
-const qn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19 17V10.2135C19 10.1287 18.9011 10.0824 18.836 10.1367L16 12.5"/></svg>', Wn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10 19 9.5 19 12C19 13.9771 16.0684 13.9997 16.0012 16.8981C15.9999 16.9533 16.0448 17 16.1 17L19.3 17"/></svg>', Vn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10.5 16.8323 10 17.6 10C18.3677 10 19.5 10.311 19.5 11.5C19.5 12.5315 18.7474 12.9022 18.548 12.9823C18.5378 12.9864 18.5395 13.0047 18.5503 13.0063C18.8115 13.0456 20 13.3065 20 14.8C20 16 19.5 17 17.8 17C17.8 17 16 17 16 16.3"/></svg>', Yn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 10L15.2834 14.8511C15.246 14.9178 15.294 15 15.3704 15C16.8489 15 18.7561 15 20.2 15M19 17C19 15.7187 19 14.8813 19 13.6"/></svg>', Kn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 15.9C16 15.9 16.3768 17 17.8 17C19.5 17 20 15.6199 20 14.7C20 12.7323 17.6745 12.0486 16.1635 12.9894C16.094 13.0327 16 12.9846 16 12.9027V10.1C16 10.0448 16.0448 10 16.1 10H19.8"/></svg>', Xn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19.5 10C16.5 10.5 16 13.3285 16 15M16 15V15C16 16.1046 16.8954 17 18 17H18.3246C19.3251 17 20.3191 16.3492 20.2522 15.3509C20.0612 12.4958 16 12.6611 16 15Z"/></svg>', Gn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 7L9 12M9 17V12M9 12L15 12M15 7V12M15 17L15 12"/></svg>';
+const Yn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19 17V10.2135C19 10.1287 18.9011 10.0824 18.836 10.1367L16 12.5"/></svg>', Kn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10 19 9.5 19 12C19 13.9771 16.0684 13.9997 16.0012 16.8981C15.9999 16.9533 16.0448 17 16.1 17L19.3 17"/></svg>', Xn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10.5 16.8323 10 17.6 10C18.3677 10 19.5 10.311 19.5 11.5C19.5 12.5315 18.7474 12.9022 18.548 12.9823C18.5378 12.9864 18.5395 13.0047 18.5503 13.0063C18.8115 13.0456 20 13.3065 20 14.8C20 16 19.5 17 17.8 17C17.8 17 16 17 16 16.3"/></svg>', Gn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 10L15.2834 14.8511C15.246 14.9178 15.294 15 15.3704 15C16.8489 15 18.7561 15 20.2 15M19 17C19 15.7187 19 14.8813 19 13.6"/></svg>', Zn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 15.9C16 15.9 16.3768 17 17.8 17C19.5 17 20 15.6199 20 14.7C20 12.7323 17.6745 12.0486 16.1635 12.9894C16.094 13.0327 16 12.9846 16 12.9027V10.1C16 10.0448 16.0448 10 16.1 10H19.8"/></svg>', Jn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19.5 10C16.5 10.5 16 13.3285 16 15M16 15V15C16 16.1046 16.8954 17 18 17H18.3246C19.3251 17 20.3191 16.3492 20.2522 15.3509C20.0612 12.4958 16 12.6611 16 15Z"/></svg>', Qn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 7L9 12M9 17V12M9 12L15 12M15 7V12M15 17L15 12"/></svg>';
 /**
  * Header block for the Editor.js.
  *
@@ -18,7 +18,7 @@ const qn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill=
  * @license MIT
  * @version 2.0.0
  */
-let Zn = class {
+let ei = class {
   /**
    * Render plugin`s main Element and fill it with saved data
    *
@@ -219,32 +219,32 @@ let Zn = class {
       {
         number: 1,
         tag: "H1",
-        svg: qn
+        svg: Yn
       },
       {
         number: 2,
         tag: "H2",
-        svg: Wn
+        svg: Kn
       },
       {
         number: 3,
         tag: "H3",
-        svg: Vn
+        svg: Xn
       },
       {
         number: 4,
         tag: "H4",
-        svg: Yn
+        svg: Gn
       },
       {
         number: 5,
         tag: "H5",
-        svg: Kn
+        svg: Zn
       },
       {
         number: 6,
         tag: "H6",
-        svg: Xn
+        svg: Jn
       }
     ];
     return this._settings.levels ? e.filter(
@@ -304,7 +304,7 @@ let Zn = class {
    */
   static get toolbox() {
     return {
-      icon: Gn,
+      icon: Qn,
       title: "Heading"
     };
   }
@@ -320,7 +320,7 @@ let Zn = class {
   }
 })();
 var Fe = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
-function Jn(r) {
+function ti(r) {
   return r && r.__esModule && Object.prototype.hasOwnProperty.call(r, "default") ? r.default : r;
 }
 (function(r) {
@@ -602,7 +602,7 @@ function Jn(r) {
 })(
   typeof Fe < "u" ? Fe : typeof window < "u" ? window : typeof self < "u" ? self : Fe
 );
-var _o = { exports: {} };
+var Bo = { exports: {} };
 (function(r, e) {
   (function(t, o) {
     r.exports = o();
@@ -1172,10 +1172,10 @@ var _o = { exports: {} };
       t.exports = i;
     }]);
   });
-})(_o);
-var Qn = _o.exports;
-const ei = /* @__PURE__ */ Jn(Qn), ti = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.69998 12.6L7.67896 12.62C6.53993 13.7048 6.52012 15.5155 7.63516 16.625V16.625C8.72293 17.7073 10.4799 17.7102 11.5712 16.6314L13.0263 15.193C14.0703 14.1609 14.2141 12.525 13.3662 11.3266L13.22 11.12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16.22 11.12L16.3564 10.9805C17.2895 10.0265 17.3478 8.5207 16.4914 7.49733V7.49733C15.569 6.39509 13.9269 6.25143 12.8271 7.17675L11.39 8.38588C10.0935 9.47674 9.95704 11.4241 11.0887 12.6852L11.12 12.72"/></svg>';
-let oi = class {
+})(Bo);
+var oi = Bo.exports;
+const ni = /* @__PURE__ */ ti(oi), ii = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.69998 12.6L7.67896 12.62C6.53993 13.7048 6.52012 15.5155 7.63516 16.625V16.625C8.72293 17.7073 10.4799 17.7102 11.5712 16.6314L13.0263 15.193C14.0703 14.1609 14.2141 12.525 13.3662 11.3266L13.22 11.12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16.22 11.12L16.3564 10.9805C17.2895 10.0265 17.3478 8.5207 16.4914 7.49733V7.49733C15.569 6.39509 13.9269 6.25143 12.8271 7.17675L11.39 8.38588C10.0935 9.47674 9.95704 11.4241 11.0887 12.6852L11.12 12.72"/></svg>';
+let ri = class {
   /**
    * Notify core that read-only mode supported
    *
@@ -1193,7 +1193,7 @@ let oi = class {
    */
   static get toolbox() {
     return {
-      icon: ti,
+      icon: ii,
       title: "Link"
     };
   }
@@ -1411,7 +1411,7 @@ let oi = class {
   async fetchLinkData(e) {
     this.showProgress(), this.data = { link: e };
     try {
-      const { body: t } = await ei.get({
+      const { body: t } = await ni.get({
         url: this.config.endpoint,
         headers: this.config.headers,
         data: {
@@ -1491,15 +1491,15 @@ function De(r, e = null, t = {}) {
     o[n] = t[n];
   return o;
 }
-function po(r) {
+function uo(r) {
   const e = De("div");
   return e.appendChild(r), e.innerHTML;
 }
-function Bo(r) {
+function Lo(r) {
   let e;
   return r.nodeType !== Node.ELEMENT_NODE ? e = r.textContent : (e = r.innerHTML, e = e.replaceAll("<br>", "")), e.trim().length === 0;
 }
-let Ie = class Et {
+let Ie = class Ct {
   /**
    * Store internal properties
    */
@@ -1512,7 +1512,7 @@ let Ie = class Et {
    * @returns {void}
    */
   save() {
-    const e = Et.range, t = De("span");
+    const e = Ct.range, t = De("span");
     t.hidden = !0, e.insertNode(t), this.savedFakeCaret = t;
   }
   /**
@@ -1575,7 +1575,7 @@ let Ie = class Et {
     if (e.focusOffset > 0)
       return !1;
     const t = e.focusNode;
-    return Et.getHigherLevelSiblings(t, "left").every((o) => Bo(o));
+    return Ct.getHigherLevelSiblings(t, "left").every((o) => Lo(o));
   }
   /**
    * Get all first-level (first child of [contenteditabel]) siblings from passed node
@@ -1606,8 +1606,8 @@ let Ie = class Et {
     return n;
   }
 };
-const ni = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><line x1="9" x2="19" y1="7" y2="7" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="9" x2="19" y1="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="9" x2="19" y1="17" y2="17" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5.00001 17H4.99002"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5.00001 12H4.99002"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5.00001 7H4.99002"/></svg>', fo = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><line x1="12" x2="19" y1="7" y2="7" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="12" x2="19" y1="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="12" x2="19" y1="17" y2="17" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.79999 14L7.79999 7.2135C7.79999 7.12872 7.7011 7.0824 7.63597 7.13668L4.79999 9.5"/></svg>';
-let ii = class St {
+const si = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><line x1="9" x2="19" y1="7" y2="7" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="9" x2="19" y1="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="9" x2="19" y1="17" y2="17" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5.00001 17H4.99002"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5.00001 12H4.99002"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5.00001 7H4.99002"/></svg>', po = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><line x1="12" x2="19" y1="7" y2="7" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="12" x2="19" y1="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="12" x2="19" y1="17" y2="17" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.79999 14L7.79999 7.2135C7.79999 7.12872 7.7011 7.0824 7.63597 7.13668L4.79999 9.5"/></svg>';
+let ai = class Et {
   /**
    * Notify core that read-only mode is supported
    *
@@ -1634,7 +1634,7 @@ let ii = class St {
    */
   static get toolbox() {
     return {
-      icon: fo,
+      icon: po,
       title: "List"
     };
   }
@@ -1692,12 +1692,12 @@ let ii = class St {
       {
         name: "unordered",
         label: this.api.i18n.t("Unordered"),
-        icon: ni
+        icon: si
       },
       {
         name: "ordered",
         label: this.api.i18n.t("Ordered"),
-        icon: fo
+        icon: po
       }
     ].map((e) => ({
       name: e.name,
@@ -1894,7 +1894,7 @@ let ii = class St {
       this.unshiftItem();
       return;
     }
-    const s = Ie.extractFragmentFromCaretPositionTillTheEnd(), a = po(s), c = t.querySelector(`.${this.CSS.itemChildren}`), l = this.createItem(a, void 0);
+    const s = Ie.extractFragmentFromCaretPositionTillTheEnd(), a = uo(s), c = t.querySelector(`.${this.CSS.itemChildren}`), l = this.createItem(a, void 0);
     c && Array.from(c.querySelectorAll(`.${this.CSS.item}`)).length > 0 ? c.prepend(l) : t.after(l), this.focusItem(l);
   }
   /**
@@ -1918,7 +1918,7 @@ let ii = class St {
    */
   getItemContent(e) {
     const t = e.querySelector(`.${this.CSS.itemContent}`);
-    return Bo(t) ? "" : t.innerHTML;
+    return Lo(t) ? "" : t.innerHTML;
   }
   /**
    * Sets focus to the item's content
@@ -1958,7 +1958,7 @@ let ii = class St {
       i = Array.from(u).pop() || o;
     } else
       i = n;
-    const s = Ie.extractFragmentFromCaretPositionTillTheEnd(), a = po(s), c = i.querySelector(`.${this.CSS.itemContent}`);
+    const s = Ie.extractFragmentFromCaretPositionTillTheEnd(), a = uo(s), c = i.querySelector(`.${this.CSS.itemContent}`);
     Ie.focus(c, !1), this.caret.save(), c.insertAdjacentHTML("beforeend", a);
     let l = t.querySelectorAll(`.${this.CSS.itemChildren} > .${this.CSS.item}`);
     l = Array.from(l), l = l.filter((u) => u.parentNode.closest(`.${this.CSS.item}`) === t), l.reverse().forEach((u) => {
@@ -2000,14 +2000,14 @@ let ii = class St {
    * @returns {string}
    */
   static joinRecursive(e) {
-    return e.items.map((t) => `${t.content} ${St.joinRecursive(t)}`).join("");
+    return e.items.map((t) => `${t.content} ${Et.joinRecursive(t)}`).join("");
   }
   /**
    * Convert from text to list with import and export list to text
    */
   static get conversionConfig() {
     return {
-      export: (e) => St.joinRecursive(e),
+      export: (e) => Et.joinRecursive(e),
       import: (e) => ({
         items: [{
           content: e,
@@ -2018,12 +2018,12 @@ let ii = class St {
     };
   }
 };
-var ri = Object.defineProperty, si = (r, e, t) => e in r ? ri(r, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : r[e] = t, ai = (r, e, t) => (si(r, typeof e != "symbol" ? e + "" : e, t), t);
-const li = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8L5 12L9 16"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 8L19 12L15 16"/></svg>';
-function ci(r) {
+var li = Object.defineProperty, ci = (r, e, t) => e in r ? li(r, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : r[e] = t, di = (r, e, t) => (ci(r, typeof e != "symbol" ? e + "" : e, t), t);
+const hi = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8L5 12L9 16"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 8L19 12L15 16"/></svg>';
+function ui(r) {
   return r && r.__esModule && Object.prototype.hasOwnProperty.call(r, "default") ? r.default : r;
 }
-function Tt(r, e, t) {
+function St(r, e, t) {
   var o, n, i, s, a;
   e == null && (e = 100);
   function c() {
@@ -2041,9 +2041,9 @@ function Tt(r, e, t) {
     o && (a = r.apply(i, n), i = n = null, clearTimeout(o), o = null);
   }, l;
 }
-Tt.debounce = Tt;
-var di = Tt;
-const hi = /* @__PURE__ */ ci(di), Lo = class Ae {
+St.debounce = St;
+var pi = St;
+const fi = /* @__PURE__ */ ui(pi), Io = class Ae {
   constructor({ data: e, api: t, readOnly: o }) {
     this.api = t, this.nodes = {
       wrapper: null,
@@ -2102,7 +2102,7 @@ const hi = /* @__PURE__ */ ci(di), Lo = class Ae {
   async embedIsReady(e) {
     let t = null;
     return new Promise((o) => {
-      t = new MutationObserver(hi(o, 450)), t.observe(e, {
+      t = new MutationObserver(fi(o, 450)), t.observe(e, {
         childList: !0,
         subtree: !0
       });
@@ -2149,7 +2149,7 @@ const hi = /* @__PURE__ */ ci(di), Lo = class Ae {
     const { services: t } = e;
     if (!t)
       return;
-    let o = Object.entries(pi);
+    let o = Object.entries(mi);
     const n = Object.entries(t).filter(([, i]) => typeof i == "boolean" && i === !0).map(([i]) => i);
     n.length && (o = o.filter(([i]) => n.includes(i))), Ae.services = o.reduce((i, [s, a]) => s in i ? (i[s] = Object.assign({}, i[s], a), i) : (i[s] = a, i), {});
   }
@@ -2163,7 +2163,7 @@ const hi = /* @__PURE__ */ ci(di), Lo = class Ae {
   }
   static get toolbox() {
     return {
-      icon: li,
+      icon: hi,
       title: "Embed"
     };
   }
@@ -2190,9 +2190,9 @@ const hi = /* @__PURE__ */ ci(di), Lo = class Ae {
     return !0;
   }
 };
-ai(Lo, "services");
-let ui = Lo;
-const pi = {
+di(Io, "services");
+let gi = Io;
+const mi = {
   vimeo: {
     name: "vimeo",
     regex: /(?:http[s]?:\/\/)?(?:www.)?(?:player.)?vimeo\.co(?:.+\/([^\/]\d+)(?:#t=[\d]+)?s?$)/,
@@ -2373,7 +2373,7 @@ const pi = {
     console.error("vite-plugin-css-injected-by-js", e);
   }
 })();
-const fi = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', gi = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', Io = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', mi = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
+const bi = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', vi = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', Mo = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', ki = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
 function Me(r, e = null, t = {}) {
   const o = document.createElement(r);
   Array.isArray(e) ? o.classList.add(...e) : e && o.classList.add(e);
@@ -2453,7 +2453,7 @@ class pe {
    */
   createFileButton() {
     const e = Me("div", [this.CSS.button]);
-    return e.innerHTML = this.config.buttonContent || `${Io} ${this.api.i18n.t("Select an Image")}`, e.addEventListener("click", () => {
+    return e.innerHTML = this.config.buttonContent || `${Mo} ${this.api.i18n.t("Select an Image")}`, e.addEventListener("click", () => {
       this.onSelectFile();
     }), e;
   }
@@ -2519,10 +2519,10 @@ class pe {
     this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${e}`, t);
   }
 }
-function bi(r) {
+function yi(r) {
   return r && r.__esModule && Object.prototype.hasOwnProperty.call(r, "default") ? r.default : r;
 }
-var Mo = { exports: {} };
+var Oo = { exports: {} };
 (function(r, e) {
   (function(t, o) {
     r.exports = o();
@@ -3098,13 +3098,13 @@ var Mo = { exports: {} };
       t.exports = i;
     }]);
   });
-})(Mo);
-var vi = Mo.exports;
-const Ee = /* @__PURE__ */ bi(vi);
-function wt(r) {
+})(Oo);
+var wi = Oo.exports;
+const Ee = /* @__PURE__ */ yi(wi);
+function yt(r) {
   return r && typeof r.then == "function";
 }
-class ki {
+class xi {
   /**
    * @param {object} params - uploader module params
    * @param {ImageConfig} params.config - image tool config
@@ -3132,7 +3132,7 @@ class ki {
     let o;
     this.config.uploader && typeof this.config.uploader.uploadByFile == "function" ? o = Ee.selectFiles({ accept: this.config.types }).then((n) => t(n[0]).then(() => {
       const i = this.config.uploader.uploadByFile(n[0]);
-      return wt(i) || console.warn("Custom uploader method uploadByFile should return a Promise"), i;
+      return yt(i) || console.warn("Custom uploader method uploadByFile should return a Promise"), i;
     })) : o = Ee.selectFiles({ accept: this.config.types }).then((n) => t(n[0]).then(() => Ee.transport({
       url: this.config.endpoints.byFile,
       data: this.config.additionalRequestData,
@@ -3155,7 +3155,7 @@ class ki {
    */
   uploadByUrl(e) {
     let t;
-    this.config.uploader && typeof this.config.uploader.uploadByUrl == "function" ? (t = this.config.uploader.uploadByUrl(e), wt(t) || console.warn("Custom uploader method uploadByUrl should return a Promise")) : t = Ee.post({
+    this.config.uploader && typeof this.config.uploader.uploadByUrl == "function" ? (t = this.config.uploader.uploadByUrl(e), yt(t) || console.warn("Custom uploader method uploadByUrl should return a Promise")) : t = Ee.post({
       url: this.config.endpoints.byUrl,
       data: Object.assign({
         url: e
@@ -3182,7 +3182,7 @@ class ki {
     };
     let n;
     if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
-      n = this.config.uploader.uploadByFile(e), wt(n) || console.warn("Custom uploader method uploadByFile should return a Promise");
+      n = this.config.uploader.uploadByFile(e), yt(n) || console.warn("Custom uploader method uploadByFile should return a Promise");
     else {
       const i = new FormData();
       i.append(this.config.field, e), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([s, a]) => {
@@ -3232,7 +3232,7 @@ class ki {
  *   },
  * },
  */
-let yi = class _t {
+let Ci = class Tt {
   /**
    * Notify core that read-only mode is supported
    *
@@ -3250,7 +3250,7 @@ let yi = class _t {
    */
   static get toolbox() {
     return {
-      icon: Io,
+      icon: Mo,
       title: "Image"
     };
   }
@@ -3263,19 +3263,19 @@ let yi = class _t {
     return [
       {
         name: "withBorder",
-        icon: gi,
+        icon: vi,
         title: "With border",
         toggle: !0
       },
       {
         name: "stretched",
-        icon: mi,
+        icon: ki,
         title: "Stretch image",
         toggle: !0
       },
       {
         name: "withBackground",
-        icon: fi,
+        icon: bi,
         title: "With background",
         toggle: !0
       }
@@ -3300,7 +3300,7 @@ let yi = class _t {
       buttonContent: t.buttonContent || "",
       uploader: t.uploader || void 0,
       actions: t.actions || []
-    }, this.uploader = new ki({
+    }, this.uploader = new xi({
       config: this.config,
       onUpload: (s) => this.onUpload(s),
       onError: (s) => this.uploadingFailed(s)
@@ -3356,7 +3356,7 @@ let yi = class _t {
    * @returns {Array}
    */
   renderSettings() {
-    return _t.tunes.concat(this.config.actions).map((e) => ({
+    return Tt.tunes.concat(this.config.actions).map((e) => ({
       icon: e.icon,
       label: this.api.i18n.t(e.title),
       name: e.name,
@@ -3455,7 +3455,7 @@ let yi = class _t {
    * @param {ImageToolData} data - data in Image Tool format
    */
   set data(e) {
-    this.image = e.file, this._data.caption = e.caption || "", this.ui.fillCaption(this._data.caption), _t.tunes.forEach(({ name: t }) => {
+    this.image = e.file, this._data.caption = e.caption || "", this.ui.fillCaption(this._data.caption), Tt.tunes.forEach(({ name: t }) => {
       const o = typeof e[t] < "u" ? e[t] === !0 || e[t] === "true" : !1;
       this.setTune(t, o);
     });
@@ -3556,13 +3556,13 @@ let yi = class _t {
   try {
     if (typeof document < "u") {
       var r = document.createElement("style");
-      r.appendChild(document.createTextNode(".cdx-quote-icon svg{transform:rotate(180deg)}.cdx-quote{margin:0}.cdx-quote__text{min-height:158px;margin-bottom:10px}.cdx-quote [contentEditable=true][data-placeholder]:before{position:absolute;content:attr(data-placeholder);color:#707684;font-weight:400;opacity:0}.cdx-quote [contentEditable=true][data-placeholder]:empty:before{opacity:1}.cdx-quote [contentEditable=true][data-placeholder]:empty:focus:before{opacity:0}.cdx-quote-settings{display:flex}.cdx-quote-settings .cdx-settings-button{width:50%}")), document.head.appendChild(r);
+      r.appendChild(document.createTextNode(".cdx-quote-icon svg{transform:rotate(180deg)}.cdx-quote{margin:0}.cdx-quote__text{min-height:158px;background-color:#ededed;margin-bottom:10px;border:none}.cdx-quote__text cite{display:flex;justify-content:flex-end}.cdx-quote [contentEditable=true][data-placeholder]:before{position:absolute;content:attr(data-placeholder);color:#707684;font-weight:400;opacity:0}.cdx-quote [contentEditable=true][data-placeholder]:empty:before{opacity:1}.cdx-quote [contentEditable=true][data-placeholder]:empty:focus:before{opacity:0}.cdx-quote-settings{display:flex}.cdx-quote-settings .cdx-settings-button{width:50%}")), document.head.appendChild(r);
     }
   } catch (e) {
     console.error("vite-plugin-css-injected-by-js", e);
   }
 })();
-const wi = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 7L6 7"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 17H6"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 12L8 12"/></svg>', xi = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M17 7L5 7"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M17 17H5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M13 12L5 12"/></svg>', Ci = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 10.8182L9 10.8182C8.80222 10.8182 8.60888 10.7649 8.44443 10.665C8.27998 10.5651 8.15181 10.4231 8.07612 10.257C8.00043 10.0909 7.98063 9.90808 8.01922 9.73174C8.0578 9.55539 8.15304 9.39341 8.29289 9.26627C8.43275 9.13913 8.61093 9.05255 8.80491 9.01747C8.99889 8.98239 9.19996 9.00039 9.38268 9.0692C9.56541 9.13801 9.72159 9.25453 9.83147 9.40403C9.94135 9.55353 10 9.72929 10 9.90909L10 12.1818C10 12.664 9.78929 13.1265 9.41421 13.4675C9.03914 13.8084 8.53043 14 8 14"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 10.8182L15 10.8182C14.8022 10.8182 14.6089 10.7649 14.4444 10.665C14.28 10.5651 14.1518 10.4231 14.0761 10.257C14.0004 10.0909 13.9806 9.90808 14.0192 9.73174C14.0578 9.55539 14.153 9.39341 14.2929 9.26627C14.4327 9.13913 14.6109 9.05255 14.8049 9.01747C14.9989 8.98239 15.2 9.00039 15.3827 9.0692C15.5654 9.13801 15.7216 9.25453 15.8315 9.40403C15.9414 9.55353 16 9.72929 16 9.90909L16 12.1818C16 12.664 15.7893 13.1265 15.4142 13.4675C15.0391 13.8084 14.5304 14 14 14"/></svg>';
+const Ei = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 7L6 7"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 17H6"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 12L8 12"/></svg>', Si = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M17 7L5 7"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M17 17H5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M13 12L5 12"/></svg>', Ti = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 10.8182L9 10.8182C8.80222 10.8182 8.60888 10.7649 8.44443 10.665C8.27998 10.5651 8.15181 10.4231 8.07612 10.257C8.00043 10.0909 7.98063 9.90808 8.01922 9.73174C8.0578 9.55539 8.15304 9.39341 8.29289 9.26627C8.43275 9.13913 8.61093 9.05255 8.80491 9.01747C8.99889 8.98239 9.19996 9.00039 9.38268 9.0692C9.56541 9.13801 9.72159 9.25453 9.83147 9.40403C9.94135 9.55353 10 9.72929 10 9.90909L10 12.1818C10 12.664 9.78929 13.1265 9.41421 13.4675C9.03914 13.8084 8.53043 14 8 14"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 10.8182L15 10.8182C14.8022 10.8182 14.6089 10.7649 14.4444 10.665C14.28 10.5651 14.1518 10.4231 14.0761 10.257C14.0004 10.0909 13.9806 9.90808 14.0192 9.73174C14.0578 9.55539 14.153 9.39341 14.2929 9.26627C14.4327 9.13913 14.6109 9.05255 14.8049 9.01747C14.9989 8.98239 15.2 9.00039 15.3827 9.0692C15.5654 9.13801 15.7216 9.25453 15.8315 9.40403C15.9414 9.55353 16 9.72929 16 9.90909L16 12.1818C16 12.664 15.7893 13.1265 15.4142 13.4675C15.0391 13.8084 14.5304 14 14 14"/></svg>';
 class je {
   /**
    * Notify core that read-only mode is supported
@@ -3581,7 +3581,7 @@ class je {
    */
   static get toolbox() {
     return {
-      icon: Ci,
+      icon: Ti,
       title: "Quote"
     };
   }
@@ -3685,11 +3685,11 @@ class je {
     return [
       {
         name: "left",
-        icon: xi
+        icon: Si
       },
       {
         name: "center",
-        icon: wi
+        icon: Ei
       }
     ];
   }
@@ -3804,8 +3804,8 @@ const Oe = {
   paddingTop: "0.3em",
   paddingBottom: "0.3em",
   border: "1px solid white"
-}, Ei = "このラインより先を有料にする";
-class Si {
+}, _i = "このラインより先を有料にする";
+class Bi {
   constructor() {
   }
   static get toolbox() {
@@ -3817,28 +3817,28 @@ class Si {
   render() {
     var t, o, n, i, s, a;
     const e = document.createElement("div");
-    return e.innerText = Ei, e.style.fontWeight = ((t = Oe.fontWeight) == null ? void 0 : t.toString()) ?? "", e.style.backgroundColor = ((o = Oe.backgroundColor) == null ? void 0 : o.toString()) ?? "", e.style.paddingTop = ((n = Oe.paddingTop) == null ? void 0 : n.toString()) ?? "", e.style.paddingBottom = ((i = Oe.paddingBottom) == null ? void 0 : i.toString()) ?? "", e.style.width = ((s = Oe.width) == null ? void 0 : s.toString()) ?? "", e.style.textAlign = ((a = Oe.textAlign) == null ? void 0 : a.toString()) ?? "", e;
+    return e.innerText = _i, e.style.fontWeight = ((t = Oe.fontWeight) == null ? void 0 : t.toString()) ?? "", e.style.backgroundColor = ((o = Oe.backgroundColor) == null ? void 0 : o.toString()) ?? "", e.style.paddingTop = ((n = Oe.paddingTop) == null ? void 0 : n.toString()) ?? "", e.style.paddingBottom = ((i = Oe.paddingBottom) == null ? void 0 : i.toString()) ?? "", e.style.width = ((s = Oe.width) == null ? void 0 : s.toString()) ?? "", e.style.textAlign = ((a = Oe.textAlign) == null ? void 0 : a.toString()) ?? "", e;
   }
   save() {
     return {};
   }
 }
-const Ti = {
-  class: Zn,
+const Li = {
+  class: ei,
   shortcut: "CMD+SHIFT+H",
   config: {
     placeholder: "へッダー",
     levels: [2, 3],
     defaultLevel: 2
   }
-}, _i = {
-  class: ii,
+}, Ii = {
+  class: ai,
   inlineToolbar: !0,
   config: {
     defaultStyle: "unordered"
   }
-}, Bi = {
-  class: ui,
+}, Mi = {
+  class: gi,
   inlineToolbar: !0,
   config: {
     services: {
@@ -3848,33 +3848,33 @@ const Ti = {
       instagram: !0
     }
   }
-}, Li = {
+}, Oi = {
   class: je,
   config: {
     quotePlaceholder: "引用を追加",
     captionPlaceholder: "キャプションを追加"
   }
-}, Ii = (r) => ({
-  class: oi,
-  config: r
-}), Mi = (r) => ({
-  class: yi,
-  config: r
-}), Oi = {
-  class: Si
 }, Ai = (r) => ({
-  header: Ti,
-  link: Ii(r == null ? void 0 : r.link),
-  list: _i,
-  embed: Bi,
-  image: Mi(r == null ? void 0 : r.image),
-  quote: Li,
-  payment: Oi
+  class: ri,
+  config: r
+}), Ni = (r) => ({
+  class: Ci,
+  config: r
+}), Ri = {
+  class: Bi
+}, Pi = (r) => ({
+  header: Li,
+  link: Ai(r == null ? void 0 : r.link),
+  list: Ii,
+  embed: Mi,
+  image: Ni(r == null ? void 0 : r.image),
+  quote: Oi,
+  payment: Ri
 });
-function Oo(r) {
+function Ao(r) {
   return r && r.__esModule && Object.prototype.hasOwnProperty.call(r, "default") ? r.default : r;
 }
-var Bt = { exports: {} }, qe = {};
+var _t = { exports: {} }, qe = {};
 /**
  * @license React
  * react-jsx-runtime.production.min.js
@@ -3884,12 +3884,12 @@ var Bt = { exports: {} }, qe = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var go;
-function Ni() {
-  if (go)
+var fo;
+function Di() {
+  if (fo)
     return qe;
-  go = 1;
-  var r = at, e = Symbol.for("react.element"), t = Symbol.for("react.fragment"), o = Object.prototype.hasOwnProperty, n = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, i = { key: !0, ref: !0, __self: !0, __source: !0 };
+  fo = 1;
+  var r = So, e = Symbol.for("react.element"), t = Symbol.for("react.fragment"), o = Object.prototype.hasOwnProperty, n = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, i = { key: !0, ref: !0, __self: !0, __source: !0 };
   function s(a, c, l) {
     var u, d = {}, p = null, k = null;
     l !== void 0 && (p = "" + l), c.key !== void 0 && (p = "" + c.key), c.ref !== void 0 && (k = c.ref);
@@ -3912,10 +3912,10 @@ var We = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var mo;
-function Ri() {
-  return mo || (mo = 1, process.env.NODE_ENV !== "production" && function() {
-    var r = at, e = Symbol.for("react.element"), t = Symbol.for("react.portal"), o = Symbol.for("react.fragment"), n = Symbol.for("react.strict_mode"), i = Symbol.for("react.profiler"), s = Symbol.for("react.provider"), a = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), l = Symbol.for("react.suspense"), u = Symbol.for("react.suspense_list"), d = Symbol.for("react.memo"), p = Symbol.for("react.lazy"), k = Symbol.for("react.offscreen"), h = Symbol.iterator, g = "@@iterator";
+var go;
+function ji() {
+  return go || (go = 1, process.env.NODE_ENV !== "production" && function() {
+    var r = So, e = Symbol.for("react.element"), t = Symbol.for("react.portal"), o = Symbol.for("react.fragment"), n = Symbol.for("react.strict_mode"), i = Symbol.for("react.profiler"), s = Symbol.for("react.provider"), a = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), l = Symbol.for("react.suspense"), u = Symbol.for("react.suspense_list"), d = Symbol.for("react.memo"), p = Symbol.for("react.lazy"), k = Symbol.for("react.offscreen"), h = Symbol.iterator, g = "@@iterator";
     function f(m) {
       if (m === null || typeof m != "object")
         return null;
@@ -4008,7 +4008,7 @@ function Ri() {
     function be() {
     }
     be.__reactDisabledLog = !0;
-    function mn() {
+    function bn() {
       {
         if (E === 0) {
           B = console.log, M = console.info, N = console.warn, q = console.error, H = console.group, ee = console.groupCollapsed, G = console.groupEnd;
@@ -4031,7 +4031,7 @@ function Ri() {
         E++;
       }
     }
-    function bn() {
+    function vn() {
       {
         if (E--, E === 0) {
           var m = {
@@ -4066,27 +4066,27 @@ function Ri() {
         E < 0 && b("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
       }
     }
-    var pt = v.ReactCurrentDispatcher, ft;
+    var ut = v.ReactCurrentDispatcher, pt;
     function Qe(m, S, L) {
       {
-        if (ft === void 0)
+        if (pt === void 0)
           try {
             throw Error();
           } catch (K) {
             var P = K.stack.trim().match(/\n( *(at )?)/);
-            ft = P && P[1] || "";
+            pt = P && P[1] || "";
           }
         return `
-` + ft + m;
+` + pt + m;
       }
     }
-    var gt = !1, et;
+    var ft = !1, et;
     {
-      var vn = typeof WeakMap == "function" ? WeakMap : Map;
-      et = new vn();
+      var kn = typeof WeakMap == "function" ? WeakMap : Map;
+      et = new kn();
     }
-    function Jt(m, S) {
-      if (!m || gt)
+    function Zt(m, S) {
+      if (!m || ft)
         return "";
       {
         var L = et.get(m);
@@ -4094,11 +4094,11 @@ function Ri() {
           return L;
       }
       var P;
-      gt = !0;
+      ft = !0;
       var K = Error.prepareStackTrace;
       Error.prepareStackTrace = void 0;
       var J;
-      J = pt.current, pt.current = null, mn();
+      J = ut.current, ut.current = null, bn();
       try {
         if (S) {
           var W = function() {
@@ -4151,15 +4151,15 @@ function Ri() {
             }
         }
       } finally {
-        gt = !1, pt.current = J, bn(), Error.prepareStackTrace = K;
+        ft = !1, ut.current = J, vn(), Error.prepareStackTrace = K;
       }
-      var Le = m ? m.displayName || m.name : "", uo = Le ? Qe(Le) : "";
-      return typeof m == "function" && et.set(m, uo), uo;
+      var Le = m ? m.displayName || m.name : "", ho = Le ? Qe(Le) : "";
+      return typeof m == "function" && et.set(m, ho), ho;
     }
-    function kn(m, S, L) {
-      return Jt(m, !1);
+    function yn(m, S, L) {
+      return Zt(m, !1);
     }
-    function yn(m) {
+    function wn(m) {
       var S = m.prototype;
       return !!(S && S.isReactComponent);
     }
@@ -4167,7 +4167,7 @@ function Ri() {
       if (m == null)
         return "";
       if (typeof m == "function")
-        return Jt(m, yn(m));
+        return Zt(m, wn(m));
       if (typeof m == "string")
         return Qe(m);
       switch (m) {
@@ -4179,7 +4179,7 @@ function Ri() {
       if (typeof m == "object")
         switch (m.$$typeof) {
           case c:
-            return kn(m.render);
+            return yn(m.render);
           case d:
             return tt(m.type, S, L);
           case p: {
@@ -4192,15 +4192,15 @@ function Ri() {
         }
       return "";
     }
-    var ot = Object.prototype.hasOwnProperty, Qt = {}, eo = v.ReactDebugCurrentFrame;
+    var ot = Object.prototype.hasOwnProperty, Jt = {}, Qt = v.ReactDebugCurrentFrame;
     function nt(m) {
       if (m) {
         var S = m._owner, L = tt(m.type, m._source, S ? S.type : null);
-        eo.setExtraStackFrame(L);
+        Qt.setExtraStackFrame(L);
       } else
-        eo.setExtraStackFrame(null);
+        Qt.setExtraStackFrame(null);
     }
-    function wn(m, S, L, P, K) {
+    function xn(m, S, L, P, K) {
       {
         var J = Function.call.bind(ot);
         for (var W in m)
@@ -4215,42 +4215,42 @@ function Ri() {
             } catch (te) {
               $ = te;
             }
-            $ && !($ instanceof Error) && (nt(K), b("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", P || "React class", L, W, typeof $), nt(null)), $ instanceof Error && !($.message in Qt) && (Qt[$.message] = !0, nt(K), b("Failed %s type: %s", L, $.message), nt(null));
+            $ && !($ instanceof Error) && (nt(K), b("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", P || "React class", L, W, typeof $), nt(null)), $ instanceof Error && !($.message in Jt) && (Jt[$.message] = !0, nt(K), b("Failed %s type: %s", L, $.message), nt(null));
           }
       }
     }
-    var xn = Array.isArray;
-    function mt(m) {
-      return xn(m);
+    var Cn = Array.isArray;
+    function gt(m) {
+      return Cn(m);
     }
-    function Cn(m) {
+    function En(m) {
       {
         var S = typeof Symbol == "function" && Symbol.toStringTag, L = S && m[Symbol.toStringTag] || m.constructor.name || "Object";
         return L;
       }
     }
-    function En(m) {
+    function Sn(m) {
       try {
-        return to(m), !1;
+        return eo(m), !1;
       } catch {
         return !0;
       }
     }
-    function to(m) {
+    function eo(m) {
       return "" + m;
     }
-    function oo(m) {
-      if (En(m))
-        return b("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Cn(m)), to(m);
+    function to(m) {
+      if (Sn(m))
+        return b("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", En(m)), eo(m);
     }
-    var ze = v.ReactCurrentOwner, Sn = {
+    var ze = v.ReactCurrentOwner, Tn = {
       key: !0,
       ref: !0,
       __self: !0,
       __source: !0
-    }, no, io, bt;
-    bt = {};
-    function Tn(m) {
+    }, oo, no, mt;
+    mt = {};
+    function _n(m) {
       if (ot.call(m, "ref")) {
         var S = Object.getOwnPropertyDescriptor(m, "ref").get;
         if (S && S.isReactWarning)
@@ -4258,7 +4258,7 @@ function Ri() {
       }
       return m.ref !== void 0;
     }
-    function _n(m) {
+    function Bn(m) {
       if (ot.call(m, "key")) {
         var S = Object.getOwnPropertyDescriptor(m, "key").get;
         if (S && S.isReactWarning)
@@ -4266,16 +4266,16 @@ function Ri() {
       }
       return m.key !== void 0;
     }
-    function Bn(m, S) {
+    function Ln(m, S) {
       if (typeof m.ref == "string" && ze.current && S && ze.current.stateNode !== S) {
         var L = j(ze.current.type);
-        bt[L] || (b('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', j(ze.current.type), m.ref), bt[L] = !0);
+        mt[L] || (b('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', j(ze.current.type), m.ref), mt[L] = !0);
       }
     }
-    function Ln(m, S) {
+    function In(m, S) {
       {
         var L = function() {
-          no || (no = !0, b("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", S));
+          oo || (oo = !0, b("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", S));
         };
         L.isReactWarning = !0, Object.defineProperty(m, "key", {
           get: L,
@@ -4283,10 +4283,10 @@ function Ri() {
         });
       }
     }
-    function In(m, S) {
+    function Mn(m, S) {
       {
         var L = function() {
-          io || (io = !0, b("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", S));
+          no || (no = !0, b("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", S));
         };
         L.isReactWarning = !0, Object.defineProperty(m, "ref", {
           get: L,
@@ -4294,7 +4294,7 @@ function Ri() {
         });
       }
     }
-    var Mn = function(m, S, L, P, K, J, W) {
+    var On = function(m, S, L, P, K, J, W) {
       var $ = {
         // This tag allows us to uniquely identify this as a React Element
         $$typeof: e,
@@ -4323,12 +4323,12 @@ function Ri() {
         value: K
       }), Object.freeze && (Object.freeze($.props), Object.freeze($)), $;
     };
-    function On(m, S, L, P, K) {
+    function An(m, S, L, P, K) {
       {
         var J, W = {}, $ = null, le = null;
-        L !== void 0 && (oo(L), $ = "" + L), _n(S) && (oo(S.key), $ = "" + S.key), Tn(S) && (le = S.ref, Bn(S, K));
+        L !== void 0 && (to(L), $ = "" + L), Bn(S) && (to(S.key), $ = "" + S.key), _n(S) && (le = S.ref, Ln(S, K));
         for (J in S)
-          ot.call(S, J) && !Sn.hasOwnProperty(J) && (W[J] = S[J]);
+          ot.call(S, J) && !Tn.hasOwnProperty(J) && (W[J] = S[J]);
         if (m && m.defaultProps) {
           var te = m.defaultProps;
           for (J in te)
@@ -4336,28 +4336,28 @@ function Ri() {
         }
         if ($ || le) {
           var ne = typeof m == "function" ? m.displayName || m.name || "Unknown" : m;
-          $ && Ln(W, ne), le && In(W, ne);
+          $ && In(W, ne), le && Mn(W, ne);
         }
-        return Mn(m, $, le, K, P, ze.current, W);
+        return On(m, $, le, K, P, ze.current, W);
       }
     }
-    var vt = v.ReactCurrentOwner, ro = v.ReactDebugCurrentFrame;
+    var bt = v.ReactCurrentOwner, io = v.ReactDebugCurrentFrame;
     function Be(m) {
       if (m) {
         var S = m._owner, L = tt(m.type, m._source, S ? S.type : null);
-        ro.setExtraStackFrame(L);
+        io.setExtraStackFrame(L);
       } else
-        ro.setExtraStackFrame(null);
+        io.setExtraStackFrame(null);
     }
-    var kt;
-    kt = !1;
-    function yt(m) {
+    var vt;
+    vt = !1;
+    function kt(m) {
       return typeof m == "object" && m !== null && m.$$typeof === e;
     }
-    function so() {
+    function ro() {
       {
-        if (vt.current) {
-          var m = j(vt.current.type);
+        if (bt.current) {
+          var m = j(bt.current.type);
           if (m)
             return `
 
@@ -4366,7 +4366,7 @@ Check the render method of \`` + m + "`.";
         return "";
       }
     }
-    function An(m) {
+    function Nn(m) {
       {
         if (m !== void 0) {
           var S = m.fileName.replace(/^.*[\\\/]/, ""), L = m.lineNumber;
@@ -4377,10 +4377,10 @@ Check your code at ` + S + ":" + L + ".";
         return "";
       }
     }
-    var ao = {};
-    function Nn(m) {
+    var so = {};
+    function Rn(m) {
       {
-        var S = so();
+        var S = ro();
         if (!S) {
           var L = typeof m == "string" ? m : m.displayName || m.name;
           L && (S = `
@@ -4390,39 +4390,39 @@ Check the top-level render call using <` + L + ">.");
         return S;
       }
     }
-    function lo(m, S) {
+    function ao(m, S) {
       {
         if (!m._store || m._store.validated || m.key != null)
           return;
         m._store.validated = !0;
-        var L = Nn(S);
-        if (ao[L])
+        var L = Rn(S);
+        if (so[L])
           return;
-        ao[L] = !0;
+        so[L] = !0;
         var P = "";
-        m && m._owner && m._owner !== vt.current && (P = " It was passed a child from " + j(m._owner.type) + "."), Be(m), b('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', L, P), Be(null);
+        m && m._owner && m._owner !== bt.current && (P = " It was passed a child from " + j(m._owner.type) + "."), Be(m), b('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', L, P), Be(null);
       }
     }
-    function co(m, S) {
+    function lo(m, S) {
       {
         if (typeof m != "object")
           return;
-        if (mt(m))
+        if (gt(m))
           for (var L = 0; L < m.length; L++) {
             var P = m[L];
-            yt(P) && lo(P, S);
+            kt(P) && ao(P, S);
           }
-        else if (yt(m))
+        else if (kt(m))
           m._store && (m._store.validated = !0);
         else if (m) {
           var K = f(m);
           if (typeof K == "function" && K !== m.entries)
             for (var J = K.call(m), W; !(W = J.next()).done; )
-              yt(W.value) && lo(W.value, S);
+              kt(W.value) && ao(W.value, S);
         }
       }
     }
-    function Rn(m) {
+    function Pn(m) {
       {
         var S = m.type;
         if (S == null || typeof S == "string")
@@ -4438,16 +4438,16 @@ Check the top-level render call using <` + L + ">.");
           return;
         if (L) {
           var P = j(S);
-          wn(L, m.props, "prop", P, m);
-        } else if (S.PropTypes !== void 0 && !kt) {
-          kt = !0;
+          xn(L, m.props, "prop", P, m);
+        } else if (S.PropTypes !== void 0 && !vt) {
+          vt = !0;
           var K = j(S);
           b("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", K || "Unknown");
         }
         typeof S.getDefaultProps == "function" && !S.getDefaultProps.isReactClassApproved && b("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
       }
     }
-    function Pn(m) {
+    function Dn(m) {
       {
         for (var S = Object.keys(m.props), L = 0; L < S.length; L++) {
           var P = S[L];
@@ -4459,48 +4459,48 @@ Check the top-level render call using <` + L + ">.");
         m.ref !== null && (Be(m), b("Invalid attribute `ref` supplied to `React.Fragment`."), Be(null));
       }
     }
-    function ho(m, S, L, P, K, J) {
+    function co(m, S, L, P, K, J) {
       {
         var W = A(m);
         if (!W) {
           var $ = "";
           (m === void 0 || typeof m == "object" && m !== null && Object.keys(m).length === 0) && ($ += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");
-          var le = An(K);
-          le ? $ += le : $ += so();
+          var le = Nn(K);
+          le ? $ += le : $ += ro();
           var te;
-          m === null ? te = "null" : mt(m) ? te = "array" : m !== void 0 && m.$$typeof === e ? (te = "<" + (j(m.type) || "Unknown") + " />", $ = " Did you accidentally export a JSX literal instead of a component?") : te = typeof m, b("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", te, $);
+          m === null ? te = "null" : gt(m) ? te = "array" : m !== void 0 && m.$$typeof === e ? (te = "<" + (j(m.type) || "Unknown") + " />", $ = " Did you accidentally export a JSX literal instead of a component?") : te = typeof m, b("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", te, $);
         }
-        var ne = On(m, S, L, K, J);
+        var ne = An(m, S, L, K, J);
         if (ne == null)
           return ne;
         if (W) {
           var he = S.children;
           if (he !== void 0)
             if (P)
-              if (mt(he)) {
+              if (gt(he)) {
                 for (var Le = 0; Le < he.length; Le++)
-                  co(he[Le], m);
+                  lo(he[Le], m);
                 Object.freeze && Object.freeze(he);
               } else
                 b("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
             else
-              co(he, m);
+              lo(he, m);
         }
-        return m === o ? Pn(ne) : Rn(ne), ne;
+        return m === o ? Dn(ne) : Pn(ne), ne;
       }
     }
-    function Dn(m, S, L) {
-      return ho(m, S, L, !0);
-    }
     function jn(m, S, L) {
-      return ho(m, S, L, !1);
+      return co(m, S, L, !0);
     }
-    var Fn = jn, Hn = Dn;
-    We.Fragment = o, We.jsx = Fn, We.jsxs = Hn;
+    function Fn(m, S, L) {
+      return co(m, S, L, !1);
+    }
+    var Hn = Fn, Un = jn;
+    We.Fragment = o, We.jsx = Hn, We.jsxs = Un;
   }()), We;
 }
-process.env.NODE_ENV === "production" ? Bt.exports = Ni() : Bt.exports = Ri();
-var D = Bt.exports, Ao = { exports: {} };
+process.env.NODE_ENV === "production" ? _t.exports = Di() : _t.exports = ji();
+var D = _t.exports, No = { exports: {} };
 /*!
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
@@ -4535,9 +4535,9 @@ var D = Bt.exports, Ao = { exports: {} };
     }
     r.exports ? (t.default = t, r.exports = t) : window.classNames = t;
   })();
-})(Ao);
-var Pi = Ao.exports;
-const ve = /* @__PURE__ */ Oo(Pi), Di = "_payment_8gufy_89", F = {
+})(No);
+var Fi = No.exports;
+const ve = /* @__PURE__ */ Ao(Fi), Hi = "_payment_8gufy_89", F = {
   "cdx-block": "_cdx-block_8gufy_2",
   "ce-block": "_ce-block_8gufy_7",
   "ce-paragraph": "_ce-paragraph_8gufy_14",
@@ -4551,7 +4551,7 @@ const ve = /* @__PURE__ */ Oo(Pi), Di = "_payment_8gufy_89", F = {
   "link-tool__anchor": "_link-tool__anchor_8gufy_70",
   "embed-tool": "_embed-tool_8gufy_80",
   "embed-tool__content": "_embed-tool__content_8gufy_84",
-  payment: Di,
+  payment: Hi,
   "cdx-quote": "_cdx-quote_8gufy_100",
   "cdx-input": "_cdx-input_8gufy_103",
   "cdx-quote__text": "_cdx-quote__text_8gufy_114",
@@ -4562,7 +4562,7 @@ const ve = /* @__PURE__ */ Oo(Pi), Di = "_payment_8gufy_89", F = {
   "cdx-list-settings": "_cdx-list-settings_8gufy_176",
   "cdx-settings-button": "_cdx-settings-button_8gufy_179",
   "payment-button": "_payment-button_8gufy_184"
-}, No = ({ id: r, data: e }) => {
+}, Ro = ({ id: r, data: e }) => {
   if (e)
     return /* @__PURE__ */ D.jsx(
       "p",
@@ -4572,7 +4572,7 @@ const ve = /* @__PURE__ */ Oo(Pi), Di = "_payment_8gufy_89", F = {
         dangerouslySetInnerHTML: { __html: e.text }
       }
     );
-}, Ro = ({ id: r, data: e }) => {
+}, Po = ({ id: r, data: e }) => {
   if (e)
     return /* @__PURE__ */ D.jsx("div", { children: /* @__PURE__ */ D.jsx("div", { id: r, className: ve(e.withBackground && "bg-[#cdd1e0] p-[15px]"), children: /* @__PURE__ */ D.jsx(
       "img",
@@ -4587,7 +4587,7 @@ const ve = /* @__PURE__ */ Oo(Pi), Di = "_payment_8gufy_89", F = {
         )
       }
     ) }) });
-}, Po = ({ id: r, data: e }) => {
+}, Do = ({ id: r, data: e }) => {
   if (!e)
     return;
   const t = new URL(e.link).hostname;
@@ -4617,7 +4617,7 @@ const ve = /* @__PURE__ */ Oo(Pi), Di = "_payment_8gufy_89", F = {
       ]
     }
   ) }) });
-}, Do = ({ id: r, data: e }) => {
+}, jo = ({ id: r, data: e }) => {
   if (e)
     return e.level === 2 ? /* @__PURE__ */ D.jsx(
       "h2",
@@ -4656,7 +4656,7 @@ const ve = /* @__PURE__ */ Oo(Pi), Di = "_payment_8gufy_89", F = {
         children: e.text
       }
     );
-}, jo = ({ id: r, data: e }) => {
+}, Fo = ({ id: r, data: e }) => {
   if (!e)
     return;
   const t = e.style, o = t === "ordered" ? "cdx-nested-list--ordered" : "cdx-nested-list--unordered", n = (i) => i.map((s, a) => /* @__PURE__ */ D.jsx("li", { className: F["cdx-nested-list__item"], children: /* @__PURE__ */ D.jsxs("div", { className: F["cdx-nested-list__item-body"], children: [
@@ -4715,7 +4715,7 @@ const ve = /* @__PURE__ */ Oo(Pi), Di = "_payment_8gufy_89", F = {
       children: n(e.items)
     }
   );
-}, Fo = ({ id: r, data: e }) => {
+}, Ho = ({ id: r, data: e }) => {
   if (e)
     return /* @__PURE__ */ D.jsx("div", { className: F["cdx-block"], children: /* @__PURE__ */ D.jsx("div", { id: r, className: F["embed-tool"], children: /* @__PURE__ */ D.jsx(
       "iframe",
@@ -4726,7 +4726,7 @@ const ve = /* @__PURE__ */ Oo(Pi), Di = "_payment_8gufy_89", F = {
         className: F["embed-tool__content"]
       }
     ) }) });
-}, Ho = ({ id: r, data: e }) => {
+}, Uo = ({ id: r, data: e }) => {
   if (!e)
     return;
   const t = e.caption.replace(/<br\s*\/?>/gi, "");
@@ -4764,24 +4764,24 @@ const ve = /* @__PURE__ */ Oo(Pi), Di = "_payment_8gufy_89", F = {
       ]
     }
   ) });
-}, ji = ({ id: r }) => /* @__PURE__ */ D.jsx("div", { id: r, className: F.payment, children: "このラインより先を有料にする" }), Uo = (r = {}) => {
+}, Ui = ({ id: r }) => /* @__PURE__ */ D.jsx("div", { id: r, className: F.payment, children: "このラインより先を有料にする" }), $o = (r = {}) => {
   const e = Object.assign({}, r), t = (n) => n.map(o), o = (n, i) => {
     if (e[n.type])
       return /* @__PURE__ */ D.jsx("div", { className: F["ce-block"], children: /* @__PURE__ */ D.jsx("div", { className: F["cdx-block"], children: e[n.type](n) }) }, i);
-    throw new Fi(n.type);
+    throw new $i(n.type);
   };
   return {
     parse: t
   };
 };
-class Fi extends Error {
+class $i extends Error {
   constructor(e) {
     super(`\x1B[31m The Parser function of type "${e}" is not defined. 
 
     Define your custom parser functions as: \x1B[34mhttps://github.com/pavittarx/editorjs-html#extend-for-custom-blocks \x1B[0m`), this.name = "ParseFunctionError";
   }
 }
-const Hi = ({ key: r, value: e, onClick: t }) => /* @__PURE__ */ D.jsx(
+const zi = ({ key: r, value: e, onClick: t }) => /* @__PURE__ */ D.jsx(
   "button",
   {
     className: e ? F.payment : F["payment-button"],
@@ -4789,7 +4789,7 @@ const Hi = ({ key: r, value: e, onClick: t }) => /* @__PURE__ */ D.jsx(
     children: "このラインより先を有料にする"
   },
   r
-), Ui = (r) => {
+), qi = (r) => {
   const e = (i) => {
     if (typeof document < "u" && i) {
       const s = document.getElementById(i);
@@ -4836,7 +4836,7 @@ const Hi = ({ key: r, value: e, onClick: t }) => /* @__PURE__ */ D.jsx(
               listStyleType: "decimal",
               listStylePosition: "inside"
             },
-            children: r.map((i, s) => /* @__PURE__ */ D.jsxs(Un, { children: [
+            children: r.map((i, s) => /* @__PURE__ */ D.jsxs($n, { children: [
               /* @__PURE__ */ D.jsx(
                 "li",
                 {
@@ -4865,44 +4865,44 @@ const Hi = ({ key: r, value: e, onClick: t }) => /* @__PURE__ */ D.jsx(
       ]
     }
   );
-}, $i = Uo({
-  paragraph: No,
-  header: Do,
-  list: jo,
-  payment: ji,
-  image: Ro,
-  link: Po,
-  embed: Fo,
-  quote: Ho
-}), Ys = ({ blocks: r }) => {
+}, Wi = $o({
+  paragraph: Ro,
+  header: jo,
+  list: Fo,
+  payment: Ui,
+  image: Po,
+  link: Do,
+  embed: Ho,
+  quote: Uo
+}), Gs = ({ blocks: r }) => {
   if (!r)
     return /* @__PURE__ */ D.jsx("div", {});
-  const e = $i.parse(r);
+  const e = Wi.parse(r);
   return /* @__PURE__ */ D.jsx("div", { className: "w-full", children: e });
-}, Ks = ({ blocks: r }) => {
+}, Zs = ({ blocks: r }) => {
   if (!r)
     return /* @__PURE__ */ D.jsx("div", {});
-  const e = Ui(
+  const e = qi(
     r.filter((t) => t.type === "header")
   );
   return /* @__PURE__ */ D.jsx("div", { className: "w-full", children: e });
-}, Xs = (r) => {
+}, Js = (r) => {
   const [e, t] = To(0);
-  return $n(() => {
-    t(r ? zi(r) : 0);
+  return _o(() => {
+    t(r ? Vi(r) : 0);
   }, [r]), e;
-}, zi = (r) => {
+}, Vi = (r) => {
   let e = 0;
   return r.blocks.forEach((t) => {
-    t.type === "paragraph" && (e += qi(t.data)), t.type === "link" && (e += Vi(t.data)), t.type === "header" && (e += Yi(t.data)), t.type === "list" && (e += Ki(t.data)), t.type === "embed" && (e += Xi(t.data)), t.type === "image" && (e += Wi(t.data)), t.type === "quote" && (e += Gi(t.data));
+    t.type === "paragraph" && (e += Yi(t.data)), t.type === "link" && (e += Xi(t.data)), t.type === "header" && (e += Gi(t.data)), t.type === "list" && (e += Zi(t.data)), t.type === "embed" && (e += Ji(t.data)), t.type === "image" && (e += Ki(t.data)), t.type === "quote" && (e += Qi(t.data));
   }), e;
-}, qi = ({ text: r }) => r.length, Wi = ({ caption: r }) => (r == null ? void 0 : r.length) ?? 0, Vi = ({ link: r }) => r.length, Yi = ({ text: r }) => r.length, Ki = ({ items: r }) => {
+}, Yi = ({ text: r }) => r.length, Ki = ({ caption: r }) => (r == null ? void 0 : r.length) ?? 0, Xi = ({ link: r }) => r.length, Gi = ({ text: r }) => r.length, Zi = ({ items: r }) => {
   const e = (t) => t.map((o) => {
     var n;
     return (((n = o.content) == null ? void 0 : n.length) ?? 0) + e(o.items);
   }).reduce((o, n) => o + n, 0);
   return e(r);
-}, Xi = (r) => (r == null ? void 0 : r.source.length) ?? 0, Gi = ({ text: r, caption: e }) => r.length + e.length, Gs = (r) => {
+}, Ji = (r) => (r == null ? void 0 : r.source.length) ?? 0, Qi = ({ text: r, caption: e }) => r.length + e.length, Qs = (r) => {
   const e = /https?:\/\/[\w.-]+(:\d+)?\/article\/preview\/[^/\s?]+(?:[/?][^\s]*)?/g;
   let t = !1;
   return typeof r == "string" ? t = !!r.match(e) : r.blocks.forEach((o) => {
@@ -4918,15 +4918,15 @@ const Hi = ({ key: r, value: e, onClick: t }) => /* @__PURE__ */ D.jsx(
     o.type === "link" && o.data.link.match(e) && (t = !0), o.type === "quote" && (o.data.text.match(e) && (t = !0), o.data.caption.match(e) && (t = !0));
   }), t;
 };
-var Zi = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
-function jt(r) {
+var er = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
+function Dt(r) {
   return r && r.__esModule && Object.prototype.hasOwnProperty.call(r, "default") ? r.default : r;
 }
-function xt() {
+function wt() {
 }
-Object.assign(xt, {
-  default: xt,
-  register: xt,
+Object.assign(wt, {
+  default: wt,
+  register: wt,
   revert: function() {
   },
   __esModule: !0
@@ -4975,8 +4975,8 @@ window.requestIdleCallback = window.requestIdleCallback || function(r) {
 window.cancelIdleCallback = window.cancelIdleCallback || function(r) {
   clearTimeout(r);
 };
-let Ji = (r = 21) => crypto.getRandomValues(new Uint8Array(r)).reduce((e, t) => (t &= 63, t < 36 ? e += t.toString(36) : t < 62 ? e += (t - 26).toString(36).toUpperCase() : t > 62 ? e += "-" : e += "_", e), "");
-var $o = /* @__PURE__ */ ((r) => (r.VERBOSE = "VERBOSE", r.INFO = "INFO", r.WARN = "WARN", r.ERROR = "ERROR", r))($o || {});
+let tr = (r = 21) => crypto.getRandomValues(new Uint8Array(r)).reduce((e, t) => (t &= 63, t < 36 ? e += t.toString(36) : t < 62 ? e += (t - 26).toString(36).toUpperCase() : t > 62 ? e += "-" : e += "_", e), "");
+var zo = /* @__PURE__ */ ((r) => (r.VERBOSE = "VERBOSE", r.INFO = "INFO", r.WARN = "WARN", r.ERROR = "ERROR", r))(zo || {});
 const R = {
   BACKSPACE: 8,
   TAB: 9,
@@ -4993,7 +4993,7 @@ const R = {
   DELETE: 46,
   META: 91,
   SLASH: 191
-}, Qi = {
+}, or = {
   LEFT: 0,
   WHEEL: 1,
   RIGHT: 2,
@@ -5036,7 +5036,7 @@ function Je(r, e, t = "log", o, n = "color: inherit") {
   }
 }
 Je.logLevel = "VERBOSE";
-function er(r) {
+function nr(r) {
   Je.logLevel = r;
 }
 const X = Je.bind(window, !1), fe = Je.bind(window, !0);
@@ -5052,19 +5052,19 @@ function se(r) {
 function Ce(r) {
   return _e(r) === "string";
 }
-function tr(r) {
+function ir(r) {
   return _e(r) === "boolean";
 }
-function bo(r) {
+function mo(r) {
   return _e(r) === "number";
 }
-function vo(r) {
+function bo(r) {
   return _e(r) === "undefined";
 }
 function ue(r) {
   return r ? Object.keys(r).length === 0 && r.constructor === Object : !0;
 }
-function zo(r) {
+function qo(r) {
   return r > 47 && r < 58 || // number keys
   r === 32 || r === 13 || // Space bar & return key(s)
   r === 229 || // processing key input for certain languages — Chinese, Japanese, etc.
@@ -5073,34 +5073,34 @@ function zo(r) {
   r > 185 && r < 193 || // ;=,-./` (in order)
   r > 218 && r < 223;
 }
-async function or(r, e = () => {
+async function rr(r, e = () => {
 }, t = () => {
 }) {
   async function o(n, i, s) {
     try {
-      await n.function(n.data), await i(vo(n.data) ? {} : n.data);
+      await n.function(n.data), await i(bo(n.data) ? {} : n.data);
     } catch {
-      s(vo(n.data) ? {} : n.data);
+      s(bo(n.data) ? {} : n.data);
     }
   }
   return r.reduce(async (n, i) => (await n, o(i, e, t)), Promise.resolve());
 }
-function qo(r) {
+function Wo(r) {
   return Array.prototype.slice.call(r);
 }
-function lt(r, e) {
+function at(r, e) {
   return function() {
     const t = this, o = arguments;
     window.setTimeout(() => r.apply(t, o), e);
   };
 }
-function nr(r) {
+function sr(r) {
   return r.name.split(".").pop();
 }
-function ir(r) {
+function ar(r) {
   return /^[-\w]+\/([-+\w]+|\*)$/.test(r);
 }
-function ko(r, e, t) {
+function vo(r, e, t) {
   let o;
   return (...n) => {
     const i = this, s = () => {
@@ -5109,7 +5109,7 @@ function ko(r, e, t) {
     window.clearTimeout(o), o = window.setTimeout(s, e), a && r.apply(i, n);
   };
 }
-function Lt(r, e, t = void 0) {
+function Bt(r, e, t = void 0) {
   let o, n, i, s = null, a = 0;
   t || (t = {});
   const c = function() {
@@ -5122,7 +5122,7 @@ function Lt(r, e, t = void 0) {
     return o = this, n = arguments, u <= 0 || u > e ? (s && (clearTimeout(s), s = null), a = l, i = r.apply(o, n), s || (o = n = null)) : !s && t.trailing !== !1 && (s = setTimeout(c, u)), i;
   };
 }
-function rr() {
+function lr() {
   const r = {
     win: !1,
     mac: !1,
@@ -5134,36 +5134,36 @@ function rr() {
 function He(r) {
   return r[0].toUpperCase() + r.slice(1);
 }
-function It(r, ...e) {
+function Lt(r, ...e) {
   if (!e.length)
     return r;
   const t = e.shift();
   if (se(r) && se(t))
     for (const o in t)
-      se(t[o]) ? (r[o] || Object.assign(r, { [o]: {} }), It(r[o], t[o])) : Object.assign(r, { [o]: t[o] });
-  return It(r, ...e);
+      se(t[o]) ? (r[o] || Object.assign(r, { [o]: {} }), Lt(r[o], t[o])) : Object.assign(r, { [o]: t[o] });
+  return Lt(r, ...e);
 }
-function dt(r) {
-  const e = rr();
+function ct(r) {
+  const e = lr();
   return r = r.replace(/shift/gi, "⇧").replace(/backspace/gi, "⌫").replace(/enter/gi, "⏎").replace(/up/gi, "↑").replace(/left/gi, "→").replace(/down/gi, "↓").replace(/right/gi, "←").replace(/escape/gi, "⎋").replace(/insert/gi, "Ins").replace(/delete/gi, "␡").replace(/\+/gi, " + "), e.mac ? r = r.replace(/ctrl|cmd/gi, "⌘").replace(/alt/gi, "⌥") : r = r.replace(/cmd/gi, "Ctrl").replace(/windows/gi, "WIN"), r;
 }
-function sr(r) {
+function cr(r) {
   try {
     return new URL(r).href;
   } catch {
   }
   return r.substring(0, 2) === "//" ? window.location.protocol + r : window.location.origin + r;
 }
-function ar() {
-  return Ji(10);
+function dr() {
+  return tr(10);
 }
-function lr(r) {
+function hr(r) {
   window.open(r, "_blank");
 }
-function cr(r = "") {
+function ur(r = "") {
   return `${r}${Math.floor(Math.random() * 1e8).toString(16)}`;
 }
-function Mt(r, e, t) {
+function It(r, e, t) {
   const o = `«${e}» is deprecated and will be removed in the next major release. Please use the «${t}» instead.`;
   r && fe(o, "warn");
 }
@@ -5179,12 +5179,12 @@ function $e(r, e, t) {
   }
   return t;
 }
-const Wo = 650;
+const Vo = 650;
 function Te() {
-  return window.matchMedia(`(max-width: ${Wo}px)`).matches;
+  return window.matchMedia(`(max-width: ${Vo}px)`).matches;
 }
-const yo = typeof window < "u" && window.navigator && window.navigator.platform && (/iP(ad|hone|od)/.test(window.navigator.platform) || window.navigator.platform === "MacIntel" && window.navigator.maxTouchPoints > 1);
-function dr(r, e) {
+const ko = typeof window < "u" && window.navigator && window.navigator.platform && (/iP(ad|hone|od)/.test(window.navigator.platform) || window.navigator.platform === "MacIntel" && window.navigator.maxTouchPoints > 1);
+function pr(r, e) {
   const t = Array.isArray(r) || se(r), o = Array.isArray(e) || se(e);
   return t || o ? JSON.stringify(r) === JSON.stringify(e) : r === e;
 }
@@ -5325,7 +5325,7 @@ class y {
    * @param holder - element where to find inputs
    */
   static findAllInputs(e) {
-    return qo(e.querySelectorAll(y.allInputsSelector)).reduce((t, o) => y.isNativeInput(o) || y.containsOnlyInlineElements(o) ? [...t, o] : [...t, ...y.getDeepestBlockElements(o)], []);
+    return Wo(e.querySelectorAll(y.allInputsSelector)).reduce((t, o) => y.isNativeInput(o) || y.containsOnlyInlineElements(o) ? [...t, o] : [...t, ...y.getDeepestBlockElements(o)], []);
   }
   /**
    * Search for deepest node which is Leaf.
@@ -5360,7 +5360,7 @@ class y {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static isElement(e) {
-    return bo(e) ? !1 : e && e.nodeType && e.nodeType === Node.ELEMENT_NODE;
+    return mo(e) ? !1 : e && e.nodeType && e.nodeType === Node.ELEMENT_NODE;
   }
   /**
    * Check if object is DocumentFragment node
@@ -5370,7 +5370,7 @@ class y {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static isFragment(e) {
-    return bo(e) ? !1 : e && e.nodeType && e.nodeType === Node.DOCUMENT_FRAGMENT_NODE;
+    return mo(e) ? !1 : e && e.nodeType && e.nodeType === Node.DOCUMENT_FRAGMENT_NODE;
   }
   /**
    * Check if passed element is contenteditable
@@ -5584,7 +5584,7 @@ class y {
     };
   }
 }
-const hr = {
+const fr = {
   blockTunes: {
     toggler: {
       "Click to tune": "",
@@ -5605,19 +5605,19 @@ const hr = {
     Filter: "",
     "Nothing found": ""
   }
-}, ur = {
+}, gr = {
   Text: "",
   Link: "",
   Bold: "",
   Italic: ""
-}, pr = {
+}, mr = {
   link: {
     "Add a link": ""
   },
   stub: {
     "The block can not be displayed correctly.": ""
   }
-}, fr = {
+}, br = {
   delete: {
     Delete: "",
     "Click to delete": ""
@@ -5628,11 +5628,11 @@ const hr = {
   moveDown: {
     "Move down": ""
   }
-}, Vo = {
-  ui: hr,
-  toolNames: ur,
-  tools: pr,
-  blockTunes: fr
+}, Yo = {
+  ui: fr,
+  toolNames: gr,
+  tools: mr,
+  blockTunes: br
 }, Ne = class {
   /**
    * Type-safe translation for internal UI texts:
@@ -5684,10 +5684,10 @@ const hr = {
   }
 };
 let ce = Ne;
-ce.currentDictionary = Vo;
-class Yo extends Error {
+ce.currentDictionary = Yo;
+class Ko extends Error {
 }
-class ht {
+class dt {
   constructor() {
     this.subscribers = {};
   }
@@ -5859,7 +5859,7 @@ function Se(r) {
     }
   });
 }
-class Ft {
+class jt {
   constructor() {
     this.allListeners = [];
   }
@@ -5872,7 +5872,7 @@ class Ft {
    * @param {boolean|AddEventListenerOptions} options - useCapture or {capture, passive, once}
    */
   on(e, t, o, n = !1) {
-    const i = cr("l"), s = {
+    const i = ur("l"), s = {
       id: i,
       element: e,
       eventType: t,
@@ -5999,7 +5999,7 @@ class z {
    * @param options.eventsDispatcher - Common event bus
    */
   constructor({ config: e, eventsDispatcher: t }) {
-    if (this.nodes = {}, this.listeners = new Ft(), this.readOnlyMutableListeners = {
+    if (this.nodes = {}, this.listeners = new jt(), this.readOnlyMutableListeners = {
       /**
        * Assigns event listener on DOM element and pushes into special array that might be removed
        *
@@ -6328,7 +6328,7 @@ class O {
     o.selectNodeContents(e), t.addRange(o);
   }
 }
-function gr(r, e) {
+function vr(r, e) {
   const { type: t, target: o, addedNodes: n, removedNodes: i } = r;
   if (o === e)
     return !0;
@@ -6339,22 +6339,22 @@ function gr(r, e) {
   const s = Array.from(n).some((c) => e.contains(c)), a = Array.from(i).some((c) => e.contains(c));
   return s || a;
 }
-const Ot = "redactor dom changed", Ko = "block changed", Xo = "fake cursor is about to be toggled", Go = "fake cursor have been set";
-function wo(r, e) {
+const Mt = "redactor dom changed", Xo = "block changed", Go = "fake cursor is about to be toggled", Zo = "fake cursor have been set";
+function yo(r, e) {
   return r.mergeable && r.name === e.name;
 }
-function mr(r, e) {
+function kr(r, e) {
   const t = e == null ? void 0 : e.export;
   return Q(t) ? t(r) : Ce(t) ? r[t] : (t !== void 0 && X("Conversion «export» property must be a string or function. String means key of saved data object to export. Function should export processed string to export."), "");
 }
-function br(r, e) {
+function yr(r, e) {
   const t = e == null ? void 0 : e.import;
   return Q(t) ? t(r) : Ce(t) ? {
     [t]: r
   } : (t !== void 0 && X("Conversion «import» property must be a string or function. String means key of tool data to import. Function accepts a imported string and return composed tool data."), {});
 }
 var ye = /* @__PURE__ */ ((r) => (r.APPEND_CALLBACK = "appendCallback", r.RENDERED = "rendered", r.MOVED = "moved", r.UPDATED = "updated", r.REMOVED = "removed", r.ON_PASTE = "onPaste", r))(ye || {});
-class re extends ht {
+class re extends dt {
   /**
    * @param options - block constructor options
    * @param [options.id] - block's id. Will be generated if omitted.
@@ -6365,7 +6365,7 @@ class re extends ht {
    * @param [eventBus] - Editor common event bus. Allows to subscribe on some Editor events. Could be omitted when "virtual" Block is created. See BlocksAPI@composeBlockData.
    */
   constructor({
-    id: e = ar(),
+    id: e = dr(),
     data: t,
     tool: o,
     api: n,
@@ -6536,7 +6536,7 @@ class re extends ht {
     var t, o;
     this.holder.classList.toggle(re.CSS.selected, e);
     const n = e === !0 && O.isRangeInsideContainer(this.holder), i = e === !1 && O.isFakeCursorInsideContainer(this.holder);
-    (n || i) && ((t = this.editorEventBus) == null || t.emit(Xo, { state: e }), n ? O.addFakeCursor() : O.removeFakeCursor(this.holder), (o = this.editorEventBus) == null || o.emit(Go, { state: e }));
+    (n || i) && ((t = this.editorEventBus) == null || t.emit(Go, { state: e }), n ? O.addFakeCursor() : O.removeFakeCursor(this.holder), (o = this.editorEventBus) == null || o.emit(Zo, { state: e }));
   }
   /**
    * Returns True if it is Selected
@@ -6691,14 +6691,14 @@ class re extends ht {
     if (e.length === 1)
       return Promise.resolve(this.tool.toolbox[0]);
     const t = await this.data;
-    return e.find((o) => Object.entries(o.data).some(([n, i]) => t[n] && dr(t[n], i)));
+    return e.find((o) => Object.entries(o.data).some(([n, i]) => t[n] && pr(t[n], i)));
   }
   /**
    * Exports Block data as string using conversion config
    */
   async exportDataAsString() {
     const e = await this.data;
-    return mr(e, this.tool.conversionConfig);
+    return kr(e, this.tool.conversionConfig);
   }
   /**
    * Make default Block wrappers and put Tool`s content there
@@ -6754,15 +6754,15 @@ class re extends ht {
     var e;
     this.redactorDomChangedCallback = (t) => {
       const { mutations: o } = t;
-      o.some((n) => gr(n, this.toolRenderedElement)) && this.didMutated(o);
-    }, (e = this.editorEventBus) == null || e.on(Ot, this.redactorDomChangedCallback);
+      o.some((n) => vr(n, this.toolRenderedElement)) && this.didMutated(o);
+    }, (e = this.editorEventBus) == null || e.on(Mt, this.redactorDomChangedCallback);
   }
   /**
    * Remove redactor dom change event listener
    */
   unwatchBlockMutations() {
     var e;
-    (e = this.editorEventBus) == null || e.off(Ot, this.redactorDomChangedCallback);
+    (e = this.editorEventBus) == null || e.off(Mt, this.redactorDomChangedCallback);
   }
   /**
    * Sometimes Tool can replace own main element, for example H2 -> H4 or UL -> OL
@@ -6785,7 +6785,7 @@ class re extends ht {
     this.cachedInputs = [];
   }
 }
-class vr extends z {
+class wr extends z {
   constructor() {
     super(...arguments), this.insert = (e = this.config.defaultBlock, t = {}, o = {}, n, i, s, a) => {
       const c = this.Editor.BlockManager.insert({
@@ -6988,7 +6988,7 @@ class vr extends z {
    * @deprecated Use BlockAPI interface to stretch Blocks
    */
   stretchBlock(e, t = !0) {
-    Mt(
+    It(
       !0,
       "blocks.stretchBlock()",
       "BlockAPI"
@@ -7020,7 +7020,7 @@ class vr extends z {
       throw new Error("Index should be greater than or equal to 0");
   }
 }
-class kr extends z {
+class xr extends z {
   constructor() {
     super(...arguments), this.setToFirstBlock = (e = this.Editor.Caret.positions.DEFAULT, t = 0) => this.Editor.BlockManager.firstBlock ? (this.Editor.Caret.setToBlock(this.Editor.BlockManager.firstBlock, e, t), !0) : !1, this.setToLastBlock = (e = this.Editor.Caret.positions.DEFAULT, t = 0) => this.Editor.BlockManager.lastBlock ? (this.Editor.Caret.setToBlock(this.Editor.BlockManager.lastBlock, e, t), !0) : !1, this.setToPreviousBlock = (e = this.Editor.Caret.positions.DEFAULT, t = 0) => this.Editor.BlockManager.previousBlock ? (this.Editor.Caret.setToBlock(this.Editor.BlockManager.previousBlock, e, t), !0) : !1, this.setToNextBlock = (e = this.Editor.Caret.positions.DEFAULT, t = 0) => this.Editor.BlockManager.nextBlock ? (this.Editor.Caret.setToBlock(this.Editor.BlockManager.nextBlock, e, t), !0) : !1, this.setToBlock = (e, t = this.Editor.Caret.positions.DEFAULT, o = 0) => this.Editor.BlockManager.blocks[e] ? (this.Editor.Caret.setToBlock(this.Editor.BlockManager.blocks[e], t, o), !0) : !1, this.focus = (e = !1) => e ? this.setToLastBlock(this.Editor.Caret.positions.END) : this.setToFirstBlock(this.Editor.Caret.positions.START);
   }
@@ -7040,7 +7040,7 @@ class kr extends z {
     };
   }
 }
-class yr extends z {
+class Cr extends z {
   /**
    * Available methods
    *
@@ -7081,7 +7081,7 @@ class yr extends z {
     this.eventsDispatcher.off(e, t);
   }
 }
-class Ht extends z {
+class Ft extends z {
   /**
    * Return namespace section for tool or block tune
    *
@@ -7109,12 +7109,12 @@ class Ht extends z {
     return Object.assign(
       this.methods,
       {
-        t: (t) => ce.t(Ht.getNamespace(e), t)
+        t: (t) => ce.t(Ft.getNamespace(e), t)
       }
     );
   }
 }
-class wr extends z {
+class Er extends z {
   /**
    * Editor.js Core API modules
    */
@@ -7151,7 +7151,7 @@ class wr extends z {
     );
   }
 }
-class xr extends z {
+class Sr extends z {
   /**
    * Available methods
    *
@@ -7176,7 +7176,7 @@ class xr extends z {
     this.Editor.InlineToolbar.close();
   }
 }
-class Cr extends z {
+class Tr extends z {
   /**
    * Available methods
    *
@@ -7220,12 +7220,12 @@ class Cr extends z {
     this.listeners.offById(e);
   }
 }
-var At = {}, Er = {
+var Ot = {}, _r = {
   get exports() {
-    return At;
+    return Ot;
   },
   set exports(r) {
-    At = r;
+    Ot = r;
   }
 };
 (function(r, e) {
@@ -7535,19 +7535,19 @@ var At = {}, Er = {
       } });
     }]);
   });
-})(Er);
-const Sr = /* @__PURE__ */ jt(At);
-class Tr {
+})(_r);
+const Br = /* @__PURE__ */ Dt(Ot);
+class Lr {
   /**
    * Show web notification
    *
    * @param {NotifierOptions | ConfirmNotifierOptions | PromptNotifierOptions} options - notification options
    */
   show(e) {
-    Sr.show(e);
+    Br.show(e);
   }
 }
-class _r extends z {
+class Ir extends z {
   /**
    * @param moduleConfiguration - Module Configuration
    * @param moduleConfiguration.config - Editor's config
@@ -7557,7 +7557,7 @@ class _r extends z {
     super({
       config: e,
       eventsDispatcher: t
-    }), this.notifier = new Tr();
+    }), this.notifier = new Lr();
   }
   /**
    * Available methods
@@ -7576,7 +7576,7 @@ class _r extends z {
     return this.notifier.show(e);
   }
 }
-class Br extends z {
+class Mr extends z {
   /**
    * Available methods
    */
@@ -7605,18 +7605,18 @@ class Br extends z {
     return this.Editor.ReadOnly.isEnabled;
   }
 }
-var Nt = {}, Lr = {
+var At = {}, Or = {
   get exports() {
-    return Nt;
+    return At;
   },
   set exports(r) {
-    Nt = r;
+    At = r;
   }
 };
 (function(r, e) {
   (function(t, o) {
     r.exports = o();
-  })(Zi, function() {
+  })(er, function() {
     function t(d) {
       var p = d.tags, k = Object.keys(p), h = k.map(function(g) {
         return typeof p[g];
@@ -7689,43 +7689,43 @@ var Nt = {}, Lr = {
     }
     return t;
   });
-})(Lr);
-const Ir = Nt;
-function Zo(r, e) {
+})(Or);
+const Ar = At;
+function Jo(r, e) {
   return r.map((t) => {
     const o = Q(e) ? e(t.tool) : e;
-    return ue(o) || (t.data = Ut(t.data, o)), t;
+    return ue(o) || (t.data = Ht(t.data, o)), t;
   });
 }
 function we(r, e = {}) {
   const t = {
     tags: e
   };
-  return new Ir(t).clean(r);
+  return new Ar(t).clean(r);
 }
-function Ut(r, e) {
-  return Array.isArray(r) ? Mr(r, e) : se(r) ? Or(r, e) : Ce(r) ? Ar(r, e) : r;
+function Ht(r, e) {
+  return Array.isArray(r) ? Nr(r, e) : se(r) ? Rr(r, e) : Ce(r) ? Pr(r, e) : r;
 }
-function Mr(r, e) {
-  return r.map((t) => Ut(t, e));
+function Nr(r, e) {
+  return r.map((t) => Ht(t, e));
 }
-function Or(r, e) {
+function Rr(r, e) {
   const t = {};
   for (const o in r) {
     if (!Object.prototype.hasOwnProperty.call(r, o))
       continue;
-    const n = r[o], i = Nr(e[o]) ? e[o] : e;
-    t[o] = Ut(n, i);
+    const n = r[o], i = Dr(e[o]) ? e[o] : e;
+    t[o] = Ht(n, i);
   }
   return t;
 }
-function Ar(r, e) {
+function Pr(r, e) {
   return se(e) ? we(r, e) : e === !1 ? we(r, {}) : r;
 }
-function Nr(r) {
-  return se(r) || tr(r) || Q(r);
+function Dr(r) {
+  return se(r) || ir(r) || Q(r);
 }
-class Rr extends z {
+class jr extends z {
   /**
    * Available methods
    *
@@ -7747,7 +7747,7 @@ class Rr extends z {
     return we(e, t);
   }
 }
-class Pr extends z {
+class Fr extends z {
   /**
    * Available methods
    *
@@ -7768,7 +7768,7 @@ class Pr extends z {
     return this.Editor.ReadOnly.isEnabled ? (fe(e, "warn"), Promise.reject(new Error(e))) : this.Editor.Saver.save();
   }
 }
-class Dr extends z {
+class Hr extends z {
   /**
    * Available methods
    *
@@ -7799,7 +7799,7 @@ class Dr extends z {
     new O().expandToTag(e);
   }
 }
-class jr extends z {
+class Ur extends z {
   /**
    * Exported classes
    */
@@ -7828,7 +7828,7 @@ class jr extends z {
     };
   }
 }
-class Fr extends z {
+class $r extends z {
   /**
    * Available methods
    *
@@ -7879,12 +7879,12 @@ class Fr extends z {
     e ?? !this.Editor.Toolbar.toolbox.opened ? (this.Editor.Toolbar.moveAndOpen(), this.Editor.Toolbar.toolbox.open()) : this.Editor.Toolbar.toolbox.close();
   }
 }
-var Rt = {}, Hr = {
+var Nt = {}, zr = {
   get exports() {
-    return Rt;
+    return Nt;
   },
   set exports(r) {
-    Rt = r;
+    Nt = r;
   }
 };
 /*!
@@ -8040,25 +8040,25 @@ var Rt = {}, Hr = {
       t.exports = `.ct{z-index:999;opacity:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;-webkit-transition:opacity 50ms ease-in,-webkit-transform 70ms cubic-bezier(.215,.61,.355,1);transition:opacity 50ms ease-in,-webkit-transform 70ms cubic-bezier(.215,.61,.355,1);transition:opacity 50ms ease-in,transform 70ms cubic-bezier(.215,.61,.355,1);transition:opacity 50ms ease-in,transform 70ms cubic-bezier(.215,.61,.355,1),-webkit-transform 70ms cubic-bezier(.215,.61,.355,1);will-change:opacity,top,left;-webkit-box-shadow:0 8px 12px 0 rgba(29,32,43,.17),0 4px 5px -3px rgba(5,6,12,.49);box-shadow:0 8px 12px 0 rgba(29,32,43,.17),0 4px 5px -3px rgba(5,6,12,.49);border-radius:9px}.ct,.ct:before{position:absolute;top:0;left:0}.ct:before{content:"";bottom:0;right:0;background-color:#1d202b;z-index:-1;border-radius:4px}@supports(-webkit-mask-box-image:url("")){.ct:before{border-radius:0;-webkit-mask-box-image:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M10.71 0h2.58c3.02 0 4.64.42 6.1 1.2a8.18 8.18 0 013.4 3.4C23.6 6.07 24 7.7 24 10.71v2.58c0 3.02-.42 4.64-1.2 6.1a8.18 8.18 0 01-3.4 3.4c-1.47.8-3.1 1.21-6.11 1.21H10.7c-3.02 0-4.64-.42-6.1-1.2a8.18 8.18 0 01-3.4-3.4C.4 17.93 0 16.3 0 13.29V10.7c0-3.02.42-4.64 1.2-6.1a8.18 8.18 0 013.4-3.4C6.07.4 7.7 0 10.71 0z"/></svg>') 48% 41% 37.9% 53.3%}}@media (--mobile){.ct{display:none}}.ct__content{padding:6px 10px;color:#cdd1e0;font-size:12px;text-align:center;letter-spacing:.02em;line-height:1em}.ct:after{content:"";width:8px;height:8px;position:absolute;background-color:#1d202b;z-index:-1}.ct--bottom{-webkit-transform:translateY(5px);transform:translateY(5px)}.ct--bottom:after{top:-3px;left:50%;-webkit-transform:translateX(-50%) rotate(-45deg);transform:translateX(-50%) rotate(-45deg)}.ct--top{-webkit-transform:translateY(-5px);transform:translateY(-5px)}.ct--top:after{top:auto;bottom:-3px;left:50%;-webkit-transform:translateX(-50%) rotate(-45deg);transform:translateX(-50%) rotate(-45deg)}.ct--left{-webkit-transform:translateX(-5px);transform:translateX(-5px)}.ct--left:after{top:50%;left:auto;right:0;-webkit-transform:translate(41.6%,-50%) rotate(-45deg);transform:translate(41.6%,-50%) rotate(-45deg)}.ct--right{-webkit-transform:translateX(5px);transform:translateX(5px)}.ct--right:after{top:50%;left:0;-webkit-transform:translate(-41.6%,-50%) rotate(-45deg);transform:translate(-41.6%,-50%) rotate(-45deg)}.ct--shown{opacity:1;-webkit-transform:none;transform:none}`;
     }]).default;
   });
-})(Hr);
-const Ur = /* @__PURE__ */ jt(Rt);
+})(zr);
+const qr = /* @__PURE__ */ Dt(Nt);
 let me = null;
-function $t() {
-  me || (me = new Ur());
+function Ut() {
+  me || (me = new qr());
 }
-function $r(r, e, t) {
-  $t(), me == null || me.show(r, e, t);
+function Wr(r, e, t) {
+  Ut(), me == null || me.show(r, e, t);
 }
-function Pt(r = !1) {
-  $t(), me == null || me.hide(r);
+function Rt(r = !1) {
+  Ut(), me == null || me.hide(r);
 }
 function Ge(r, e, t) {
-  $t(), me == null || me.onHover(r, e, t);
+  Ut(), me == null || me.onHover(r, e, t);
 }
-function zr() {
+function Vr() {
   me == null || me.destroy(), me = null;
 }
-class qr extends z {
+class Yr extends z {
   /**
    * @class
    * @param moduleConfiguration - Module Configuration
@@ -8089,13 +8089,13 @@ class qr extends z {
    * @param {TooltipOptions} options - tooltip options
    */
   show(e, t, o) {
-    $r(e, t, o);
+    Wr(e, t, o);
   }
   /**
    * Method hides tooltip on HTML page
    */
   hide() {
-    Pt();
+    Rt();
   }
   /**
    * Decorator for showing Tooltip by mouseenter/mouseleave
@@ -8108,7 +8108,7 @@ class qr extends z {
     Ge(e, t, o);
   }
 }
-class Wr extends z {
+class Kr extends z {
   /**
    * Available methods / getters
    */
@@ -8136,26 +8136,26 @@ class Wr extends z {
     };
   }
 }
-function Jo(r, e) {
+function Qo(r, e) {
   const t = {};
   return Object.entries(r).forEach(([o, n]) => {
     if (se(n)) {
       const i = e ? `${e}.${o}` : o;
-      Object.values(n).every((s) => Ce(s)) ? t[o] = i : t[o] = Jo(n, i);
+      Object.values(n).every((s) => Ce(s)) ? t[o] = i : t[o] = Qo(n, i);
       return;
     }
     t[o] = n;
   }), t;
 }
-const ge = Jo(Vo);
-function Vr(r, e) {
+const ge = Qo(Yo);
+function Xr(r, e) {
   const t = {};
   return Object.keys(r).forEach((o) => {
     const n = e[o];
     n !== void 0 ? t[n] = r[o] : t[o] = r[o];
   }), t;
 }
-const Yr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 12L9 7.1C9 7.04477 9.04477 7 9.1 7H10.4C11.5 7 14 7.1 14 9.5C14 9.5 14 12 11 12M9 12V16.8C9 16.9105 9.08954 17 9.2 17H12.5C14 17 15 16 15 14.5C15 11.7046 11 12 11 12M9 12H11"/></svg>', Qo = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7 10L11.8586 14.8586C11.9367 14.9367 12.0633 14.9367 12.1414 14.8586L17 10"/></svg>', Kr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7 15L11.8586 10.1414C11.9367 10.0633 12.0633 10.0633 12.1414 10.1414L17 15"/></svg>', Xr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M8 8L12 12M12 12L16 16M12 12L16 8M12 12L8 16"/></svg>', Gr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/></svg>', Zr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M13.34 10C12.4223 12.7337 11 17 11 17"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.21 7H14.2"/></svg>', xo = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.69998 12.6L7.67896 12.62C6.53993 13.7048 6.52012 15.5155 7.63516 16.625V16.625C8.72293 17.7073 10.4799 17.7102 11.5712 16.6314L13.0263 15.193C14.0703 14.1609 14.2141 12.525 13.3662 11.3266L13.22 11.12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16.22 11.12L16.3564 10.9805C17.2895 10.0265 17.3478 8.5207 16.4914 7.49733V7.49733C15.5691 6.39509 13.9269 6.25143 12.8271 7.17675L11.3901 8.38588C10.0935 9.47674 9.95706 11.4241 11.0888 12.6852L11.12 12.72"/></svg>', Jr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M9.40999 7.29999H9.4"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M14.6 7.29999H14.59"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M9.30999 12H9.3"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M14.6 12H14.59"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M9.40999 16.7H9.4"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M14.6 16.7H14.59"/></svg>', Qr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 7V12M12 17V12M17 12H12M12 12H7"/></svg>', es = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5" stroke="currentColor" stroke-width="2"/><line x1="15.4142" x2="19" y1="15" y2="18.5858" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>', ts = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M15.7795 11.5C15.7795 11.5 16.053 11.1962 16.5497 10.6722C17.4442 9.72856 17.4701 8.2475 16.5781 7.30145V7.30145C15.6482 6.31522 14.0873 6.29227 13.1288 7.25073L11.8796 8.49999"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M8.24517 12.3883C8.24517 12.3883 7.97171 12.6922 7.47504 13.2161C6.58051 14.1598 6.55467 15.6408 7.44666 16.5869V16.5869C8.37653 17.5731 9.93744 17.5961 10.8959 16.6376L12.1452 15.3883"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M17.7802 15.1032L16.597 14.9422C16.0109 14.8624 15.4841 15.3059 15.4627 15.8969L15.4199 17.0818"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6.39064 9.03238L7.58432 9.06668C8.17551 9.08366 8.6522 8.58665 8.61056 7.99669L8.5271 6.81397"/><line x1="12.1142" x2="11.7" y1="12.2" y2="11.7858" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>', os = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><line x1="12" x2="12" y1="9" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 15.02V15.01"/></svg>';
+const Gr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 12L9 7.1C9 7.04477 9.04477 7 9.1 7H10.4C11.5 7 14 7.1 14 9.5C14 9.5 14 12 11 12M9 12V16.8C9 16.9105 9.08954 17 9.2 17H12.5C14 17 15 16 15 14.5C15 11.7046 11 12 11 12M9 12H11"/></svg>', en = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7 10L11.8586 14.8586C11.9367 14.9367 12.0633 14.9367 12.1414 14.8586L17 10"/></svg>', Zr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7 15L11.8586 10.1414C11.9367 10.0633 12.0633 10.0633 12.1414 10.1414L17 15"/></svg>', Jr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M8 8L12 12M12 12L16 16M12 12L16 8M12 12L8 16"/></svg>', Qr = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/></svg>', es = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M13.34 10C12.4223 12.7337 11 17 11 17"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.21 7H14.2"/></svg>', wo = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.69998 12.6L7.67896 12.62C6.53993 13.7048 6.52012 15.5155 7.63516 16.625V16.625C8.72293 17.7073 10.4799 17.7102 11.5712 16.6314L13.0263 15.193C14.0703 14.1609 14.2141 12.525 13.3662 11.3266L13.22 11.12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16.22 11.12L16.3564 10.9805C17.2895 10.0265 17.3478 8.5207 16.4914 7.49733V7.49733C15.5691 6.39509 13.9269 6.25143 12.8271 7.17675L11.3901 8.38588C10.0935 9.47674 9.95706 11.4241 11.0888 12.6852L11.12 12.72"/></svg>', ts = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M9.40999 7.29999H9.4"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M14.6 7.29999H14.59"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M9.30999 12H9.3"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M14.6 12H14.59"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M9.40999 16.7H9.4"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M14.6 16.7H14.59"/></svg>', os = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 7V12M12 17V12M17 12H12M12 12H7"/></svg>', ns = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5" stroke="currentColor" stroke-width="2"/><line x1="15.4142" x2="19" y1="15" y2="18.5858" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>', is = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M15.7795 11.5C15.7795 11.5 16.053 11.1962 16.5497 10.6722C17.4442 9.72856 17.4701 8.2475 16.5781 7.30145V7.30145C15.6482 6.31522 14.0873 6.29227 13.1288 7.25073L11.8796 8.49999"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M8.24517 12.3883C8.24517 12.3883 7.97171 12.6922 7.47504 13.2161C6.58051 14.1598 6.55467 15.6408 7.44666 16.5869V16.5869C8.37653 17.5731 9.93744 17.5961 10.8959 16.6376L12.1452 15.3883"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M17.7802 15.1032L16.597 14.9422C16.0109 14.8624 15.4841 15.3059 15.4627 15.8969L15.4199 17.0818"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6.39064 9.03238L7.58432 9.06668C8.17551 9.08366 8.6522 8.58665 8.61056 7.99669L8.5271 6.81397"/><line x1="12.1142" x2="11.7" y1="12.2" y2="11.7858" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>', rs = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><line x1="12" x2="12" y1="9" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 15.02V15.01"/></svg>';
 class oe {
   /**
    * Constructs popover item instance
@@ -8281,7 +8281,7 @@ class oe {
   make(e) {
     const t = y.make("div", oe.CSS.container);
     return e.name && (t.dataset.itemName = e.name), this.nodes.icon = y.make("div", oe.CSS.icon, {
-      innerHTML: e.icon || Gr
+      innerHTML: e.icon || Qr
     }), t.appendChild(this.nodes.icon), t.appendChild(y.make("div", oe.CSS.title, {
       innerHTML: e.title || ""
     })), e.secondaryLabel && t.appendChild(y.make("div", oe.CSS.secondaryTitle, {
@@ -8403,7 +8403,7 @@ const Ve = class {
     if (this.items.length === 0)
       return this.cursor;
     let e = this.cursor;
-    return e === -1 ? e = r === Ve.directions.RIGHT ? -1 : 0 : this.items[e].classList.remove(this.focusedCssClass), r === Ve.directions.RIGHT ? e = (e + 1) % this.items.length : e = (this.items.length + e - 1) % this.items.length, y.canSetCaret(this.items[e]) && lt(() => O.setCursor(this.items[e]), 50)(), this.items[e].classList.add(this.focusedCssClass), e;
+    return e === -1 ? e = r === Ve.directions.RIGHT ? -1 : 0 : this.items[e].classList.remove(this.focusedCssClass), r === Ve.directions.RIGHT ? e = (e + 1) % this.items.length : e = (this.items.length + e - 1) % this.items.length, y.canSetCaret(this.items[e]) && at(() => O.setCursor(this.items[e]), 50)(), this.items[e].classList.add(this.focusedCssClass), e;
   }
 };
 let Re = Ve;
@@ -8579,7 +8579,7 @@ class Ke {
    * @param options.placeholder - input placeholder
    */
   constructor({ items: e, onSearch: t, placeholder: o }) {
-    this.listeners = new Ft(), this.items = e, this.onSearch = t, this.render(o);
+    this.listeners = new jt(), this.items = e, this.onSearch = t, this.render(o);
   }
   /**
    * Returns search field element
@@ -8613,7 +8613,7 @@ class Ke {
   render(e) {
     this.wrapper = y.make("div", Ke.CSS.wrapper);
     const t = y.make("div", Ke.CSS.icon, {
-      innerHTML: es
+      innerHTML: ns
     });
     this.input = y.make("input", Ke.CSS.input, {
       placeholder: e,
@@ -8649,13 +8649,13 @@ const Ye = class {
    * Locks body element scroll
    */
   lock() {
-    yo ? this.lockHard() : document.body.classList.add(Ye.CSS.scrollLocked);
+    ko ? this.lockHard() : document.body.classList.add(Ye.CSS.scrollLocked);
   }
   /**
    * Unlocks body element scroll
    */
   unlock() {
-    yo ? this.unlockHard() : document.body.classList.remove(Ye.CSS.scrollLocked);
+    ko ? this.unlockHard() : document.body.classList.remove(Ye.CSS.scrollLocked);
   }
   /**
    * Locks scroll in a hard way (via setting fixed position to body element)
@@ -8673,24 +8673,24 @@ const Ye = class {
     document.body.classList.remove(Ye.CSS.scrollLockedHard), this.scrollPosition !== null && window.scrollTo(0, this.scrollPosition), this.scrollPosition = null;
   }
 };
-let en = Ye;
-en.CSS = {
+let tn = Ye;
+tn.CSS = {
   scrollLocked: "ce-scroll-locked",
   scrollLockedHard: "ce-scroll-locked--hard"
 };
-var ns = Object.defineProperty, is = Object.getOwnPropertyDescriptor, rs = (r, e, t, o) => {
-  for (var n = o > 1 ? void 0 : o ? is(e, t) : e, i = r.length - 1, s; i >= 0; i--)
+var ss = Object.defineProperty, as = Object.getOwnPropertyDescriptor, ls = (r, e, t, o) => {
+  for (var n = o > 1 ? void 0 : o ? as(e, t) : e, i = r.length - 1, s; i >= 0; i--)
     (s = r[i]) && (n = (o ? s(e, t, n) : s(n)) || n);
-  return o && n && ns(e, t, n), n;
+  return o && n && ss(e, t, n), n;
 }, Ze = /* @__PURE__ */ ((r) => (r.Close = "close", r))(Ze || {});
-const ie = class extends ht {
+const ie = class extends dt {
   /**
    * Constructs the instance
    *
    * @param params - popover construction params
    */
   constructor(r) {
-    super(), this.scopeElement = document.body, this.listeners = new Ft(), this.scrollLocker = new en(), this.nodes = {
+    super(), this.scopeElement = document.body, this.listeners = new jt(), this.scrollLocker = new tn(), this.nodes = {
       wrapper: null,
       popover: null,
       nothingFoundMessage: null,
@@ -8895,11 +8895,11 @@ const ie = class extends ht {
     }
   }
 };
-let zt = ie;
-rs([
+let $t = ie;
+ls([
   $e
-], zt.prototype, "height", 1);
-class ss extends z {
+], $t.prototype, "height", 1);
+class cs extends z {
   constructor() {
     super(...arguments), this.opened = !1, this.selection = new O(), this.onPopoverClose = () => {
       this.close();
@@ -8955,7 +8955,7 @@ class ss extends z {
   open(e = this.Editor.BlockManager.currentBlock) {
     this.opened = !0, this.selection.save(), this.Editor.BlockSelection.selectBlock(e), this.Editor.BlockSelection.clearCache();
     const [t, o] = e.getTunes();
-    this.eventsDispatcher.emit(this.events.opened), this.popover = new zt({
+    this.eventsDispatcher.emit(this.events.opened), this.popover = new $t({
       searchable: !0,
       items: t.map((n) => this.resolveTuneAliases(n)),
       customContent: o,
@@ -8996,7 +8996,7 @@ class ss extends z {
    * @param item - item with resolved aliases
    */
   resolveTuneAliases(e) {
-    const t = Vr(e, { label: "title" });
+    const t = Xr(e, { label: "title" });
     return e.confirmation && (t.confirmation = this.resolveTuneAliases(e.confirmation)), t;
   }
 }
@@ -9117,7 +9117,7 @@ class de extends z {
     const s = (o = this.Editor.Tools.blockTools.get(e)) == null ? void 0 : o.shortcut;
     if (s) {
       const a = y.make("span", de.CSS.conversionToolSecondaryLabel, {
-        innerText: dt(s)
+        innerText: ct(s)
       });
       y.append(n, a);
     }
@@ -9155,12 +9155,12 @@ class de extends z {
     });
   }
 }
-var Dt = {}, as = {
+var Pt = {}, ds = {
   get exports() {
-    return Dt;
+    return Pt;
   },
   set exports(r) {
-    Dt = r;
+    Pt = r;
   }
 };
 /*!
@@ -9260,9 +9260,9 @@ var Dt = {}, as = {
       o.default = a;
     }]).default;
   });
-})(as);
-const ls = /* @__PURE__ */ jt(Dt);
-class cs {
+})(ds);
+const hs = /* @__PURE__ */ Dt(Pt);
+class us {
   constructor() {
     this.registeredShortcuts = /* @__PURE__ */ new Map();
   }
@@ -9276,7 +9276,7 @@ class cs {
       throw Error(
         `Shortcut ${e.name} is already registered for ${e.on}. Please remove it before add a new handler.`
       );
-    const t = new ls({
+    const t = new hs({
       name: e.name,
       on: e.on,
       callback: e.handler
@@ -9308,13 +9308,13 @@ class cs {
     return (this.registeredShortcuts.get(e) || []).find(({ name: o }) => o === t);
   }
 }
-const Ue = new cs();
-var ds = Object.defineProperty, hs = Object.getOwnPropertyDescriptor, tn = (r, e, t, o) => {
-  for (var n = o > 1 ? void 0 : o ? hs(e, t) : e, i = r.length - 1, s; i >= 0; i--)
+const Ue = new us();
+var ps = Object.defineProperty, fs = Object.getOwnPropertyDescriptor, on = (r, e, t, o) => {
+  for (var n = o > 1 ? void 0 : o ? fs(e, t) : e, i = r.length - 1, s; i >= 0; i--)
     (s = r[i]) && (n = (o ? s(e, t, n) : s(n)) || n);
-  return o && n && ds(e, t, n), n;
+  return o && n && ps(e, t, n), n;
 }, rt = /* @__PURE__ */ ((r) => (r.Opened = "toolbox-opened", r.Closed = "toolbox-closed", r.BlockAdded = "toolbox-block-added", r))(rt || {});
-const on = class extends ht {
+const nn = class extends dt {
   /**
    * Toolbox constructor
    *
@@ -9354,7 +9354,7 @@ const on = class extends ht {
    * Makes the Toolbox
    */
   make() {
-    return this.popover = new zt({
+    return this.popover = new $t({
       scopeElement: this.api.ui.nodes.redactor,
       searchable: !0,
       messages: {
@@ -9362,7 +9362,7 @@ const on = class extends ht {
         search: this.i18nLabels.filter
       },
       items: this.toolboxItemsToBeDisplayed
-    }), this.popover.on(Ze.Close, this.onPopoverClose), this.enableShortcuts(), this.nodes.toolbox = this.popover.getElement(), this.nodes.toolbox.classList.add(on.CSS.toolbox), this.nodes.toolbox;
+    }), this.popover.on(Ze.Close, this.onPopoverClose), this.enableShortcuts(), this.nodes.toolbox = this.popover.getElement(), this.nodes.toolbox.classList.add(nn.CSS.toolbox), this.nodes.toolbox;
   }
   /**
    * Returns true if the Toolbox has the Flipper activated and the Flipper has selected button
@@ -9427,7 +9427,7 @@ const on = class extends ht {
       onActivate: () => {
         this.toolButtonActivated(t.name, e.data);
       },
-      secondaryLabel: t.shortcut ? dt(t.shortcut) : ""
+      secondaryLabel: t.shortcut ? ct(t.shortcut) : ""
     });
     return this.toolsToBeDisplayed.reduce((e, t) => (Array.isArray(t.toolbox) ? t.toolbox.forEach((o) => {
       e.push(r(o, t));
@@ -9507,19 +9507,19 @@ const on = class extends ht {
     }), this.api.toolbar.close();
   }
 };
-let qt = on;
-tn([
+let zt = nn;
+on([
   $e
-], qt.prototype, "toolsToBeDisplayed", 1);
-tn([
+], zt.prototype, "toolsToBeDisplayed", 1);
+on([
   $e
-], qt.prototype, "toolboxItemsToBeDisplayed", 1);
-const nn = "block hovered";
-async function us(r, e) {
+], zt.prototype, "toolboxItemsToBeDisplayed", 1);
+const rn = "block hovered";
+async function gs(r, e) {
   const t = navigator.keyboard;
   return t && (await t.getLayoutMap()).get(r) || e;
 }
-class ps extends z {
+class ms extends z {
   /**
    * @class
    * @param moduleConfiguration - Module Configuration
@@ -9668,9 +9668,9 @@ class ps extends z {
     this.nodes.wrapper = y.make("div", this.CSS.toolbar), ["content", "actions"].forEach((i) => {
       this.nodes[i] = y.make("div", this.CSS[i]);
     }), y.append(this.nodes.wrapper, this.nodes.content), y.append(this.nodes.content, this.nodes.actions), this.nodes.plusButton = y.make("div", this.CSS.plusButton, {
-      innerHTML: Qr
+      innerHTML: os
     }), y.append(this.nodes.actions, this.nodes.plusButton), this.readOnlyMutableListeners.on(this.nodes.plusButton, "click", () => {
-      Pt(!0), this.plusButtonClicked();
+      Rt(!0), this.plusButtonClicked();
     }, !1);
     const e = y.make("div");
     e.appendChild(document.createTextNode(ce.ui(ge.ui.toolbar.toolbox, "Add"))), e.appendChild(y.make("div", this.CSS.plusButtonShortcut, {
@@ -9678,11 +9678,11 @@ class ps extends z {
     })), Ge(this.nodes.plusButton, e, {
       hidingDelay: 400
     }), this.nodes.settingsToggler = y.make("span", this.CSS.settingsToggler, {
-      innerHTML: Jr
+      innerHTML: ts
     }), y.append(this.nodes.actions, this.nodes.settingsToggler);
-    const t = y.make("div"), o = y.text(ce.ui(ge.ui.blockTunes.toggler, "Click to tune")), n = await us("Slash", "/");
+    const t = y.make("div"), o = y.text(ce.ui(ge.ui.blockTunes.toggler, "Click to tune")), n = await gs("Slash", "/");
     t.appendChild(o), t.appendChild(y.make("div", this.CSS.plusButtonShortcut, {
-      textContent: dt(`CMD + ${n}`)
+      textContent: ct(`CMD + ${n}`)
     })), Ge(this.nodes.settingsToggler, t, {
       hidingDelay: 400
     }), y.append(this.nodes.actions, this.makeToolbox()), y.append(this.nodes.actions, this.Editor.BlockSettings.getElement()), y.append(this.Editor.UI.nodes.wrapper, this.nodes.wrapper);
@@ -9691,7 +9691,7 @@ class ps extends z {
    * Creates the Toolbox instance and return it's rendered element
    */
   makeToolbox() {
-    return this.toolboxInstance = new qt({
+    return this.toolboxInstance = new zt({
       api: this.Editor.API.methods,
       tools: this.Editor.Tools.blockTools,
       i18nLabels: {
@@ -9720,8 +9720,8 @@ class ps extends z {
   enableModuleBindings() {
     this.readOnlyMutableListeners.on(this.nodes.settingsToggler, "mousedown", (e) => {
       var t;
-      e.stopPropagation(), this.settingsTogglerClicked(), (t = this.toolboxInstance) != null && t.opened && this.toolboxInstance.close(), Pt(!0);
-    }, !0), Te() || this.eventsDispatcher.on(nn, (e) => {
+      e.stopPropagation(), this.settingsTogglerClicked(), (t = this.toolboxInstance) != null && t.opened && this.toolboxInstance.close(), Rt(!0);
+    }, !0), Te() || this.eventsDispatcher.on(rn, (e) => {
       var t;
       this.Editor.BlockSettings.opened || (t = this.toolboxInstance) != null && t.opened || this.moveAndOpen(e.block);
     });
@@ -9760,8 +9760,8 @@ class ps extends z {
     this.removeAllNodes(), this.toolboxInstance && this.toolboxInstance.destroy();
   }
 }
-var ut = /* @__PURE__ */ ((r) => (r[r.Block = 0] = "Block", r[r.Inline = 1] = "Inline", r[r.Tune = 2] = "Tune", r))(ut || {}), st = /* @__PURE__ */ ((r) => (r.Shortcut = "shortcut", r.Toolbox = "toolbox", r.EnabledInlineTools = "inlineToolbar", r.EnabledBlockTunes = "tunes", r.Config = "config", r))(st || {}), rn = /* @__PURE__ */ ((r) => (r.Shortcut = "shortcut", r.SanitizeConfig = "sanitize", r))(rn || {}), Pe = /* @__PURE__ */ ((r) => (r.IsEnabledLineBreaks = "enableLineBreaks", r.Toolbox = "toolbox", r.ConversionConfig = "conversionConfig", r.IsReadOnlySupported = "isReadOnlySupported", r.PasteConfig = "pasteConfig", r))(Pe || {}), Wt = /* @__PURE__ */ ((r) => (r.IsInline = "isInline", r.Title = "title", r))(Wt || {}), sn = /* @__PURE__ */ ((r) => (r.IsTune = "isTune", r))(sn || {});
-class Vt {
+var ht = /* @__PURE__ */ ((r) => (r[r.Block = 0] = "Block", r[r.Inline = 1] = "Inline", r[r.Tune = 2] = "Tune", r))(ht || {}), st = /* @__PURE__ */ ((r) => (r.Shortcut = "shortcut", r.Toolbox = "toolbox", r.EnabledInlineTools = "inlineToolbar", r.EnabledBlockTunes = "tunes", r.Config = "config", r))(st || {}), sn = /* @__PURE__ */ ((r) => (r.Shortcut = "shortcut", r.SanitizeConfig = "sanitize", r))(sn || {}), Pe = /* @__PURE__ */ ((r) => (r.IsEnabledLineBreaks = "enableLineBreaks", r.Toolbox = "toolbox", r.ConversionConfig = "conversionConfig", r.IsReadOnlySupported = "isReadOnlySupported", r.PasteConfig = "pasteConfig", r))(Pe || {}), qt = /* @__PURE__ */ ((r) => (r.IsInline = "isInline", r.Title = "title", r))(qt || {}), an = /* @__PURE__ */ ((r) => (r.IsTune = "isTune", r))(an || {});
+class Wt {
   /**
    * @class
    * @param {ConstructorOptions} options - Constructor options
@@ -9833,7 +9833,7 @@ class Vt {
     return this.type === 2;
   }
 }
-class fs extends z {
+class bs extends z {
   /**
    * @class
    * @param moduleConfiguration - Module Configuration
@@ -9978,7 +9978,7 @@ class fs extends z {
   addConversionToggler() {
     this.nodes.conversionToggler = y.make("div", this.CSS.conversionToggler), this.nodes.conversionTogglerContent = y.make("div", this.CSS.conversionTogglerContent);
     const e = y.make("div", this.CSS.conversionTogglerArrow, {
-      innerHTML: Qo
+      innerHTML: en
     });
     this.nodes.conversionToggler.appendChild(this.nodes.conversionTogglerContent), this.nodes.conversionToggler.appendChild(e), this.nodes.togglerAndButtonsWrapper.appendChild(this.nodes.conversionToggler), this.listeners.on(this.nodes.conversionToggler, "click", () => {
       this.Editor.ConversionToolbar.toggle((t) => {
@@ -10049,7 +10049,7 @@ class fs extends z {
       e.title || He(e.name)
     );
     i.appendChild(y.text(s)), n && i.appendChild(y.make("div", this.CSS.inlineToolbarShortcut, {
-      textContent: dt(n)
+      textContent: ct(n)
     })), Te() === !1 && Ge(o, i, {
       placement: "top",
       hidingDelay: 100
@@ -10062,7 +10062,7 @@ class fs extends z {
    */
   getToolShortcut(e) {
     const { Tools: t } = this.Editor, o = t.inlineTools.get(e), n = t.internal.inlineTools;
-    return Array.from(n.keys()).includes(e) ? this.inlineTools[e][rn.Shortcut] : o.shortcut;
+    return Array.from(n.keys()).includes(e) ? this.inlineTools[e][sn.Shortcut] : o.shortcut;
   }
   /**
    * Enable Tool shortcut with Editor Shortcuts Module
@@ -10121,7 +10121,7 @@ class fs extends z {
     });
   }
 }
-class gs extends z {
+class vs extends z {
   /**
    * All keydowns on Block
    *
@@ -10158,7 +10158,7 @@ class gs extends z {
    * @param {KeyboardEvent} event - keydown
    */
   beforeKeydownProcessing(e) {
-    this.needToolbarClosing(e) && zo(e.keyCode) && (this.Editor.Toolbar.close(), this.Editor.ConversionToolbar.close(), e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || this.Editor.BlockSelection.clearSelection(e));
+    this.needToolbarClosing(e) && qo(e.keyCode) && (this.Editor.Toolbar.close(), this.Editor.ConversionToolbar.close(), e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || this.Editor.BlockSelection.clearSelection(e));
   }
   /**
    * Key up on Block:
@@ -10266,7 +10266,7 @@ class gs extends z {
           o.setToBlock(s, o.positions.END);
           return;
         }
-        wo(n, i) ? this.mergeBlocks(i, n) : o.setToBlock(i, o.positions.END);
+        yo(n, i) ? this.mergeBlocks(i, n) : o.setToBlock(i, o.positions.END);
       }
     }
   }
@@ -10293,7 +10293,7 @@ class gs extends z {
           t.removeBlock(n), o.setToBlock(i, o.positions.START);
           return;
         }
-        wo(n, i) ? this.mergeBlocks(n, i) : o.setToBlock(i, o.positions.START);
+        yo(n, i) ? this.mergeBlocks(n, i) : o.setToBlock(i, o.positions.START);
       }
     }
   }
@@ -10330,7 +10330,7 @@ class gs extends z {
       e.preventDefault();
       return;
     }
-    lt(() => {
+    at(() => {
       this.Editor.BlockManager.currentBlock && this.Editor.BlockManager.currentBlock.updateCurrentInput();
     }, 20)(), this.Editor.BlockSelection.clearSelection(e);
   }
@@ -10355,7 +10355,7 @@ class gs extends z {
       e.preventDefault();
       return;
     }
-    lt(() => {
+    at(() => {
       this.Editor.BlockManager.currentBlock && this.Editor.BlockManager.currentBlock.updateCurrentInput();
     }, 20)(), this.Editor.BlockSelection.clearSelection(e);
   }
@@ -10381,7 +10381,7 @@ class gs extends z {
     this.Editor.Toolbar.opened || this.Editor.Toolbar.moveAndOpen(), this.Editor.BlockSettings.opened || this.Editor.BlockSettings.open();
   }
 }
-class Ct {
+class xt {
   /**
    * @class
    * @param {HTMLElement} workingArea — editor`s working node
@@ -10411,7 +10411,7 @@ class Ct {
    * @returns {HTMLElement[]}
    */
   get nodes() {
-    return qo(this.workingArea.children);
+    return Wo(this.workingArea.children);
   }
   /**
    * Proxy trap to implement array-like setter
@@ -10589,8 +10589,8 @@ class Ct {
     });
   }
 }
-const Co = "block-removed", Eo = "block-added", ms = "block-moved", So = "block-changed";
-class bs {
+const xo = "block-removed", Co = "block-added", ks = "block-moved", Eo = "block-changed";
+class ys {
   constructor() {
     this.completed = Promise.resolve();
   }
@@ -10605,7 +10605,7 @@ class bs {
     });
   }
 }
-class vs extends z {
+class ws extends z {
   constructor() {
     super(...arguments), this._currentBlockIndex = -1, this._blocks = null;
   }
@@ -10710,10 +10710,10 @@ class vs extends z {
    * Define this._blocks property
    */
   prepare() {
-    const e = new Ct(this.Editor.UI.nodes.redactor);
+    const e = new xt(this.Editor.UI.nodes.redactor);
     this._blocks = new Proxy(e, {
-      set: Ct.set,
-      get: Ct.get
+      set: xt.set,
+      get: xt.get
     }), this.listeners.on(
       document,
       "copy",
@@ -10790,9 +10790,9 @@ class vs extends z {
       data: o,
       tunes: a
     });
-    return s && this.blockDidMutated(Co, this.getBlockByIndex(c), {
+    return s && this.blockDidMutated(xo, this.getBlockByIndex(c), {
       index: c
-    }), this._blocks.insert(c, l, s), this.blockDidMutated(Eo, l, {
+    }), this._blocks.insert(c, l, s), this.blockDidMutated(Co, l, {
       index: c
     }), i ? this.currentBlockIndex = c : c <= this.currentBlockIndex && this.currentBlockIndex++, l;
   }
@@ -10821,7 +10821,7 @@ class vs extends z {
       data: Object.assign({}, o, t),
       tunes: e.tunes
     }), i = this.getBlockIndex(e);
-    return this._blocks.replace(i, n), this.blockDidMutated(So, n, {
+    return this._blocks.replace(i, n), this.blockDidMutated(Eo, n, {
       index: i
     }), n;
   }
@@ -10873,7 +10873,7 @@ class vs extends z {
    */
   insertDefaultBlockAtIndex(e, t = !1) {
     const o = this.composeBlock({ tool: this.config.defaultBlock });
-    return this._blocks[e] = o, this.blockDidMutated(Eo, o, {
+    return this._blocks[e] = o, this.blockDidMutated(Co, o, {
       index: e
     }), t ? this.currentBlockIndex = e : e <= this.currentBlockIndex && this.currentBlockIndex++, o;
   }
@@ -10907,7 +10907,7 @@ class vs extends z {
       const n = this._blocks.indexOf(e);
       if (!this.validateIndex(n))
         throw new Error("Can't find a Block to remove");
-      e.destroy(), this._blocks.remove(n), this.blockDidMutated(Co, e, {
+      e.destroy(), this._blocks.remove(n), this.blockDidMutated(xo, e, {
         index: n
       }), this.currentBlockIndex >= n && this.currentBlockIndex--, this.blocks.length ? n === 0 && (this.currentBlockIndex = 0) : (this.currentBlockIndex = -1, t && this.insert()), o();
     });
@@ -11040,7 +11040,7 @@ class vs extends z {
       X("Warning during 'move' call: indices cannot be lower than 0 or greater than the amount of blocks.", "warn");
       return;
     }
-    this._blocks.move(e, t), this.currentBlockIndex = e, this.blockDidMutated(ms, this.currentBlock, {
+    this._blocks.move(e, t), this.currentBlockIndex = e, this.blockDidMutated(ks, this.currentBlock, {
       fromIndex: t,
       toIndex: e
     });
@@ -11063,7 +11063,7 @@ class vs extends z {
       i,
       n.sanitizeConfig
     );
-    let a = br(s, n.conversionConfig);
+    let a = yr(s, n.conversionConfig);
     o && (a = Object.assign(a, o)), this.replace(e, n.name, a);
   }
   /**
@@ -11081,7 +11081,7 @@ class vs extends z {
    *                                        2) in api.blocks.clear we should add empty block
    */
   async clear(e = !1) {
-    const t = new bs();
+    const t = new ys();
     this.blocks.forEach((o) => {
       t.add(async () => {
         await this.removeBlock(o, !1);
@@ -11110,7 +11110,7 @@ class vs extends z {
       t.dragOver(o);
     }), this.readOnlyMutableListeners.on(e.holder, "dragleave", (o) => {
       t.dragLeave(o);
-    }), e.on("didMutated", (o) => this.blockDidMutated(So, o, {
+    }), e.on("didMutated", (o) => this.blockDidMutated(Eo, o, {
       index: this.getBlockIndex(o)
     }));
   }
@@ -11155,12 +11155,12 @@ class vs extends z {
         ...o
       }
     });
-    return this.eventsDispatcher.emit(Ko, {
+    return this.eventsDispatcher.emit(Xo, {
       event: n
     }), t;
   }
 }
-class ks extends z {
+class xs extends z {
   constructor() {
     super(...arguments), this.anyBlockSelectedCache = null, this.needToSelectAll = !1, this.nativeInputSelected = !1, this.readyToBlockSelection = !1;
   }
@@ -11279,10 +11279,10 @@ class ks extends z {
   clearSelection(e, t = !1) {
     const { BlockManager: o, Caret: n, RectangleSelection: i } = this.Editor;
     this.needToSelectAll = !1, this.nativeInputSelected = !1, this.readyToBlockSelection = !1;
-    const s = e && e instanceof KeyboardEvent, a = s && zo(e.keyCode);
+    const s = e && e instanceof KeyboardEvent, a = s && qo(e.keyCode);
     if (this.anyBlockSelected && s && a && !O.isSelectionExists) {
       const c = o.removeSelectedBlocks();
-      o.insertDefaultBlockAtIndex(c, !0), n.setToBlock(o.currentBlock), lt(() => {
+      o.insertDefaultBlockAtIndex(c, !0), n.setToBlock(o.currentBlock), at(() => {
         const l = e.key;
         n.insertContentAtCaretPosition(l.length > 1 ? "" : l);
       }, 20)();
@@ -11384,7 +11384,7 @@ class ks extends z {
     this.selection.save(), O.get().removeAllRanges(), this.allBlocksSelected = !0, this.Editor.InlineToolbar.close();
   }
 }
-class ct extends z {
+class lt extends z {
   /**
    * Allowed caret positions in input
    *
@@ -11601,7 +11601,7 @@ class ct extends z {
    */
   createShadow(e) {
     const t = document.createElement("span");
-    t.classList.add(ct.CSS.shadowCaret), e.insertAdjacentElement("beforeend", t);
+    t.classList.add(lt.CSS.shadowCaret), e.insertAdjacentElement("beforeend", t);
   }
   /**
    * Restores caret position
@@ -11609,7 +11609,7 @@ class ct extends z {
    * @param {HTMLElement} element - element where caret should be restored
    */
   restoreCaret(e) {
-    const t = e.querySelector(`.${ct.CSS.shadowCaret}`);
+    const t = e.querySelector(`.${lt.CSS.shadowCaret}`);
     if (!t)
       return;
     new O().expandToTag(t);
@@ -11658,7 +11658,7 @@ class ct extends z {
     return n;
   }
 }
-class ys extends z {
+class Cs extends z {
   constructor() {
     super(...arguments), this.onMouseUp = () => {
       this.listeners.off(document, "mouseover", this.onMouseOver), this.listeners.off(document, "mouseup", this.onMouseUp);
@@ -11696,7 +11696,7 @@ class ys extends z {
    * @param {MouseEvent} event - mouse down event
    */
   watchSelection(e) {
-    if (e.button !== Qi.LEFT)
+    if (e.button !== or.LEFT)
       return;
     const { BlockManager: t } = this.Editor;
     this.firstSelectedBlock = t.getBlock(e.target), this.lastSelectedBlock = this.firstSelectedBlock, this.listeners.on(document, "mouseover", this.onMouseOver), this.listeners.on(document, "mouseup", this.onMouseUp);
@@ -11766,7 +11766,7 @@ class ys extends z {
     }
   }
 }
-class ws extends z {
+class Es extends z {
   constructor() {
     super(...arguments), this.isStartedAtEditor = !1;
   }
@@ -11839,7 +11839,7 @@ class ws extends z {
     e.preventDefault();
   }
 }
-class xs extends z {
+class Ss extends z {
   /**
    * Prepare the module
    *
@@ -11853,11 +11853,11 @@ class xs extends z {
       eventsDispatcher: t
     }), this.disabled = !1, this.batchingTimeout = null, this.batchingOnChangeQueue = /* @__PURE__ */ new Map(), this.batchTime = 400, this.mutationObserver = new MutationObserver((o) => {
       this.redactorChanged(o);
-    }), this.eventsDispatcher.on(Ko, (o) => {
+    }), this.eventsDispatcher.on(Xo, (o) => {
       this.particularBlockChanged(o.event);
-    }), this.eventsDispatcher.on(Xo, () => {
-      this.disable();
     }), this.eventsDispatcher.on(Go, () => {
+      this.disable();
+    }), this.eventsDispatcher.on(Zo, () => {
       this.enable();
     });
   }
@@ -11898,12 +11898,12 @@ class xs extends z {
    * @param mutations - mutations happened
    */
   redactorChanged(e) {
-    this.eventsDispatcher.emit(Ot, {
+    this.eventsDispatcher.emit(Mt, {
       mutations: e
     });
   }
 }
-const an = class extends z {
+const ln = class extends z {
   constructor() {
     super(...arguments), this.MIME_TYPE = "application/x-editor-js", this.toolsTags = {}, this.tagsByTool = {}, this.toolsPatterns = [], this.toolsFiles = {}, this.exceptionList = [], this.processTool = (r) => {
       try {
@@ -12049,7 +12049,7 @@ const an = class extends z {
       return;
     const { files: e = {} } = r.pasteConfig;
     let { extensions: t, mimeTypes: o } = e;
-    !t && !o || (t && !Array.isArray(t) && (X(`«extensions» property of the onDrop config for «${r.name}» Tool should be an array`), t = []), o && !Array.isArray(o) && (X(`«mimeTypes» property of the onDrop config for «${r.name}» Tool should be an array`), o = []), o && (o = o.filter((n) => ir(n) ? !0 : (X(`MIME type value «${n}» for the «${r.name}» Tool is not a valid MIME type`, "warn"), !1))), this.toolsFiles[r.name] = {
+    !t && !o || (t && !Array.isArray(t) && (X(`«extensions» property of the onDrop config for «${r.name}» Tool should be an array`), t = []), o && !Array.isArray(o) && (X(`«mimeTypes» property of the onDrop config for «${r.name}» Tool should be an array`), o = []), o && (o = o.filter((n) => ar(n) ? !0 : (X(`MIME type value «${n}» for the «${r.name}» Tool is not a valid MIME type`, "warn"), !1))), this.toolsFiles[r.name] = {
       extensions: t || [],
       mimeTypes: o || []
     });
@@ -12104,7 +12104,7 @@ const an = class extends z {
    * @param {File} file - file to process
    */
   async processFile(r) {
-    const e = nr(r), t = Object.entries(this.toolsFiles).find(([n, { mimeTypes: i, extensions: s }]) => {
+    const e = sr(r), t = Object.entries(this.toolsFiles).find(([n, { mimeTypes: i, extensions: s }]) => {
       const [a, c] = r.type.split("/"), l = s.find((d) => d.toLowerCase() === e.toLowerCase()), u = i.find((d) => {
         const [p, k] = d.split("/");
         return p === a && (k === c || k === "*");
@@ -12212,7 +12212,7 @@ const an = class extends z {
    */
   async processInlinePaste(r) {
     const { BlockManager: e, Caret: t } = this.Editor, { content: o } = r;
-    if (e.currentBlock && e.currentBlock.tool.isDefault && o.textContent.length < an.PATTERN_PROCESSING_MAX_LENGTH) {
+    if (e.currentBlock && e.currentBlock.tool.isDefault && o.textContent.length < ln.PATTERN_PROCESSING_MAX_LENGTH) {
       const n = await this.processPattern(o.textContent);
       if (n) {
         const i = e.currentBlock && e.currentBlock.tool.isDefault && e.currentBlock.isEmpty, s = e.paste(n.tool, n.event, i);
@@ -12273,7 +12273,7 @@ const an = class extends z {
    */
   insertEditorJSData(r) {
     const { BlockManager: e, Caret: t, Tools: o } = this.Editor;
-    Zo(
+    Jo(
       r,
       (n) => o.blockTools.get(n).sanitizeConfig
     ).forEach(({ tool: n, data: i }, s) => {
@@ -12347,9 +12347,9 @@ const an = class extends z {
     });
   }
 };
-let ln = an;
-ln.PATTERN_PROCESSING_MAX_LENGTH = 450;
-class Cs extends z {
+let cn = ln;
+cn.PATTERN_PROCESSING_MAX_LENGTH = 450;
+class Ts extends z {
   constructor() {
     super(...arguments), this.toolsDontSupportReadOnly = [], this.readOnlyEnabled = !1;
   }
@@ -12389,7 +12389,7 @@ class Cs extends z {
    * Throws an error about tools which don't support read-only mode
    */
   throwCriticalError() {
-    throw new Yo(
+    throw new Ko(
       `To enable read-only mode all connected tools should support it. Tools ${this.toolsDontSupportReadOnly.join(", ")} don't support read-only mode.`
     );
   }
@@ -12460,13 +12460,13 @@ class Xe extends z {
     const { container: e } = this.genHTML();
     this.listeners.on(e, "mousedown", (t) => {
       this.processMouseDown(t);
-    }, !1), this.listeners.on(document.body, "mousemove", Lt((t) => {
+    }, !1), this.listeners.on(document.body, "mousemove", Bt((t) => {
       this.processMouseMove(t);
     }, 10), {
       passive: !0
     }), this.listeners.on(document.body, "mouseleave", () => {
       this.processMouseLeave();
-    }), this.listeners.on(window, "scroll", Lt((t) => {
+    }), this.listeners.on(window, "scroll", Bt((t) => {
       this.processScroll(t);
     }, 10), {
       passive: !0
@@ -12636,7 +12636,7 @@ class Xe extends z {
       this.rectCrossesBlocks && this.Editor.BlockSelection.unSelectBlockByIndex(this.stackOfSelected[p]), this.stackOfSelected.pop(), p--;
   }
 }
-class Es extends z {
+class _s extends z {
   /**
    * Renders passed blocks as one batch
    *
@@ -12702,7 +12702,7 @@ class Es extends z {
     };
   }
 }
-class Ss extends z {
+class Bs extends z {
   /**
    * Composes new chain of Promises to fire them alternatelly
    *
@@ -12714,7 +12714,7 @@ class Ss extends z {
       o.forEach((a) => {
         n.push(this.getSavedData(a));
       });
-      const i = await Promise.all(n), s = await Zo(i, (a) => t.blockTools.get(a).sanitizeConfig);
+      const i = await Promise.all(n), s = await Jo(i, (a) => t.blockTools.get(a).sanitizeConfig);
       return this.makeOutput(s);
     } catch (i) {
       fe("Saving failed due to the Error %o", "error", i);
@@ -12776,7 +12776,7 @@ class Ss extends z {
     console.error("vite-plugin-css-injected-by-js", e);
   }
 })();
-const Ts = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M8 9V7.2C8 7.08954 8.08954 7 8.2 7L12 7M16 9V7.2C16 7.08954 15.9105 7 15.8 7L12 7M12 7L12 17M12 17H10M12 17H14"/></svg>';
+const Ls = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M8 9V7.2C8 7.08954 8.08954 7 8.2 7L12 7M16 9V7.2C16 7.08954 15.9105 7 15.8 7L12 7M12 7L12 17M12 17H10M12 17H14"/></svg>';
 /**
  * Base Paragraph Block for the Editor.js.
  * Represents a regular text block
@@ -12785,7 +12785,7 @@ const Ts = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill=
  * @copyright CodeX 2018
  * @license The MIT License (MIT)
  */
-class Yt {
+class Vt {
   /**
    * Default placeholder for Paragraph Tool
    *
@@ -12808,7 +12808,7 @@ class Yt {
     this.api = o, this.readOnly = n, this._CSS = {
       block: this.api.styles.block,
       wrapper: "ce-paragraph"
-    }, this.readOnly || (this.onKeyUp = this.onKeyUp.bind(this)), this._placeholder = t.placeholder ? t.placeholder : Yt.DEFAULT_PLACEHOLDER, this._data = {}, this._element = null, this._preserveBlank = t.preserveBlank !== void 0 ? t.preserveBlank : !1, this.data = e;
+    }, this.readOnly || (this.onKeyUp = this.onKeyUp.bind(this)), this._placeholder = t.placeholder ? t.placeholder : Vt.DEFAULT_PLACEHOLDER, this._data = {}, this._element = null, this._preserveBlank = t.preserveBlank !== void 0 ? t.preserveBlank : !1, this.data = e;
   }
   /**
    * Check if text content is empty and set empty string to inner html.
@@ -12966,12 +12966,12 @@ class Yt {
    */
   static get toolbox() {
     return {
-      icon: Ts,
+      icon: Ls,
       title: "Text"
     };
   }
 }
-class Kt {
+class Yt {
   constructor() {
     this.commandName = "bold", this.CSS = {
       button: "ce-inline-tool",
@@ -12996,7 +12996,7 @@ class Kt {
    * Create button for Inline Toolbar
    */
   render() {
-    return this.nodes.button = document.createElement("button"), this.nodes.button.type = "button", this.nodes.button.classList.add(this.CSS.button, this.CSS.buttonModifier), this.nodes.button.innerHTML = Yr, this.nodes.button;
+    return this.nodes.button = document.createElement("button"), this.nodes.button.type = "button", this.nodes.button.classList.add(this.CSS.button, this.CSS.buttonModifier), this.nodes.button.innerHTML = Gr, this.nodes.button;
   }
   /**
    * Wrap range with <b> tag
@@ -13022,9 +13022,9 @@ class Kt {
     return "CMD+B";
   }
 }
-Kt.isInline = !0;
-Kt.title = "Bold";
-class Xt {
+Yt.isInline = !0;
+Yt.title = "Bold";
+class Kt {
   constructor() {
     this.commandName = "italic", this.CSS = {
       button: "ce-inline-tool",
@@ -13049,7 +13049,7 @@ class Xt {
    * Create button for Inline Toolbar
    */
   render() {
-    return this.nodes.button = document.createElement("button"), this.nodes.button.type = "button", this.nodes.button.classList.add(this.CSS.button, this.CSS.buttonModifier), this.nodes.button.innerHTML = Zr, this.nodes.button;
+    return this.nodes.button = document.createElement("button"), this.nodes.button.type = "button", this.nodes.button.classList.add(this.CSS.button, this.CSS.buttonModifier), this.nodes.button.innerHTML = es, this.nodes.button;
   }
   /**
    * Wrap range with <i> tag
@@ -13071,9 +13071,9 @@ class Xt {
     return "CMD+I";
   }
 }
-Xt.isInline = !0;
-Xt.title = "Italic";
-class Gt {
+Kt.isInline = !0;
+Kt.title = "Italic";
+class Xt {
   /**
    * @param api - Editor.js API
    */
@@ -13109,7 +13109,7 @@ class Gt {
    * Create button for Inline Toolbar
    */
   render() {
-    return this.nodes.button = document.createElement("button"), this.nodes.button.type = "button", this.nodes.button.classList.add(this.CSS.button, this.CSS.buttonModifier), this.nodes.button.innerHTML = xo, this.nodes.button;
+    return this.nodes.button = document.createElement("button"), this.nodes.button.type = "button", this.nodes.button.classList.add(this.CSS.button, this.CSS.buttonModifier), this.nodes.button.innerHTML = wo, this.nodes.button;
   }
   /**
    * Input for the link
@@ -13141,11 +13141,11 @@ class Gt {
   checkState() {
     const e = this.selection.findParentTag("A");
     if (e) {
-      this.nodes.button.innerHTML = ts, this.nodes.button.classList.add(this.CSS.buttonUnlink), this.nodes.button.classList.add(this.CSS.buttonActive), this.openActions();
+      this.nodes.button.innerHTML = is, this.nodes.button.classList.add(this.CSS.buttonUnlink), this.nodes.button.classList.add(this.CSS.buttonActive), this.openActions();
       const t = e.getAttribute("href");
       this.nodes.input.value = t !== "null" ? t : "", this.selection.save();
     } else
-      this.nodes.button.innerHTML = xo, this.nodes.button.classList.remove(this.CSS.buttonUnlink), this.nodes.button.classList.remove(this.CSS.buttonActive);
+      this.nodes.button.innerHTML = wo, this.nodes.button.classList.remove(this.CSS.buttonUnlink), this.nodes.button.classList.remove(this.CSS.buttonActive);
     return !!e;
   }
   /**
@@ -13251,9 +13251,9 @@ class Gt {
     document.execCommand(this.commandUnlink);
   }
 }
-Gt.isInline = !0;
-Gt.title = "Link";
-class cn {
+Xt.isInline = !0;
+Xt.title = "Link";
+class dn {
   /**
    * @param options - constructor options
    * @param options.data - stub tool data
@@ -13289,7 +13289,7 @@ class cn {
    * @returns {HTMLElement}
    */
   make() {
-    const e = y.make("div", this.CSS.wrapper), t = os, o = y.make("div", this.CSS.info), n = y.make("div", this.CSS.title, {
+    const e = y.make("div", this.CSS.wrapper), t = rs, o = y.make("div", this.CSS.info), n = y.make("div", this.CSS.title, {
       textContent: this.title
     }), i = y.make("div", this.CSS.subtitle, {
       textContent: this.subtitle
@@ -13297,16 +13297,16 @@ class cn {
     return e.innerHTML = t, o.appendChild(n), o.appendChild(i), e.appendChild(o), e;
   }
 }
-cn.isReadOnlySupported = !0;
-class _s extends Vt {
+dn.isReadOnlySupported = !0;
+class Is extends Wt {
   constructor() {
-    super(...arguments), this.type = ut.Inline;
+    super(...arguments), this.type = ht.Inline;
   }
   /**
    * Returns title for Inline Tool if specified by user
    */
   get title() {
-    return this.constructable[Wt.Title];
+    return this.constructable[qt.Title];
   }
   /**
    * Constructs new InlineTool instance from constructable
@@ -13318,9 +13318,9 @@ class _s extends Vt {
     });
   }
 }
-class Bs extends Vt {
+class Ms extends Wt {
   constructor() {
-    super(...arguments), this.type = ut.Tune;
+    super(...arguments), this.type = ht.Tune;
   }
   /**
    * Constructs new BlockTune instance from constructable
@@ -13374,14 +13374,14 @@ class ae extends Map {
     return new ae(e);
   }
 }
-var Ls = Object.defineProperty, Is = Object.getOwnPropertyDescriptor, dn = (r, e, t, o) => {
-  for (var n = o > 1 ? void 0 : o ? Is(e, t) : e, i = r.length - 1, s; i >= 0; i--)
+var Os = Object.defineProperty, As = Object.getOwnPropertyDescriptor, hn = (r, e, t, o) => {
+  for (var n = o > 1 ? void 0 : o ? As(e, t) : e, i = r.length - 1, s; i >= 0; i--)
     (s = r[i]) && (n = (o ? s(e, t, n) : s(n)) || n);
-  return o && n && Ls(e, t, n), n;
+  return o && n && Os(e, t, n), n;
 };
-class Zt extends Vt {
+class Gt extends Wt {
   constructor() {
-    super(...arguments), this.type = ut.Block, this.inlineTools = new ae(), this.tunes = new ae();
+    super(...arguments), this.type = ht.Block, this.inlineTools = new ae(), this.tunes = new ae();
   }
   /**
    * Creates new Tool instance
@@ -13481,13 +13481,13 @@ class Zt extends Vt {
     return Array.from(this.inlineTools.values()).forEach((t) => Object.assign(e, t.sanitizeConfig)), Array.from(this.tunes.values()).forEach((t) => Object.assign(e, t.sanitizeConfig)), e;
   }
 }
-dn([
+hn([
   $e
-], Zt.prototype, "sanitizeConfig", 1);
-dn([
+], Gt.prototype, "sanitizeConfig", 1);
+hn([
   $e
-], Zt.prototype, "baseSanitizeConfig", 1);
-class Ms {
+], Gt.prototype, "baseSanitizeConfig", 1);
+class Ns {
   /**
    * @class
    * @param config - tools config
@@ -13521,16 +13521,16 @@ class Ms {
    */
   getConstructor(e) {
     switch (!0) {
-      case e[Wt.IsInline]:
-        return _s;
-      case e[sn.IsTune]:
-        return Bs;
+      case e[qt.IsInline]:
+        return Is;
+      case e[an.IsTune]:
+        return Ms;
       default:
-        return Zt;
+        return Gt;
     }
   }
 }
-class hn {
+class un {
   /**
    * MoveDownTune constructor
    *
@@ -13546,7 +13546,7 @@ class hn {
    */
   render() {
     return {
-      icon: Qo,
+      icon: en,
       title: this.api.i18n.t("Move down"),
       onActivate: () => this.handleClick(),
       name: "move-down"
@@ -13564,8 +13564,8 @@ class hn {
     n.top < window.innerHeight && (i = window.scrollY + o.offsetHeight), window.scrollTo(0, i), this.api.blocks.move(e + 1), this.api.toolbar.toggleBlockSettings(!0);
   }
 }
-hn.isTune = !0;
-class un {
+un.isTune = !0;
+class pn {
   /**
    * DeleteTune constructor
    *
@@ -13579,7 +13579,7 @@ class un {
    */
   render() {
     return {
-      icon: Xr,
+      icon: Jr,
       title: this.api.i18n.t("Delete"),
       name: "delete",
       confirmation: {
@@ -13595,8 +13595,8 @@ class un {
     this.api.blocks.delete();
   }
 }
-un.isTune = !0;
-class pn {
+pn.isTune = !0;
+class fn {
   /**
    * MoveUpTune constructor
    *
@@ -13612,7 +13612,7 @@ class pn {
    */
   render() {
     return {
-      icon: Kr,
+      icon: Zr,
       title: this.api.i18n.t("Move up"),
       onActivate: () => this.handleClick(),
       name: "move-up"
@@ -13630,13 +13630,13 @@ class pn {
     a.top > 0 ? c = Math.abs(s.top) - Math.abs(a.top) : c = Math.abs(s.top) + a.height, window.scrollBy(0, -1 * c), this.api.blocks.move(e - 1), this.api.toolbar.toggleBlockSettings(!0);
   }
 }
-pn.isTune = !0;
-var Os = Object.defineProperty, As = Object.getOwnPropertyDescriptor, Ns = (r, e, t, o) => {
-  for (var n = o > 1 ? void 0 : o ? As(e, t) : e, i = r.length - 1, s; i >= 0; i--)
+fn.isTune = !0;
+var Rs = Object.defineProperty, Ps = Object.getOwnPropertyDescriptor, Ds = (r, e, t, o) => {
+  for (var n = o > 1 ? void 0 : o ? Ps(e, t) : e, i = r.length - 1, s; i >= 0; i--)
     (s = r[i]) && (n = (o ? s(e, t, n) : s(n)) || n);
-  return o && n && Os(e, t, n), n;
+  return o && n && Rs(e, t, n), n;
 };
-class fn extends z {
+class gn extends z {
   constructor() {
     super(...arguments), this.stubTool = "stub", this.toolsAvailable = new ae(), this.toolsUnavailable = new ae();
   }
@@ -13690,14 +13690,14 @@ class fn extends z {
    * @returns {Promise<void>}
    */
   async prepare() {
-    if (this.validateTools(), this.config.tools = It({}, this.internalTools, this.config.tools), !Object.prototype.hasOwnProperty.call(this.config, "tools") || Object.keys(this.config.tools).length === 0)
+    if (this.validateTools(), this.config.tools = Lt({}, this.internalTools, this.config.tools), !Object.prototype.hasOwnProperty.call(this.config, "tools") || Object.keys(this.config.tools).length === 0)
       throw Error("Can't start without tools");
     const e = this.prepareConfig();
-    this.factory = new Ms(e, this.config, this.Editor.API);
+    this.factory = new Ns(e, this.config, this.Editor.API);
     const t = this.getListOfPrepareFunctions(e);
     if (t.length === 0)
       return Promise.resolve();
-    await or(t, (o) => {
+    await rr(t, (o) => {
       this.toolPrepareMethodSuccess(o);
     }, (o) => {
       this.toolPrepareMethodFallback(o);
@@ -13724,36 +13724,36 @@ class fn extends z {
   get internalTools() {
     return {
       bold: {
-        class: Kt,
+        class: Yt,
         isInternal: !0
       },
       italic: {
-        class: Xt,
+        class: Kt,
         isInternal: !0
       },
       link: {
-        class: Gt,
+        class: Xt,
         isInternal: !0
       },
       paragraph: {
-        class: Yt,
+        class: Vt,
         inlineToolbar: !0,
         isInternal: !0
       },
       stub: {
-        class: cn,
+        class: dn,
         isInternal: !0
       },
       moveUp: {
-        class: pn,
+        class: fn,
         isInternal: !0
       },
       delete: {
-        class: un,
+        class: pn,
         isInternal: !0
       },
       moveDown: {
-        class: hn,
+        class: un,
         isInternal: !0
       }
     };
@@ -13881,14 +13881,14 @@ class fn extends z {
     return e;
   }
 }
-Ns([
+Ds([
   $e
-], fn.prototype, "getAllInlineToolsSanitizeConfig", 1);
-const Rs = `:root{--selectionColor: #e1f2ff;--inlineSelectionColor: #d4ecff;--bg-light: #eff2f5;--grayText: #707684;--color-dark: #1D202B;--color-active-icon: #388AE5;--color-gray-border: rgba(201, 201, 204, .48);--content-width: 650px;--narrow-mode-right-padding: 50px;--toolbox-buttons-size: 26px;--toolbox-buttons-size--mobile: 36px;--icon-size: 20px;--icon-size--mobile: 28px;--block-padding-vertical: .4em;--color-line-gray: #EFF0F1 }.codex-editor{position:relative;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:1}.codex-editor .hide{display:none}.codex-editor__redactor [contenteditable]:empty:after{content:"\\feff"}@media (min-width: 651px){.codex-editor--narrow .codex-editor__redactor{margin-right:50px}}@media (min-width: 651px){.codex-editor--narrow.codex-editor--rtl .codex-editor__redactor{margin-left:50px;margin-right:0}}@media (min-width: 651px){.codex-editor--narrow .ce-toolbar__actions{right:-5px}}.codex-editor-copyable{position:absolute;height:1px;width:1px;top:-400%;opacity:.001}.codex-editor-overlay{position:fixed;top:0px;left:0px;right:0px;bottom:0px;z-index:999;pointer-events:none;overflow:hidden}.codex-editor-overlay__container{position:relative;pointer-events:auto;z-index:0}.codex-editor-overlay__rectangle{position:absolute;pointer-events:none;background-color:#2eaadc33;border:1px solid transparent}.codex-editor svg{max-height:100%}.codex-editor path{stroke:currentColor}.codex-editor ::-moz-selection{background-color:#d4ecff}.codex-editor ::selection{background-color:#d4ecff}.codex-editor--toolbox-opened [contentEditable=true][data-placeholder]:focus:before{opacity:0!important}.ce-scroll-locked{overflow:hidden}.ce-scroll-locked--hard{overflow:hidden;top:calc(-1 * var(--window-scroll-offset));position:fixed;width:100%}.ce-toolbar{position:absolute;left:0;right:0;top:0;-webkit-transition:opacity .1s ease;transition:opacity .1s ease;will-change:opacity,top;display:none}.ce-toolbar--opened{display:block}.ce-toolbar__content{max-width:650px;margin:0 auto;position:relative}.ce-toolbar__plus{color:#1d202b;cursor:pointer;width:26px;height:26px;border-radius:7px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-ms-flex-negative:0;flex-shrink:0}@media (max-width: 650px){.ce-toolbar__plus{width:36px;height:36px}}@media (hover: hover){.ce-toolbar__plus:hover{background-color:#eff2f5}}.ce-toolbar__plus--active{background-color:#eff2f5;-webkit-animation:bounceIn .75s 1;animation:bounceIn .75s 1;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}.ce-toolbar__plus-shortcut{opacity:.6;word-spacing:-2px;margin-top:5px}@media (max-width: 650px){.ce-toolbar__plus{position:absolute;background-color:#fff;border:1px solid #E8E8EB;-webkit-box-shadow:0 3px 15px -3px rgba(13,20,33,.13);box-shadow:0 3px 15px -3px #0d142121;border-radius:6px;z-index:2;position:static}.ce-toolbar__plus--left-oriented:before{left:15px;margin-left:0}.ce-toolbar__plus--right-oriented:before{left:auto;right:15px;margin-left:0}}.ce-toolbar__actions{position:absolute;right:100%;opacity:0;display:-webkit-box;display:-ms-flexbox;display:flex;padding-right:5px}.ce-toolbar__actions--opened{opacity:1}@media (max-width: 650px){.ce-toolbar__actions{right:auto}}.ce-toolbar__settings-btn{color:#1d202b;width:26px;height:26px;border-radius:7px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;margin-left:3px;cursor:pointer;user-select:none}@media (max-width: 650px){.ce-toolbar__settings-btn{width:36px;height:36px}}@media (hover: hover){.ce-toolbar__settings-btn:hover{background-color:#eff2f5}}.ce-toolbar__settings-btn--active{background-color:#eff2f5;-webkit-animation:bounceIn .75s 1;animation:bounceIn .75s 1;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@media (min-width: 651px){.ce-toolbar__settings-btn{width:24px}}.ce-toolbar__settings-btn--hidden{display:none}@media (max-width: 650px){.ce-toolbar__settings-btn{position:absolute;background-color:#fff;border:1px solid #E8E8EB;-webkit-box-shadow:0 3px 15px -3px rgba(13,20,33,.13);box-shadow:0 3px 15px -3px #0d142121;border-radius:6px;z-index:2;position:static}.ce-toolbar__settings-btn--left-oriented:before{left:15px;margin-left:0}.ce-toolbar__settings-btn--right-oriented:before{left:auto;right:15px;margin-left:0}}.ce-toolbar__plus svg,.ce-toolbar__settings-btn svg{width:24px;height:24px}@media (min-width: 651px){.codex-editor--narrow .ce-toolbar__plus{left:5px}}@media (min-width: 651px){.codex-editor--narrow .ce-toolbox .ce-popover{right:0;left:auto;left:initial}}.ce-inline-toolbar{--y-offset: 8px;position:absolute;background-color:#fff;border:1px solid #E8E8EB;-webkit-box-shadow:0 3px 15px -3px rgba(13,20,33,.13);box-shadow:0 3px 15px -3px #0d142121;border-radius:6px;z-index:2;opacity:0;visibility:hidden;-webkit-transition:opacity .25s ease;transition:opacity .25s ease;will-change:opacity,left,top;top:0;left:0;z-index:3}.ce-inline-toolbar--left-oriented:before{left:15px;margin-left:0}.ce-inline-toolbar--right-oriented:before{left:auto;right:15px;margin-left:0}.ce-inline-toolbar--showed{opacity:1;visibility:visible}.ce-inline-toolbar [hidden]{display:none!important}.ce-inline-toolbar__toggler-and-button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;padding:0 6px}.ce-inline-toolbar__buttons{display:-webkit-box;display:-ms-flexbox;display:flex}.ce-inline-toolbar__dropdown{display:-webkit-box;display:-ms-flexbox;display:flex;padding:6px;margin:0 6px 0 -6px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;border-right:1px solid rgba(201,201,204,.48);-webkit-box-sizing:border-box;box-sizing:border-box}@media (hover: hover){.ce-inline-toolbar__dropdown:hover{background:#eff2f5}}.ce-inline-toolbar__dropdown--hidden{display:none}.ce-inline-toolbar__dropdown-content,.ce-inline-toolbar__dropdown-arrow{display:-webkit-box;display:-ms-flexbox;display:flex}.ce-inline-toolbar__dropdown-content svg,.ce-inline-toolbar__dropdown-arrow svg{width:20px;height:20px}.ce-inline-toolbar__shortcut{opacity:.6;word-spacing:-3px;margin-top:3px}.ce-inline-tool{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:6px 1px;cursor:pointer;border:0;outline:none;background-color:transparent;vertical-align:bottom;color:inherit;margin:0;border-radius:0;line-height:normal}.ce-inline-tool svg{width:20px;height:20px}@media (max-width: 650px){.ce-inline-tool svg{width:28px;height:28px}}@media (hover: hover){.ce-inline-tool:hover{background-color:#eff2f5}}.ce-inline-tool--active{color:#388ae5}.ce-inline-tool--focused{background:rgba(34,186,255,.08)!important}.ce-inline-tool--focused{-webkit-box-shadow:inset 0 0 0px 1px rgba(7,161,227,.08);box-shadow:inset 0 0 0 1px #07a1e314}.ce-inline-tool--focused-animated{-webkit-animation-name:buttonClicked;animation-name:buttonClicked;-webkit-animation-duration:.25s;animation-duration:.25s}.ce-inline-tool--link .icon--unlink,.ce-inline-tool--unlink .icon--link{display:none}.ce-inline-tool--unlink .icon--unlink{display:inline-block;margin-bottom:-1px}.ce-inline-tool-input{outline:none;border:0;border-radius:0 0 4px 4px;margin:0;font-size:13px;padding:10px;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box;display:none;font-weight:500;border-top:1px solid rgba(201,201,204,.48);-webkit-appearance:none;font-family:inherit}@media (max-width: 650px){.ce-inline-tool-input{font-size:15px;font-weight:500}}.ce-inline-tool-input::-webkit-input-placeholder{color:#707684}.ce-inline-tool-input::-moz-placeholder{color:#707684}.ce-inline-tool-input:-ms-input-placeholder{color:#707684}.ce-inline-tool-input::-ms-input-placeholder{color:#707684}.ce-inline-tool-input::placeholder{color:#707684}.ce-inline-tool-input--showed{display:block}.ce-conversion-toolbar{position:absolute;background-color:#fff;border:1px solid #E8E8EB;-webkit-box-shadow:0 3px 15px -3px rgba(13,20,33,.13);box-shadow:0 3px 15px -3px #0d142121;border-radius:6px;z-index:2;opacity:0;visibility:hidden;will-change:transform,opacity;-webkit-transition:opacity .1s ease,-webkit-transform .1s ease;transition:opacity .1s ease,-webkit-transform .1s ease;transition:transform .1s ease,opacity .1s ease;transition:transform .1s ease,opacity .1s ease,-webkit-transform .1s ease;-webkit-transform:translateY(-8px);transform:translateY(-8px);left:-1px;width:190px;margin-top:5px;-webkit-box-sizing:content-box;box-sizing:content-box}.ce-conversion-toolbar--left-oriented:before{left:15px;margin-left:0}.ce-conversion-toolbar--right-oriented:before{left:auto;right:15px;margin-left:0}.ce-conversion-toolbar--showed{opacity:1;visibility:visible;-webkit-transform:none;transform:none}.ce-conversion-toolbar [hidden]{display:none!important}.ce-conversion-toolbar__buttons{display:-webkit-box;display:-ms-flexbox;display:flex}.ce-conversion-toolbar__label{color:#707684;font-size:11px;font-weight:500;letter-spacing:.33px;padding:10px 10px 5px;text-transform:uppercase}.ce-conversion-tool{display:-webkit-box;display:-ms-flexbox;display:flex;padding:5px 10px;font-size:14px;line-height:20px;font-weight:500;cursor:pointer;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ce-conversion-tool--hidden{display:none}.ce-conversion-tool--focused{background:rgba(34,186,255,.08)!important}.ce-conversion-tool--focused{-webkit-box-shadow:inset 0 0 0px 1px rgba(7,161,227,.08);box-shadow:inset 0 0 0 1px #07a1e314}.ce-conversion-tool--focused-animated{-webkit-animation-name:buttonClicked;animation-name:buttonClicked;-webkit-animation-duration:.25s;animation-duration:.25s}.ce-conversion-tool:hover{background:#eff2f5}.ce-conversion-tool__icon{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;width:26px;height:26px;-webkit-box-shadow:0 0 0 1px rgba(201,201,204,.48);box-shadow:0 0 0 1px #c9c9cc7a;border-radius:5px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;background:#fff;-webkit-box-sizing:content-box;box-sizing:content-box;-ms-flex-negative:0;flex-shrink:0;margin-right:10px}.ce-conversion-tool__icon svg{width:20px;height:20px}@media (max-width: 650px){.ce-conversion-tool__icon{width:36px;height:36px;border-radius:8px}.ce-conversion-tool__icon svg{width:28px;height:28px}}.ce-conversion-tool--last{margin-right:0!important}.ce-conversion-tool--active{color:#388ae5!important}.ce-conversion-tool--active{-webkit-animation:bounceIn .75s 1;animation:bounceIn .75s 1;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}.ce-conversion-tool__secondary-label{color:#707684;font-size:12px;margin-left:auto;white-space:nowrap;letter-spacing:-.1em;padding-right:5px;margin-bottom:-2px;opacity:.6}@media (max-width: 650px){.ce-conversion-tool__secondary-label{display:none}}.ce-settings__button{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:6px 1px;border-radius:3px;cursor:pointer;border:0;outline:none;background-color:transparent;vertical-align:bottom;color:inherit;margin:0;line-height:32px}.ce-settings__button svg{width:20px;height:20px}@media (max-width: 650px){.ce-settings__button svg{width:28px;height:28px}}@media (hover: hover){.ce-settings__button:hover{background-color:#eff2f5}}.ce-settings__button--active{color:#388ae5}.ce-settings__button--focused{background:rgba(34,186,255,.08)!important}.ce-settings__button--focused{-webkit-box-shadow:inset 0 0 0px 1px rgba(7,161,227,.08);box-shadow:inset 0 0 0 1px #07a1e314}.ce-settings__button--focused-animated{-webkit-animation-name:buttonClicked;animation-name:buttonClicked;-webkit-animation-duration:.25s;animation-duration:.25s}.ce-settings__button:not(:nth-child(3n+3)){margin-right:3px}.ce-settings__button:nth-child(n+4){margin-top:3px}.ce-settings__button--disabled{cursor:not-allowed!important}.ce-settings__button--disabled{opacity:.3}.ce-settings__button--selected{color:#388ae5}@media (min-width: 651px){.codex-editor--narrow .ce-settings .ce-popover{right:0;left:auto;left:initial}}@-webkit-keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes fade-in{0%{opacity:0}to{opacity:1}}.ce-block{-webkit-animation:fade-in .3s ease;animation:fade-in .3s ease;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-fill-mode:initial;animation-fill-mode:initial}.ce-block:first-of-type{margin-top:0}.ce-block--selected .ce-block__content{background:#e1f2ff}.ce-block--selected .ce-block__content [contenteditable]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.ce-block--selected .ce-block__content img,.ce-block--selected .ce-block__content .ce-stub{opacity:.55}.ce-block--stretched .ce-block__content{max-width:none}.ce-block__content{position:relative;max-width:650px;margin:0 auto;-webkit-transition:background-color .15s ease;transition:background-color .15s ease}.ce-block--drop-target .ce-block__content:before{content:"";position:absolute;top:100%;left:-20px;margin-top:-1px;height:8px;width:8px;border:solid #388AE5;border-width:1px 1px 0 0;-webkit-transform-origin:right;transform-origin:right;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.ce-block--drop-target .ce-block__content:after{content:"";position:absolute;top:100%;height:1px;width:100%;color:#388ae5;background:repeating-linear-gradient(90deg,#388AE5,#388AE5 1px,#fff 1px,#fff 6px)}.ce-block a{cursor:pointer;-webkit-text-decoration:underline;text-decoration:underline}.ce-block b{font-weight:700}.ce-block i{font-style:italic}@-webkit-keyframes bounceIn{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-webkit-transform:scale3d(.9,.9,.9);transform:scale3d(.9,.9,.9)}20%{-webkit-transform:scale3d(1.03,1.03,1.03);transform:scale3d(1.03,1.03,1.03)}60%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}@keyframes bounceIn{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-webkit-transform:scale3d(.9,.9,.9);transform:scale3d(.9,.9,.9)}20%{-webkit-transform:scale3d(1.03,1.03,1.03);transform:scale3d(1.03,1.03,1.03)}60%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}@-webkit-keyframes selectionBounce{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}50%{-webkit-transform:scale3d(1.01,1.01,1.01);transform:scale3d(1.01,1.01,1.01)}70%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}@keyframes selectionBounce{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}50%{-webkit-transform:scale3d(1.01,1.01,1.01);transform:scale3d(1.01,1.01,1.01)}70%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}@-webkit-keyframes buttonClicked{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-webkit-transform:scale3d(.95,.95,.95);transform:scale3d(.95,.95,.95)}60%{-webkit-transform:scale3d(1.02,1.02,1.02);transform:scale3d(1.02,1.02,1.02)}80%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}@keyframes buttonClicked{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-webkit-transform:scale3d(.95,.95,.95);transform:scale3d(.95,.95,.95)}60%{-webkit-transform:scale3d(1.02,1.02,1.02);transform:scale3d(1.02,1.02,1.02)}80%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}.cdx-block{padding:.4em 0}.cdx-block::-webkit-input-placeholder{line-height:normal!important}.cdx-input{border:1px solid rgba(201,201,204,.48);-webkit-box-shadow:inset 0 1px 2px 0 rgba(35,44,72,.06);box-shadow:inset 0 1px 2px #232c480f;border-radius:3px;padding:10px 12px;outline:none;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.cdx-input[data-placeholder]:before{position:static!important}.cdx-input[data-placeholder]:before{display:inline-block;width:0;white-space:nowrap;pointer-events:none}.cdx-settings-button{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:6px 1px;border-radius:3px;cursor:pointer;border:0;outline:none;background-color:transparent;vertical-align:bottom;color:inherit;margin:0;min-width:26px;min-height:26px}.cdx-settings-button svg{width:20px;height:20px}@media (max-width: 650px){.cdx-settings-button svg{width:28px;height:28px}}@media (hover: hover){.cdx-settings-button:hover{background-color:#eff2f5}}.cdx-settings-button--focused{background:rgba(34,186,255,.08)!important}.cdx-settings-button--focused{-webkit-box-shadow:inset 0 0 0px 1px rgba(7,161,227,.08);box-shadow:inset 0 0 0 1px #07a1e314}.cdx-settings-button--focused-animated{-webkit-animation-name:buttonClicked;animation-name:buttonClicked;-webkit-animation-duration:.25s;animation-duration:.25s}.cdx-settings-button--active{color:#388ae5}.cdx-settings-button svg{width:auto;height:auto}@media (max-width: 650px){.cdx-settings-button{width:36px;height:36px;border-radius:8px}}.cdx-loader{position:relative;border:1px solid rgba(201,201,204,.48)}.cdx-loader:before{content:"";position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-11px 0 0 -11px;border:2px solid rgba(201,201,204,.48);border-left-color:#388ae5;border-radius:50%;-webkit-animation:cdxRotation 1.2s infinite linear;animation:cdxRotation 1.2s infinite linear}@-webkit-keyframes cdxRotation{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes cdxRotation{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.cdx-button{padding:13px;border-radius:3px;border:1px solid rgba(201,201,204,.48);font-size:14.9px;background:#fff;-webkit-box-shadow:0 2px 2px 0 rgba(18,30,57,.04);box-shadow:0 2px 2px #121e390a;color:#707684;text-align:center;cursor:pointer}@media (hover: hover){.cdx-button:hover{background:#FBFCFE;-webkit-box-shadow:0 1px 3px 0 rgba(18,30,57,.08);box-shadow:0 1px 3px #121e3914}}.cdx-button svg{height:20px;margin-right:.2em;margin-top:-2px}.ce-stub{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:12px 18px;margin:10px 0;border-radius:10px;background:#eff2f5;border:1px solid #EFF0F1;color:#707684;font-size:14px}.ce-stub svg{width:20px;height:20px}.ce-stub__info{margin-left:14px}.ce-stub__title{font-weight:500;text-transform:capitalize}.codex-editor.codex-editor--rtl{direction:rtl}.codex-editor.codex-editor--rtl .cdx-list{padding-left:0;padding-right:40px}.codex-editor.codex-editor--rtl .ce-toolbar__plus{right:-26px;left:auto}.codex-editor.codex-editor--rtl .ce-toolbar__actions{right:auto;left:-26px}@media (max-width: 650px){.codex-editor.codex-editor--rtl .ce-toolbar__actions{margin-left:0;margin-right:auto;padding-right:0;padding-left:10px}}.codex-editor.codex-editor--rtl .ce-settings{left:5px;right:auto}.codex-editor.codex-editor--rtl .ce-settings:before{right:auto;left:25px}.codex-editor.codex-editor--rtl .ce-settings__button:not(:nth-child(3n+3)){margin-left:3px;margin-right:0}.codex-editor.codex-editor--rtl .ce-conversion-tool__icon{margin-right:0;margin-left:10px}.codex-editor.codex-editor--rtl .ce-inline-toolbar__dropdown{border-right:0px solid transparent;border-left:1px solid rgba(201,201,204,.48);margin:0 -6px 0 6px}.codex-editor.codex-editor--rtl .ce-inline-toolbar__dropdown .icon--toggler-down{margin-left:0;margin-right:4px}@media (min-width: 651px){.codex-editor--narrow.codex-editor--rtl .ce-toolbar__plus{left:0px;right:5px}}@media (min-width: 651px){.codex-editor--narrow.codex-editor--rtl .ce-toolbar__actions{left:-5px}}.cdx-search-field{--icon-margin-right: 10px;background:rgba(232,232,235,.49);border:1px solid rgba(226,226,229,.2);border-radius:6px;padding:2px;display:grid;grid-template-columns:auto auto 1fr;grid-template-rows:auto}.cdx-search-field__icon{width:26px;height:26px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-right:var(--icon-margin-right)}.cdx-search-field__icon svg{width:20px;height:20px;color:#707684}.cdx-search-field__input{font-size:14px;outline:none;font-weight:500;font-family:inherit;border:0;background:transparent;margin:0;padding:0;line-height:22px;min-width:calc(100% - 26px - var(--icon-margin-right))}.cdx-search-field__input::-webkit-input-placeholder{color:#707684;font-weight:500}.cdx-search-field__input::-moz-placeholder{color:#707684;font-weight:500}.cdx-search-field__input:-ms-input-placeholder{color:#707684;font-weight:500}.cdx-search-field__input::-ms-input-placeholder{color:#707684;font-weight:500}.cdx-search-field__input::placeholder{color:#707684;font-weight:500}.ce-popover{--border-radius: 6px;--width: 200px;--max-height: 270px;--padding: 6px;--offset-from-target: 8px;--color-border: #e8e8eb;--color-shadow: rgba(13,20,33,.13);--color-background: white;--color-text-primary: black;--color-text-secondary: #707684;--color-border-icon: rgba(201, 201, 204, .48);--color-border-icon-disabled: #EFF0F1;--color-text-icon-active: #388AE5;--color-background-icon-active: rgba(56, 138, 229, .1);--color-background-item-focus: rgba(34, 186, 255, .08);--color-shadow-item-focus: rgba(7, 161, 227, .08);--color-background-item-hover: #eff2f5;--color-background-item-confirm: #E24A4A;--color-background-item-confirm-hover: #CE4343;min-width:var(--width);width:var(--width);max-height:var(--max-height);border-radius:var(--border-radius);overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-shadow:0 3px 15px -3px var(--color-shadow);box-shadow:0 3px 15px -3px var(--color-shadow);position:absolute;left:0;top:calc(100% + var(--offset-from-target));background:var(--color-background);display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;z-index:4;opacity:0;max-height:0;pointer-events:none;padding:0;border:none}.ce-popover--opened{opacity:1;padding:var(--padding);max-height:var(--max-height);pointer-events:auto;-webkit-animation:panelShowing .1s ease;animation:panelShowing .1s ease;border:1px solid var(--color-border)}@media (max-width: 650px){.ce-popover--opened{-webkit-animation:panelShowingMobile .25s ease;animation:panelShowingMobile .25s ease}}.ce-popover__items{overflow-y:auto;-ms-scroll-chaining:none;overscroll-behavior:contain}@media (max-width: 650px){.ce-popover__overlay{position:fixed;top:0;bottom:0;left:0;right:0;background:#1D202B;z-index:3;opacity:.5;-webkit-transition:opacity .12s ease-in;transition:opacity .12s ease-in;will-change:opacity;visibility:visible}}.ce-popover__overlay--hidden{display:none}.ce-popover--open-top{top:calc(-1 * (var(--offset-from-target) + var(--popover-height)))}@media (max-width: 650px){.ce-popover{--offset: 5px;position:fixed;max-width:none;min-width:calc(100% - var(--offset) * 2);left:var(--offset);right:var(--offset);bottom:calc(var(--offset) + env(safe-area-inset-bottom));top:auto;border-radius:10px}.ce-popover .ce-popover__search{display:none}}.ce-popover__search,.ce-popover__custom-content:not(:empty){margin-bottom:5px}.ce-popover__nothing-found-message{color:#707684;display:none;cursor:default;padding:3px;font-size:14px;line-height:20px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ce-popover__nothing-found-message--displayed{display:block}.ce-popover__custom-content:not(:empty){padding:4px}@media (min-width: 651px){.ce-popover__custom-content:not(:empty){padding:0}}.ce-popover__custom-content--hidden{display:none}.ce-popover-item{--border-radius: 6px;--icon-size: 20px;--icon-size-mobile: 28px;border-radius:var(--border-radius);display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:3px;color:var(--color-text-primary);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}@media (max-width: 650px){.ce-popover-item{padding:4px}}.ce-popover-item:not(:last-of-type){margin-bottom:1px}.ce-popover-item__icon{border-radius:5px;width:26px;height:26px;-webkit-box-shadow:0 0 0 1px var(--color-border-icon);box-shadow:0 0 0 1px var(--color-border-icon);background:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-right:10px}.ce-popover-item__icon svg{width:20px;height:20px}@media (max-width: 650px){.ce-popover-item__icon{width:36px;height:36px;border-radius:8px}.ce-popover-item__icon svg{width:var(--icon-size-mobile);height:var(--icon-size-mobile)}}.ce-popover-item__title{font-size:14px;line-height:20px;font-weight:500;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}@media (max-width: 650px){.ce-popover-item__title{font-size:16px}}.ce-popover-item__secondary-title{color:var(--color-text-secondary);font-size:12px;margin-left:auto;white-space:nowrap;letter-spacing:-.1em;padding-right:5px;margin-bottom:-2px;opacity:.6}@media (max-width: 650px){.ce-popover-item__secondary-title{display:none}}.ce-popover-item--active{background:var(--color-background-icon-active);color:var(--color-text-icon-active)}.ce-popover-item--active .ce-popover-item__icon{-webkit-box-shadow:none;box-shadow:none}.ce-popover-item--disabled{color:var(--color-text-secondary);cursor:default;pointer-events:none}.ce-popover-item--disabled .ce-popover-item__icon{-webkit-box-shadow:0 0 0 1px var(--color-border-icon-disabled);box-shadow:0 0 0 1px var(--color-border-icon-disabled)}.ce-popover-item--focused:not(.ce-popover-item--no-focus){background:var(--color-background-item-focus)!important}.ce-popover-item--focused:not(.ce-popover-item--no-focus){-webkit-box-shadow:inset 0 0 0px 1px var(--color-shadow-item-focus);box-shadow:inset 0 0 0 1px var(--color-shadow-item-focus)}.ce-popover-item--hidden{display:none}@media (hover: hover){.ce-popover-item:hover{cursor:pointer}.ce-popover-item:hover:not(.ce-popover-item--no-hover){background-color:var(--color-background-item-hover)}.ce-popover-item:hover .ce-popover-item__icon{-webkit-box-shadow:none;box-shadow:none}}.ce-popover-item--confirmation{background:var(--color-background-item-confirm)}.ce-popover-item--confirmation .ce-popover-item__icon{color:var(--color-background-item-confirm)}.ce-popover-item--confirmation .ce-popover-item__title{color:#fff}@media (hover: hover){.ce-popover-item--confirmation:not(.ce-popover-item--no-hover):hover{background:var(--color-background-item-confirm-hover)}}.ce-popover-item--confirmation:not(.ce-popover-item--no-focus).ce-popover-item--focused{background:var(--color-background-item-confirm-hover)!important}.ce-popover-item--confirmation .ce-popover-item__icon,.ce-popover-item--active .ce-popover-item__icon,.ce-popover-item--focused .ce-popover-item__icon{-webkit-box-shadow:none;box-shadow:none}@-webkit-keyframes panelShowing{0%{opacity:0;-webkit-transform:translateY(-8px) scale(.9);transform:translateY(-8px) scale(.9)}70%{opacity:1;-webkit-transform:translateY(2px);transform:translateY(2px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes panelShowing{0%{opacity:0;-webkit-transform:translateY(-8px) scale(.9);transform:translateY(-8px) scale(.9)}70%{opacity:1;-webkit-transform:translateY(2px);transform:translateY(2px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes panelShowingMobile{0%{opacity:0;-webkit-transform:translateY(14px) scale(.98);transform:translateY(14px) scale(.98)}70%{opacity:1;-webkit-transform:translateY(-4px);transform:translateY(-4px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes panelShowingMobile{0%{opacity:0;-webkit-transform:translateY(14px) scale(.98);transform:translateY(14px) scale(.98)}70%{opacity:1;-webkit-transform:translateY(-4px);transform:translateY(-4px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}.wobble{-webkit-animation-name:wobble;animation-name:wobble;-webkit-animation-duration:.4s;animation-duration:.4s}@-webkit-keyframes wobble{0%{-webkit-transform:translate3d(0,0,0);transform:translateZ(0)}15%{-webkit-transform:translate3d(-9%,0,0);transform:translate3d(-9%,0,0)}30%{-webkit-transform:translate3d(9%,0,0);transform:translate3d(9%,0,0)}45%{-webkit-transform:translate3d(-4%,0,0);transform:translate3d(-4%,0,0)}60%{-webkit-transform:translate3d(4%,0,0);transform:translate3d(4%,0,0)}75%{-webkit-transform:translate3d(-1%,0,0);transform:translate3d(-1%,0,0)}to{-webkit-transform:translate3d(0,0,0);transform:translateZ(0)}}@keyframes wobble{0%{-webkit-transform:translate3d(0,0,0);transform:translateZ(0)}15%{-webkit-transform:translate3d(-9%,0,0);transform:translate3d(-9%,0,0)}30%{-webkit-transform:translate3d(9%,0,0);transform:translate3d(9%,0,0)}45%{-webkit-transform:translate3d(-4%,0,0);transform:translate3d(-4%,0,0)}60%{-webkit-transform:translate3d(4%,0,0);transform:translate3d(4%,0,0)}75%{-webkit-transform:translate3d(-1%,0,0);transform:translate3d(-1%,0,0)}to{-webkit-transform:translate3d(0,0,0);transform:translateZ(0)}}
+], gn.prototype, "getAllInlineToolsSanitizeConfig", 1);
+const js = `:root{--selectionColor: #e1f2ff;--inlineSelectionColor: #d4ecff;--bg-light: #eff2f5;--grayText: #707684;--color-dark: #1D202B;--color-active-icon: #388AE5;--color-gray-border: rgba(201, 201, 204, .48);--content-width: 650px;--narrow-mode-right-padding: 50px;--toolbox-buttons-size: 26px;--toolbox-buttons-size--mobile: 36px;--icon-size: 20px;--icon-size--mobile: 28px;--block-padding-vertical: .4em;--color-line-gray: #EFF0F1 }.codex-editor{position:relative;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:1}.codex-editor .hide{display:none}.codex-editor__redactor [contenteditable]:empty:after{content:"\\feff"}@media (min-width: 651px){.codex-editor--narrow .codex-editor__redactor{margin-right:50px}}@media (min-width: 651px){.codex-editor--narrow.codex-editor--rtl .codex-editor__redactor{margin-left:50px;margin-right:0}}@media (min-width: 651px){.codex-editor--narrow .ce-toolbar__actions{right:-5px}}.codex-editor-copyable{position:absolute;height:1px;width:1px;top:-400%;opacity:.001}.codex-editor-overlay{position:fixed;top:0px;left:0px;right:0px;bottom:0px;z-index:999;pointer-events:none;overflow:hidden}.codex-editor-overlay__container{position:relative;pointer-events:auto;z-index:0}.codex-editor-overlay__rectangle{position:absolute;pointer-events:none;background-color:#2eaadc33;border:1px solid transparent}.codex-editor svg{max-height:100%}.codex-editor path{stroke:currentColor}.codex-editor ::-moz-selection{background-color:#d4ecff}.codex-editor ::selection{background-color:#d4ecff}.codex-editor--toolbox-opened [contentEditable=true][data-placeholder]:focus:before{opacity:0!important}.ce-scroll-locked{overflow:hidden}.ce-scroll-locked--hard{overflow:hidden;top:calc(-1 * var(--window-scroll-offset));position:fixed;width:100%}.ce-toolbar{position:absolute;left:0;right:0;top:0;-webkit-transition:opacity .1s ease;transition:opacity .1s ease;will-change:opacity,top;display:none}.ce-toolbar--opened{display:block}.ce-toolbar__content{max-width:650px;margin:0 auto;position:relative}.ce-toolbar__plus{color:#1d202b;cursor:pointer;width:26px;height:26px;border-radius:7px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-ms-flex-negative:0;flex-shrink:0}@media (max-width: 650px){.ce-toolbar__plus{width:36px;height:36px}}@media (hover: hover){.ce-toolbar__plus:hover{background-color:#eff2f5}}.ce-toolbar__plus--active{background-color:#eff2f5;-webkit-animation:bounceIn .75s 1;animation:bounceIn .75s 1;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}.ce-toolbar__plus-shortcut{opacity:.6;word-spacing:-2px;margin-top:5px}@media (max-width: 650px){.ce-toolbar__plus{position:absolute;background-color:#fff;border:1px solid #E8E8EB;-webkit-box-shadow:0 3px 15px -3px rgba(13,20,33,.13);box-shadow:0 3px 15px -3px #0d142121;border-radius:6px;z-index:2;position:static}.ce-toolbar__plus--left-oriented:before{left:15px;margin-left:0}.ce-toolbar__plus--right-oriented:before{left:auto;right:15px;margin-left:0}}.ce-toolbar__actions{position:absolute;right:100%;opacity:0;display:-webkit-box;display:-ms-flexbox;display:flex;padding-right:5px}.ce-toolbar__actions--opened{opacity:1}@media (max-width: 650px){.ce-toolbar__actions{right:auto}}.ce-toolbar__settings-btn{color:#1d202b;width:26px;height:26px;border-radius:7px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;margin-left:3px;cursor:pointer;user-select:none}@media (max-width: 650px){.ce-toolbar__settings-btn{width:36px;height:36px}}@media (hover: hover){.ce-toolbar__settings-btn:hover{background-color:#eff2f5}}.ce-toolbar__settings-btn--active{background-color:#eff2f5;-webkit-animation:bounceIn .75s 1;animation:bounceIn .75s 1;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@media (min-width: 651px){.ce-toolbar__settings-btn{width:24px}}.ce-toolbar__settings-btn--hidden{display:none}@media (max-width: 650px){.ce-toolbar__settings-btn{position:absolute;background-color:#fff;border:1px solid #E8E8EB;-webkit-box-shadow:0 3px 15px -3px rgba(13,20,33,.13);box-shadow:0 3px 15px -3px #0d142121;border-radius:6px;z-index:2;position:static}.ce-toolbar__settings-btn--left-oriented:before{left:15px;margin-left:0}.ce-toolbar__settings-btn--right-oriented:before{left:auto;right:15px;margin-left:0}}.ce-toolbar__plus svg,.ce-toolbar__settings-btn svg{width:24px;height:24px}@media (min-width: 651px){.codex-editor--narrow .ce-toolbar__plus{left:5px}}@media (min-width: 651px){.codex-editor--narrow .ce-toolbox .ce-popover{right:0;left:auto;left:initial}}.ce-inline-toolbar{--y-offset: 8px;position:absolute;background-color:#fff;border:1px solid #E8E8EB;-webkit-box-shadow:0 3px 15px -3px rgba(13,20,33,.13);box-shadow:0 3px 15px -3px #0d142121;border-radius:6px;z-index:2;opacity:0;visibility:hidden;-webkit-transition:opacity .25s ease;transition:opacity .25s ease;will-change:opacity,left,top;top:0;left:0;z-index:3}.ce-inline-toolbar--left-oriented:before{left:15px;margin-left:0}.ce-inline-toolbar--right-oriented:before{left:auto;right:15px;margin-left:0}.ce-inline-toolbar--showed{opacity:1;visibility:visible}.ce-inline-toolbar [hidden]{display:none!important}.ce-inline-toolbar__toggler-and-button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;padding:0 6px}.ce-inline-toolbar__buttons{display:-webkit-box;display:-ms-flexbox;display:flex}.ce-inline-toolbar__dropdown{display:-webkit-box;display:-ms-flexbox;display:flex;padding:6px;margin:0 6px 0 -6px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;border-right:1px solid rgba(201,201,204,.48);-webkit-box-sizing:border-box;box-sizing:border-box}@media (hover: hover){.ce-inline-toolbar__dropdown:hover{background:#eff2f5}}.ce-inline-toolbar__dropdown--hidden{display:none}.ce-inline-toolbar__dropdown-content,.ce-inline-toolbar__dropdown-arrow{display:-webkit-box;display:-ms-flexbox;display:flex}.ce-inline-toolbar__dropdown-content svg,.ce-inline-toolbar__dropdown-arrow svg{width:20px;height:20px}.ce-inline-toolbar__shortcut{opacity:.6;word-spacing:-3px;margin-top:3px}.ce-inline-tool{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:6px 1px;cursor:pointer;border:0;outline:none;background-color:transparent;vertical-align:bottom;color:inherit;margin:0;border-radius:0;line-height:normal}.ce-inline-tool svg{width:20px;height:20px}@media (max-width: 650px){.ce-inline-tool svg{width:28px;height:28px}}@media (hover: hover){.ce-inline-tool:hover{background-color:#eff2f5}}.ce-inline-tool--active{color:#388ae5}.ce-inline-tool--focused{background:rgba(34,186,255,.08)!important}.ce-inline-tool--focused{-webkit-box-shadow:inset 0 0 0px 1px rgba(7,161,227,.08);box-shadow:inset 0 0 0 1px #07a1e314}.ce-inline-tool--focused-animated{-webkit-animation-name:buttonClicked;animation-name:buttonClicked;-webkit-animation-duration:.25s;animation-duration:.25s}.ce-inline-tool--link .icon--unlink,.ce-inline-tool--unlink .icon--link{display:none}.ce-inline-tool--unlink .icon--unlink{display:inline-block;margin-bottom:-1px}.ce-inline-tool-input{outline:none;border:0;border-radius:0 0 4px 4px;margin:0;font-size:13px;padding:10px;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box;display:none;font-weight:500;border-top:1px solid rgba(201,201,204,.48);-webkit-appearance:none;font-family:inherit}@media (max-width: 650px){.ce-inline-tool-input{font-size:15px;font-weight:500}}.ce-inline-tool-input::-webkit-input-placeholder{color:#707684}.ce-inline-tool-input::-moz-placeholder{color:#707684}.ce-inline-tool-input:-ms-input-placeholder{color:#707684}.ce-inline-tool-input::-ms-input-placeholder{color:#707684}.ce-inline-tool-input::placeholder{color:#707684}.ce-inline-tool-input--showed{display:block}.ce-conversion-toolbar{position:absolute;background-color:#fff;border:1px solid #E8E8EB;-webkit-box-shadow:0 3px 15px -3px rgba(13,20,33,.13);box-shadow:0 3px 15px -3px #0d142121;border-radius:6px;z-index:2;opacity:0;visibility:hidden;will-change:transform,opacity;-webkit-transition:opacity .1s ease,-webkit-transform .1s ease;transition:opacity .1s ease,-webkit-transform .1s ease;transition:transform .1s ease,opacity .1s ease;transition:transform .1s ease,opacity .1s ease,-webkit-transform .1s ease;-webkit-transform:translateY(-8px);transform:translateY(-8px);left:-1px;width:190px;margin-top:5px;-webkit-box-sizing:content-box;box-sizing:content-box}.ce-conversion-toolbar--left-oriented:before{left:15px;margin-left:0}.ce-conversion-toolbar--right-oriented:before{left:auto;right:15px;margin-left:0}.ce-conversion-toolbar--showed{opacity:1;visibility:visible;-webkit-transform:none;transform:none}.ce-conversion-toolbar [hidden]{display:none!important}.ce-conversion-toolbar__buttons{display:-webkit-box;display:-ms-flexbox;display:flex}.ce-conversion-toolbar__label{color:#707684;font-size:11px;font-weight:500;letter-spacing:.33px;padding:10px 10px 5px;text-transform:uppercase}.ce-conversion-tool{display:-webkit-box;display:-ms-flexbox;display:flex;padding:5px 10px;font-size:14px;line-height:20px;font-weight:500;cursor:pointer;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ce-conversion-tool--hidden{display:none}.ce-conversion-tool--focused{background:rgba(34,186,255,.08)!important}.ce-conversion-tool--focused{-webkit-box-shadow:inset 0 0 0px 1px rgba(7,161,227,.08);box-shadow:inset 0 0 0 1px #07a1e314}.ce-conversion-tool--focused-animated{-webkit-animation-name:buttonClicked;animation-name:buttonClicked;-webkit-animation-duration:.25s;animation-duration:.25s}.ce-conversion-tool:hover{background:#eff2f5}.ce-conversion-tool__icon{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;width:26px;height:26px;-webkit-box-shadow:0 0 0 1px rgba(201,201,204,.48);box-shadow:0 0 0 1px #c9c9cc7a;border-radius:5px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;background:#fff;-webkit-box-sizing:content-box;box-sizing:content-box;-ms-flex-negative:0;flex-shrink:0;margin-right:10px}.ce-conversion-tool__icon svg{width:20px;height:20px}@media (max-width: 650px){.ce-conversion-tool__icon{width:36px;height:36px;border-radius:8px}.ce-conversion-tool__icon svg{width:28px;height:28px}}.ce-conversion-tool--last{margin-right:0!important}.ce-conversion-tool--active{color:#388ae5!important}.ce-conversion-tool--active{-webkit-animation:bounceIn .75s 1;animation:bounceIn .75s 1;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}.ce-conversion-tool__secondary-label{color:#707684;font-size:12px;margin-left:auto;white-space:nowrap;letter-spacing:-.1em;padding-right:5px;margin-bottom:-2px;opacity:.6}@media (max-width: 650px){.ce-conversion-tool__secondary-label{display:none}}.ce-settings__button{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:6px 1px;border-radius:3px;cursor:pointer;border:0;outline:none;background-color:transparent;vertical-align:bottom;color:inherit;margin:0;line-height:32px}.ce-settings__button svg{width:20px;height:20px}@media (max-width: 650px){.ce-settings__button svg{width:28px;height:28px}}@media (hover: hover){.ce-settings__button:hover{background-color:#eff2f5}}.ce-settings__button--active{color:#388ae5}.ce-settings__button--focused{background:rgba(34,186,255,.08)!important}.ce-settings__button--focused{-webkit-box-shadow:inset 0 0 0px 1px rgba(7,161,227,.08);box-shadow:inset 0 0 0 1px #07a1e314}.ce-settings__button--focused-animated{-webkit-animation-name:buttonClicked;animation-name:buttonClicked;-webkit-animation-duration:.25s;animation-duration:.25s}.ce-settings__button:not(:nth-child(3n+3)){margin-right:3px}.ce-settings__button:nth-child(n+4){margin-top:3px}.ce-settings__button--disabled{cursor:not-allowed!important}.ce-settings__button--disabled{opacity:.3}.ce-settings__button--selected{color:#388ae5}@media (min-width: 651px){.codex-editor--narrow .ce-settings .ce-popover{right:0;left:auto;left:initial}}@-webkit-keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes fade-in{0%{opacity:0}to{opacity:1}}.ce-block{-webkit-animation:fade-in .3s ease;animation:fade-in .3s ease;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-fill-mode:initial;animation-fill-mode:initial}.ce-block:first-of-type{margin-top:0}.ce-block--selected .ce-block__content{background:#e1f2ff}.ce-block--selected .ce-block__content [contenteditable]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.ce-block--selected .ce-block__content img,.ce-block--selected .ce-block__content .ce-stub{opacity:.55}.ce-block--stretched .ce-block__content{max-width:none}.ce-block__content{position:relative;max-width:650px;margin:0 auto;-webkit-transition:background-color .15s ease;transition:background-color .15s ease}.ce-block--drop-target .ce-block__content:before{content:"";position:absolute;top:100%;left:-20px;margin-top:-1px;height:8px;width:8px;border:solid #388AE5;border-width:1px 1px 0 0;-webkit-transform-origin:right;transform-origin:right;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.ce-block--drop-target .ce-block__content:after{content:"";position:absolute;top:100%;height:1px;width:100%;color:#388ae5;background:repeating-linear-gradient(90deg,#388AE5,#388AE5 1px,#fff 1px,#fff 6px)}.ce-block a{cursor:pointer;-webkit-text-decoration:underline;text-decoration:underline}.ce-block b{font-weight:700}.ce-block i{font-style:italic}@-webkit-keyframes bounceIn{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-webkit-transform:scale3d(.9,.9,.9);transform:scale3d(.9,.9,.9)}20%{-webkit-transform:scale3d(1.03,1.03,1.03);transform:scale3d(1.03,1.03,1.03)}60%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}@keyframes bounceIn{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-webkit-transform:scale3d(.9,.9,.9);transform:scale3d(.9,.9,.9)}20%{-webkit-transform:scale3d(1.03,1.03,1.03);transform:scale3d(1.03,1.03,1.03)}60%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}@-webkit-keyframes selectionBounce{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}50%{-webkit-transform:scale3d(1.01,1.01,1.01);transform:scale3d(1.01,1.01,1.01)}70%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}@keyframes selectionBounce{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}50%{-webkit-transform:scale3d(1.01,1.01,1.01);transform:scale3d(1.01,1.01,1.01)}70%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}@-webkit-keyframes buttonClicked{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-webkit-transform:scale3d(.95,.95,.95);transform:scale3d(.95,.95,.95)}60%{-webkit-transform:scale3d(1.02,1.02,1.02);transform:scale3d(1.02,1.02,1.02)}80%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}@keyframes buttonClicked{0%,20%,40%,60%,80%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-webkit-transform:scale3d(.95,.95,.95);transform:scale3d(.95,.95,.95)}60%{-webkit-transform:scale3d(1.02,1.02,1.02);transform:scale3d(1.02,1.02,1.02)}80%{-webkit-transform:scale3d(1,1,1);transform:scaleZ(1)}}.cdx-block{padding:.4em 0}.cdx-block::-webkit-input-placeholder{line-height:normal!important}.cdx-input{border:1px solid rgba(201,201,204,.48);-webkit-box-shadow:inset 0 1px 2px 0 rgba(35,44,72,.06);box-shadow:inset 0 1px 2px #232c480f;border-radius:3px;padding:10px 12px;outline:none;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.cdx-input[data-placeholder]:before{position:static!important}.cdx-input[data-placeholder]:before{display:inline-block;width:0;white-space:nowrap;pointer-events:none}.cdx-settings-button{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:6px 1px;border-radius:3px;cursor:pointer;border:0;outline:none;background-color:transparent;vertical-align:bottom;color:inherit;margin:0;min-width:26px;min-height:26px}.cdx-settings-button svg{width:20px;height:20px}@media (max-width: 650px){.cdx-settings-button svg{width:28px;height:28px}}@media (hover: hover){.cdx-settings-button:hover{background-color:#eff2f5}}.cdx-settings-button--focused{background:rgba(34,186,255,.08)!important}.cdx-settings-button--focused{-webkit-box-shadow:inset 0 0 0px 1px rgba(7,161,227,.08);box-shadow:inset 0 0 0 1px #07a1e314}.cdx-settings-button--focused-animated{-webkit-animation-name:buttonClicked;animation-name:buttonClicked;-webkit-animation-duration:.25s;animation-duration:.25s}.cdx-settings-button--active{color:#388ae5}.cdx-settings-button svg{width:auto;height:auto}@media (max-width: 650px){.cdx-settings-button{width:36px;height:36px;border-radius:8px}}.cdx-loader{position:relative;border:1px solid rgba(201,201,204,.48)}.cdx-loader:before{content:"";position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-11px 0 0 -11px;border:2px solid rgba(201,201,204,.48);border-left-color:#388ae5;border-radius:50%;-webkit-animation:cdxRotation 1.2s infinite linear;animation:cdxRotation 1.2s infinite linear}@-webkit-keyframes cdxRotation{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes cdxRotation{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.cdx-button{padding:13px;border-radius:3px;border:1px solid rgba(201,201,204,.48);font-size:14.9px;background:#fff;-webkit-box-shadow:0 2px 2px 0 rgba(18,30,57,.04);box-shadow:0 2px 2px #121e390a;color:#707684;text-align:center;cursor:pointer}@media (hover: hover){.cdx-button:hover{background:#FBFCFE;-webkit-box-shadow:0 1px 3px 0 rgba(18,30,57,.08);box-shadow:0 1px 3px #121e3914}}.cdx-button svg{height:20px;margin-right:.2em;margin-top:-2px}.ce-stub{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:12px 18px;margin:10px 0;border-radius:10px;background:#eff2f5;border:1px solid #EFF0F1;color:#707684;font-size:14px}.ce-stub svg{width:20px;height:20px}.ce-stub__info{margin-left:14px}.ce-stub__title{font-weight:500;text-transform:capitalize}.codex-editor.codex-editor--rtl{direction:rtl}.codex-editor.codex-editor--rtl .cdx-list{padding-left:0;padding-right:40px}.codex-editor.codex-editor--rtl .ce-toolbar__plus{right:-26px;left:auto}.codex-editor.codex-editor--rtl .ce-toolbar__actions{right:auto;left:-26px}@media (max-width: 650px){.codex-editor.codex-editor--rtl .ce-toolbar__actions{margin-left:0;margin-right:auto;padding-right:0;padding-left:10px}}.codex-editor.codex-editor--rtl .ce-settings{left:5px;right:auto}.codex-editor.codex-editor--rtl .ce-settings:before{right:auto;left:25px}.codex-editor.codex-editor--rtl .ce-settings__button:not(:nth-child(3n+3)){margin-left:3px;margin-right:0}.codex-editor.codex-editor--rtl .ce-conversion-tool__icon{margin-right:0;margin-left:10px}.codex-editor.codex-editor--rtl .ce-inline-toolbar__dropdown{border-right:0px solid transparent;border-left:1px solid rgba(201,201,204,.48);margin:0 -6px 0 6px}.codex-editor.codex-editor--rtl .ce-inline-toolbar__dropdown .icon--toggler-down{margin-left:0;margin-right:4px}@media (min-width: 651px){.codex-editor--narrow.codex-editor--rtl .ce-toolbar__plus{left:0px;right:5px}}@media (min-width: 651px){.codex-editor--narrow.codex-editor--rtl .ce-toolbar__actions{left:-5px}}.cdx-search-field{--icon-margin-right: 10px;background:rgba(232,232,235,.49);border:1px solid rgba(226,226,229,.2);border-radius:6px;padding:2px;display:grid;grid-template-columns:auto auto 1fr;grid-template-rows:auto}.cdx-search-field__icon{width:26px;height:26px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-right:var(--icon-margin-right)}.cdx-search-field__icon svg{width:20px;height:20px;color:#707684}.cdx-search-field__input{font-size:14px;outline:none;font-weight:500;font-family:inherit;border:0;background:transparent;margin:0;padding:0;line-height:22px;min-width:calc(100% - 26px - var(--icon-margin-right))}.cdx-search-field__input::-webkit-input-placeholder{color:#707684;font-weight:500}.cdx-search-field__input::-moz-placeholder{color:#707684;font-weight:500}.cdx-search-field__input:-ms-input-placeholder{color:#707684;font-weight:500}.cdx-search-field__input::-ms-input-placeholder{color:#707684;font-weight:500}.cdx-search-field__input::placeholder{color:#707684;font-weight:500}.ce-popover{--border-radius: 6px;--width: 200px;--max-height: 270px;--padding: 6px;--offset-from-target: 8px;--color-border: #e8e8eb;--color-shadow: rgba(13,20,33,.13);--color-background: white;--color-text-primary: black;--color-text-secondary: #707684;--color-border-icon: rgba(201, 201, 204, .48);--color-border-icon-disabled: #EFF0F1;--color-text-icon-active: #388AE5;--color-background-icon-active: rgba(56, 138, 229, .1);--color-background-item-focus: rgba(34, 186, 255, .08);--color-shadow-item-focus: rgba(7, 161, 227, .08);--color-background-item-hover: #eff2f5;--color-background-item-confirm: #E24A4A;--color-background-item-confirm-hover: #CE4343;min-width:var(--width);width:var(--width);max-height:var(--max-height);border-radius:var(--border-radius);overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-shadow:0 3px 15px -3px var(--color-shadow);box-shadow:0 3px 15px -3px var(--color-shadow);position:absolute;left:0;top:calc(100% + var(--offset-from-target));background:var(--color-background);display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;z-index:4;opacity:0;max-height:0;pointer-events:none;padding:0;border:none}.ce-popover--opened{opacity:1;padding:var(--padding);max-height:var(--max-height);pointer-events:auto;-webkit-animation:panelShowing .1s ease;animation:panelShowing .1s ease;border:1px solid var(--color-border)}@media (max-width: 650px){.ce-popover--opened{-webkit-animation:panelShowingMobile .25s ease;animation:panelShowingMobile .25s ease}}.ce-popover__items{overflow-y:auto;-ms-scroll-chaining:none;overscroll-behavior:contain}@media (max-width: 650px){.ce-popover__overlay{position:fixed;top:0;bottom:0;left:0;right:0;background:#1D202B;z-index:3;opacity:.5;-webkit-transition:opacity .12s ease-in;transition:opacity .12s ease-in;will-change:opacity;visibility:visible}}.ce-popover__overlay--hidden{display:none}.ce-popover--open-top{top:calc(-1 * (var(--offset-from-target) + var(--popover-height)))}@media (max-width: 650px){.ce-popover{--offset: 5px;position:fixed;max-width:none;min-width:calc(100% - var(--offset) * 2);left:var(--offset);right:var(--offset);bottom:calc(var(--offset) + env(safe-area-inset-bottom));top:auto;border-radius:10px}.ce-popover .ce-popover__search{display:none}}.ce-popover__search,.ce-popover__custom-content:not(:empty){margin-bottom:5px}.ce-popover__nothing-found-message{color:#707684;display:none;cursor:default;padding:3px;font-size:14px;line-height:20px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ce-popover__nothing-found-message--displayed{display:block}.ce-popover__custom-content:not(:empty){padding:4px}@media (min-width: 651px){.ce-popover__custom-content:not(:empty){padding:0}}.ce-popover__custom-content--hidden{display:none}.ce-popover-item{--border-radius: 6px;--icon-size: 20px;--icon-size-mobile: 28px;border-radius:var(--border-radius);display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:3px;color:var(--color-text-primary);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}@media (max-width: 650px){.ce-popover-item{padding:4px}}.ce-popover-item:not(:last-of-type){margin-bottom:1px}.ce-popover-item__icon{border-radius:5px;width:26px;height:26px;-webkit-box-shadow:0 0 0 1px var(--color-border-icon);box-shadow:0 0 0 1px var(--color-border-icon);background:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-right:10px}.ce-popover-item__icon svg{width:20px;height:20px}@media (max-width: 650px){.ce-popover-item__icon{width:36px;height:36px;border-radius:8px}.ce-popover-item__icon svg{width:var(--icon-size-mobile);height:var(--icon-size-mobile)}}.ce-popover-item__title{font-size:14px;line-height:20px;font-weight:500;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}@media (max-width: 650px){.ce-popover-item__title{font-size:16px}}.ce-popover-item__secondary-title{color:var(--color-text-secondary);font-size:12px;margin-left:auto;white-space:nowrap;letter-spacing:-.1em;padding-right:5px;margin-bottom:-2px;opacity:.6}@media (max-width: 650px){.ce-popover-item__secondary-title{display:none}}.ce-popover-item--active{background:var(--color-background-icon-active);color:var(--color-text-icon-active)}.ce-popover-item--active .ce-popover-item__icon{-webkit-box-shadow:none;box-shadow:none}.ce-popover-item--disabled{color:var(--color-text-secondary);cursor:default;pointer-events:none}.ce-popover-item--disabled .ce-popover-item__icon{-webkit-box-shadow:0 0 0 1px var(--color-border-icon-disabled);box-shadow:0 0 0 1px var(--color-border-icon-disabled)}.ce-popover-item--focused:not(.ce-popover-item--no-focus){background:var(--color-background-item-focus)!important}.ce-popover-item--focused:not(.ce-popover-item--no-focus){-webkit-box-shadow:inset 0 0 0px 1px var(--color-shadow-item-focus);box-shadow:inset 0 0 0 1px var(--color-shadow-item-focus)}.ce-popover-item--hidden{display:none}@media (hover: hover){.ce-popover-item:hover{cursor:pointer}.ce-popover-item:hover:not(.ce-popover-item--no-hover){background-color:var(--color-background-item-hover)}.ce-popover-item:hover .ce-popover-item__icon{-webkit-box-shadow:none;box-shadow:none}}.ce-popover-item--confirmation{background:var(--color-background-item-confirm)}.ce-popover-item--confirmation .ce-popover-item__icon{color:var(--color-background-item-confirm)}.ce-popover-item--confirmation .ce-popover-item__title{color:#fff}@media (hover: hover){.ce-popover-item--confirmation:not(.ce-popover-item--no-hover):hover{background:var(--color-background-item-confirm-hover)}}.ce-popover-item--confirmation:not(.ce-popover-item--no-focus).ce-popover-item--focused{background:var(--color-background-item-confirm-hover)!important}.ce-popover-item--confirmation .ce-popover-item__icon,.ce-popover-item--active .ce-popover-item__icon,.ce-popover-item--focused .ce-popover-item__icon{-webkit-box-shadow:none;box-shadow:none}@-webkit-keyframes panelShowing{0%{opacity:0;-webkit-transform:translateY(-8px) scale(.9);transform:translateY(-8px) scale(.9)}70%{opacity:1;-webkit-transform:translateY(2px);transform:translateY(2px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes panelShowing{0%{opacity:0;-webkit-transform:translateY(-8px) scale(.9);transform:translateY(-8px) scale(.9)}70%{opacity:1;-webkit-transform:translateY(2px);transform:translateY(2px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes panelShowingMobile{0%{opacity:0;-webkit-transform:translateY(14px) scale(.98);transform:translateY(14px) scale(.98)}70%{opacity:1;-webkit-transform:translateY(-4px);transform:translateY(-4px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes panelShowingMobile{0%{opacity:0;-webkit-transform:translateY(14px) scale(.98);transform:translateY(14px) scale(.98)}70%{opacity:1;-webkit-transform:translateY(-4px);transform:translateY(-4px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}.wobble{-webkit-animation-name:wobble;animation-name:wobble;-webkit-animation-duration:.4s;animation-duration:.4s}@-webkit-keyframes wobble{0%{-webkit-transform:translate3d(0,0,0);transform:translateZ(0)}15%{-webkit-transform:translate3d(-9%,0,0);transform:translate3d(-9%,0,0)}30%{-webkit-transform:translate3d(9%,0,0);transform:translate3d(9%,0,0)}45%{-webkit-transform:translate3d(-4%,0,0);transform:translate3d(-4%,0,0)}60%{-webkit-transform:translate3d(4%,0,0);transform:translate3d(4%,0,0)}75%{-webkit-transform:translate3d(-1%,0,0);transform:translate3d(-1%,0,0)}to{-webkit-transform:translate3d(0,0,0);transform:translateZ(0)}}@keyframes wobble{0%{-webkit-transform:translate3d(0,0,0);transform:translateZ(0)}15%{-webkit-transform:translate3d(-9%,0,0);transform:translate3d(-9%,0,0)}30%{-webkit-transform:translate3d(9%,0,0);transform:translate3d(9%,0,0)}45%{-webkit-transform:translate3d(-4%,0,0);transform:translate3d(-4%,0,0)}60%{-webkit-transform:translate3d(4%,0,0);transform:translate3d(4%,0,0)}75%{-webkit-transform:translate3d(-1%,0,0);transform:translate3d(-1%,0,0)}to{-webkit-transform:translate3d(0,0,0);transform:translateZ(0)}}
 `;
-class Ps extends z {
+class Fs extends z {
   constructor() {
-    super(...arguments), this.isMobile = !1, this.contentRectCache = void 0, this.resizeDebouncer = ko(() => {
+    super(...arguments), this.isMobile = !1, this.contentRectCache = void 0, this.resizeDebouncer = vo(() => {
       this.windowResize();
     }, 200);
   }
@@ -13986,7 +13986,7 @@ class Ps extends z {
    * Check for mobile mode and cache a result
    */
   checkIsMobile() {
-    this.isMobile = window.innerWidth < Wo;
+    this.isMobile = window.innerWidth < Vo;
   }
   /**
    * Makes Editor.js interface
@@ -14006,7 +14006,7 @@ class Ps extends z {
       return;
     const t = y.make("style", null, {
       id: e,
-      textContent: Rs.toString()
+      textContent: js.toString()
     });
     this.config.style && !ue(this.config.style) && this.config.style.nonce && t.setAttribute("nonce", this.config.style.nonce), y.prepend(document.head, t);
   }
@@ -14031,7 +14031,7 @@ class Ps extends z {
     }, !0), this.readOnlyMutableListeners.on(document, "mousedown", (t) => {
       this.documentClicked(t);
     }, !0);
-    const e = ko(() => {
+    const e = vo(() => {
       this.selectionChanged();
     }, 180);
     this.readOnlyMutableListeners.on(document, "selectionchange", e, !0), this.readOnlyMutableListeners.on(window, "resize", () => {
@@ -14045,9 +14045,9 @@ class Ps extends z {
    */
   watchBlockHoveredEvents() {
     let e;
-    this.readOnlyMutableListeners.on(this.nodes.redactor, "mousemove", Lt((t) => {
+    this.readOnlyMutableListeners.on(this.nodes.redactor, "mousemove", Bt((t) => {
       const o = t.target.closest(".ce-block");
-      this.Editor.BlockSelection.anyBlockSelected || o && e !== o && (e = o, this.eventsDispatcher.emit(nn, {
+      this.Editor.BlockSelection.anyBlockSelected || o && e !== o && (e = o, this.eventsDispatcher.emit(rn, {
         block: this.Editor.BlockManager.getBlockByChildNode(o)
       }));
     }, 20), {
@@ -14195,8 +14195,8 @@ class Ps extends z {
     const t = e.target, o = e.metaKey || e.ctrlKey;
     if (y.isAnchor(t) && o) {
       e.stopImmediatePropagation(), e.stopPropagation();
-      const n = t.getAttribute("href"), i = sr(n);
-      lr(i);
+      const n = t.getAttribute("href"), i = cr(n);
+      hr(i);
       return;
     }
     this.processBottomZoneClick(e);
@@ -14240,51 +14240,51 @@ class Ps extends z {
     this.Editor.InlineToolbar.tryToShow(!0, i);
   }
 }
-const Ds = {
+const Hs = {
   // API Modules
-  BlocksAPI: vr,
-  CaretAPI: kr,
-  EventsAPI: yr,
-  I18nAPI: Ht,
-  API: wr,
-  InlineToolbarAPI: xr,
-  ListenersAPI: Cr,
-  NotifierAPI: _r,
-  ReadOnlyAPI: Br,
-  SanitizerAPI: Rr,
-  SaverAPI: Pr,
-  SelectionAPI: Dr,
-  StylesAPI: jr,
-  ToolbarAPI: Fr,
-  TooltipAPI: qr,
-  UiAPI: Wr,
+  BlocksAPI: wr,
+  CaretAPI: xr,
+  EventsAPI: Cr,
+  I18nAPI: Ft,
+  API: Er,
+  InlineToolbarAPI: Sr,
+  ListenersAPI: Tr,
+  NotifierAPI: Ir,
+  ReadOnlyAPI: Mr,
+  SanitizerAPI: jr,
+  SaverAPI: Fr,
+  SelectionAPI: Hr,
+  StylesAPI: Ur,
+  ToolbarAPI: $r,
+  TooltipAPI: Yr,
+  UiAPI: Kr,
   // Toolbar Modules
-  BlockSettings: ss,
+  BlockSettings: cs,
   ConversionToolbar: de,
-  Toolbar: ps,
-  InlineToolbar: fs,
+  Toolbar: ms,
+  InlineToolbar: bs,
   // Modules
-  BlockEvents: gs,
-  BlockManager: vs,
-  BlockSelection: ks,
-  Caret: ct,
-  CrossBlockSelection: ys,
-  DragNDrop: ws,
-  ModificationsObserver: xs,
-  Paste: ln,
-  ReadOnly: Cs,
+  BlockEvents: vs,
+  BlockManager: ws,
+  BlockSelection: xs,
+  Caret: lt,
+  CrossBlockSelection: Cs,
+  DragNDrop: Es,
+  ModificationsObserver: Ss,
+  Paste: cn,
+  ReadOnly: Ts,
   RectangleSelection: Xe,
-  Renderer: Es,
-  Saver: Ss,
-  Tools: fn,
-  UI: Ps
+  Renderer: _s,
+  Saver: Bs,
+  Tools: gn,
+  UI: Fs
 };
-class js {
+class Us {
   /**
    * @param {EditorConfig} config - user configuration
    */
   constructor(e) {
-    this.moduleInstances = {}, this.eventsDispatcher = new ht();
+    this.moduleInstances = {}, this.eventsDispatcher = new dt();
     let t, o;
     this.isReady = new Promise((n, i) => {
       t = n, o = i;
@@ -14307,7 +14307,7 @@ class js {
       ...e
     } : this.config = {
       holder: e
-    }, Mt(!!this.config.holderId, "config.holderId", "config.holder"), this.config.holderId && !this.config.holder && (this.config.holder = this.config.holderId, this.config.holderId = null), this.config.holder == null && (this.config.holder = "editorjs"), this.config.logLevel || (this.config.logLevel = $o.VERBOSE), er(this.config.logLevel), Mt(!!this.config.initialBlock, "config.initialBlock", "config.defaultBlock"), this.config.defaultBlock = this.config.defaultBlock || this.config.initialBlock || "paragraph", this.config.minHeight = this.config.minHeight !== void 0 ? this.config.minHeight : 300;
+    }, It(!!this.config.holderId, "config.holderId", "config.holder"), this.config.holderId && !this.config.holder && (this.config.holder = this.config.holderId, this.config.holderId = null), this.config.holder == null && (this.config.holder = "editorjs"), this.config.logLevel || (this.config.logLevel = zo.VERBOSE), nr(this.config.logLevel), It(!!this.config.initialBlock, "config.initialBlock", "config.defaultBlock"), this.config.defaultBlock = this.config.defaultBlock || this.config.initialBlock || "paragraph", this.config.minHeight = this.config.minHeight !== void 0 ? this.config.minHeight : 300;
     const n = {
       type: this.config.defaultBlock,
       data: {}
@@ -14370,7 +14370,7 @@ class js {
         try {
           await this.moduleInstances[t].prepare();
         } catch (o) {
-          if (o instanceof Yo)
+          if (o instanceof Ko)
             throw new Error(o.message);
           X(`Module ${t} was skipped because of %o`, "warn", o);
         }
@@ -14388,7 +14388,7 @@ class js {
    * Make modules instances and save it to the @property this.moduleInstances
    */
   constructModules() {
-    Object.entries(Ds).forEach(([e, t]) => {
+    Object.entries(Hs).forEach(([e, t]) => {
       try {
         this.moduleInstances[e] = new t({
           config: this.configuration,
@@ -14427,7 +14427,7 @@ class js {
  * @see Editor.js <https://editorjs.io>
  * @author CodeX Team <https://codex.so>
  */
-class Fs {
+class $s {
   /** Editor version */
   static get version() {
     return "2.29.1";
@@ -14439,7 +14439,7 @@ class Fs {
     let t = () => {
     };
     se(e) && Q(e.onReady) && (t = e.onReady);
-    const o = new js(e);
+    const o = new Us(e);
     this.isReady = o.isReady.then(() => {
       this.exportAPI(o), t();
     });
@@ -14453,7 +14453,7 @@ class Fs {
     const t = ["configuration"], o = () => {
       Object.values(e.moduleInstances).forEach((n) => {
         Q(n.destroy) && n.destroy(), n.listeners.removeAll();
-      }), zr(), e = null;
+      }), Vr(), e = null;
       for (const n in this)
         Object.prototype.hasOwnProperty.call(this, n) && delete this[n];
       Object.setPrototypeOf(this, null);
@@ -14483,7 +14483,7 @@ class Fs {
     });
   }
 }
-var gn = { exports: {} };
+var mn = { exports: {} };
 (function(r, e) {
   (function(t, o) {
     r.exports = o();
@@ -14812,9 +14812,9 @@ var gn = { exports: {} };
       })(), i.default;
     })();
   });
-})(gn);
-var Hs = gn.exports;
-const Us = /* @__PURE__ */ Oo(Hs), $s = {
+})(mn);
+var zs = mn.exports;
+const qs = /* @__PURE__ */ Ao(zs), Ws = {
   messages: {
     ui: {
       blockTunes: {
@@ -14881,48 +14881,49 @@ const Us = /* @__PURE__ */ Oo(Hs), $s = {
       }
     }
   }
-}, Zs = ({ id: r, data: e, onChange: t, config: o }) => {
-  const n = at.useRef(null);
-  at.useEffect(() => {
-    if (!n.current) {
-      const s = new Fs({
+}, ea = zn(({ id: r, data: e, onChange: t, config: o }, n) => {
+  const i = qn(null);
+  _o(() => {
+    if (!i.current) {
+      const a = new $s({
         holder: r,
-        tools: Ai(o),
+        tools: Pi(o),
         autofocus: !1,
         data: e,
         placeholder: "文字を入力",
         async onChange() {
           if (t) {
-            const a = await i();
-            a && t(a);
+            const c = await s();
+            c && t(c);
           }
         },
-        i18n: $s,
+        i18n: Ws,
         onReady() {
-          new Us(s);
+          new qs(a);
         }
       });
-      n.current = s;
+      i.current = a;
     }
     return () => {
-      n.current && n.current.destroy && n.current.destroy();
+      i.current && i.current.destroy && i.current.destroy();
     };
   }, []);
-  const i = () => {
-    var s;
-    if ((s = n.current) != null && s.save)
-      return n.current.save().then((a) => a);
+  const s = () => {
+    var a;
+    return ((a = i.current) == null ? void 0 : a.save()) || Promise.reject("Editor not initialized");
   };
-  return /* @__PURE__ */ D.jsx("div", { id: r, className: "w-full" });
-}, zs = Uo({
-  paragraph: No,
-  header: Do,
-  list: jo,
-  image: Ro,
-  link: Po,
-  embed: Fo,
-  quote: Ho
-}), Js = ({ data: r, onChange: e }) => {
+  return Wn(n, () => ({
+    save: s
+  })), /* @__PURE__ */ D.jsx("div", { id: r, className: "w-full" });
+}), Vs = $o({
+  paragraph: Ro,
+  header: jo,
+  list: Fo,
+  image: Po,
+  link: Do,
+  embed: Ho,
+  quote: Uo
+}), ta = ({ data: r, onChange: e }) => {
   const t = it(() => {
     const l = r.blocks.findIndex((u) => u.type === "payment");
     return l === -1 ? void 0 : l;
@@ -14930,9 +14931,9 @@ const Us = /* @__PURE__ */ Oo(Hs), $s = {
     ...r,
     blocks: r.blocks.filter((l) => l.type !== "payment")
   }), [r]), n = it(
-    () => zs.parse(o.blocks),
+    () => Vs.parse(o.blocks),
     [o]
-  ), [i, s] = To(t), a = zn(
+  ), [i, s] = To(t), a = Vn(
     (l) => {
       if (i === l)
         s(void 0), e(o);
@@ -14962,7 +14963,7 @@ const Us = /* @__PURE__ */ Oo(Hs), $s = {
     [e, o, i]
   ), c = it(() => n.flatMap((l, u) => [
     l,
-    Hi({
+    zi({
       key: `${u}-payment-button`,
       value: i === u + 1,
       onClick: () => {
@@ -14973,30 +14974,30 @@ const Us = /* @__PURE__ */ Oo(Hs), $s = {
   return /* @__PURE__ */ D.jsx("div", { className: "w-full", children: c });
 };
 export {
-  Zs as Editor,
-  Ks as Index,
-  Ys as Preview,
-  Js as SetPaymentLine,
-  zi as counter,
-  Xi as embedCounter,
-  Fo as embedParser,
-  Ai as generateTool,
-  Yi as headerCounter,
-  Do as headerParser,
-  Wi as imageCounter,
-  Ro as imageParser,
-  Ui as indexParser,
-  Gs as isFoundedPreviewURL,
-  Vi as linkCounter,
-  Po as linkParser,
-  Ki as listCounter,
-  jo as listParser,
-  qi as paragraphCounter,
-  No as paragraphParser,
-  Uo as parser,
-  Hi as paymentButton,
-  ji as paymentLineParser,
-  Gi as quoteCounter,
-  Ho as quoteParser,
-  Xs as useEditorCounter
+  ea as Editor,
+  Zs as Index,
+  Gs as Preview,
+  ta as SetPaymentLine,
+  Vi as counter,
+  Ji as embedCounter,
+  Ho as embedParser,
+  Pi as generateTool,
+  Gi as headerCounter,
+  jo as headerParser,
+  Ki as imageCounter,
+  Po as imageParser,
+  qi as indexParser,
+  Qs as isFoundedPreviewURL,
+  Xi as linkCounter,
+  Do as linkParser,
+  Zi as listCounter,
+  Fo as listParser,
+  Yi as paragraphCounter,
+  Ro as paragraphParser,
+  $o as parser,
+  zi as paymentButton,
+  Ui as paymentLineParser,
+  Qi as quoteCounter,
+  Uo as quoteParser,
+  Js as useEditorCounter
 };

@@ -1,5 +1,5 @@
+/// <reference types="react" />
 import { OutputData } from '@editorjs/editorjs';
-import React from 'react';
 import { ToolConfigs } from '../components/editorTools';
 type Props = {
     id: string;
@@ -7,6 +7,9 @@ type Props = {
     onChange?: (data: OutputData) => void;
     config?: ToolConfigs;
 };
-declare const Editor: React.FC<Props>;
+interface Editor {
+    save: () => Promise<OutputData>;
+}
+declare const Editor: import("react").ForwardRefExoticComponent<Props & import("react").RefAttributes<Editor>>;
 export default Editor;
 //# sourceMappingURL=editor.d.ts.map
