@@ -15,6 +15,4 @@ export interface OutputBlockData<
   tunes?: { [name: string]: any }
 }
 
-export {
-  SetPaymentLine
-}
+export { SetPaymentLine }
