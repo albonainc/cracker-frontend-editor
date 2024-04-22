@@ -10,6 +10,7 @@ export default defineConfig({
   build: {
     sourcemap: true,
     outDir: 'dist',
+    minify: false,
     lib: {
       entry: 'src/index.ts',
       name: 'cracker-frontend-editor',

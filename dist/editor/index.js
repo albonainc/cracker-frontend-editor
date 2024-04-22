@@ -1,13 +1,13 @@
-import { jsx as c } from "react/jsx-runtime";
-import m from "@editorjs/editorjs";
-import { forwardRef as u, useRef as g, useEffect as H, useImperativeHandle as h } from "react";
-import p from "@editorjs/header";
-import f from "@editorjs/link";
-import V from "@editorjs/nested-list";
-import v from "editorjs-embed";
-import w from "editorjs-image";
-import b from "editorjs-quote";
-const L = {
+import { jsx } from "react/jsx-runtime";
+import EditorJs from "@editorjs/editorjs";
+import { forwardRef, useRef, useEffect, useImperativeHandle } from "react";
+import Header from "@editorjs/header";
+import LinkTool from "@editorjs/link";
+import List from "@editorjs/nested-list";
+import Embed from "editorjs-embed";
+import ImageTool from "editorjs-image";
+import Quote from "editorjs-quote";
+const i18n = {
   messages: {
     ui: {
       blockTunes: {
@@ -74,7 +74,8 @@ const L = {
       }
     }
   }
-}, i = {
+};
+const styles = {
   fontWeight: "bold",
   backgroundColor: "#FFDA00",
   width: "100%",
@@ -82,8 +83,9 @@ const L = {
   paddingTop: "0.3em",
   paddingBottom: "0.3em",
   border: "1px solid white"
-}, k = "このラインより先を有料にする";
-class y {
+};
+const text = "このラインより先を有料にする";
+class PaymentLine {
   constructor() {
   }
   static get toolbox() {
@@ -93,94 +95,112 @@ class y {
     };
   }
   render() {
-    var n, s, d, o, l, r;
-    const t = document.createElement("div");
-    return t.innerText = k, t.style.fontWeight = ((n = i.fontWeight) == null ? void 0 : n.toString()) ?? "", t.style.backgroundColor = ((s = i.backgroundColor) == null ? void 0 : s.toString()) ?? "", t.style.paddingTop = ((d = i.paddingTop) == null ? void 0 : d.toString()) ?? "", t.style.paddingBottom = ((o = i.paddingBottom) == null ? void 0 : o.toString()) ?? "", t.style.width = ((l = i.width) == null ? void 0 : l.toString()) ?? "", t.style.textAlign = ((r = i.textAlign) == null ? void 0 : r.toString()) ?? "", t;
+    var _a, _b, _c, _d, _e, _f;
+    const div = document.createElement("div");
+    div.innerText = text;
+    div.style.fontWeight = ((_a = styles.fontWeight) == null ? void 0 : _a.toString()) ?? "";
+    div.style.backgroundColor = ((_b = styles.backgroundColor) == null ? void 0 : _b.toString()) ?? "";
+    div.style.paddingTop = ((_c = styles.paddingTop) == null ? void 0 : _c.toString()) ?? "";
+    div.style.paddingBottom = ((_d = styles.paddingBottom) == null ? void 0 : _d.toString()) ?? "";
+    div.style.width = ((_e = styles.width) == null ? void 0 : _e.toString()) ?? "";
+    div.style.textAlign = ((_f = styles.textAlign) == null ? void 0 : _f.toString()) ?? "";
+    return div;
   }
   save() {
     return {};
   }
 }
-const x = {
-  class: p,
+const header = {
+  class: Header,
   shortcut: "CMD+SHIFT+H",
   config: {
     placeholder: "へッダー",
     levels: [2, 3],
     defaultLevel: 2
   }
-}, T = {
-  class: V,
-  inlineToolbar: !0,
+};
+const list = {
+  class: List,
+  inlineToolbar: true,
   config: {
     defaultStyle: "unordered"
   }
-}, S = {
-  class: v,
-  inlineToolbar: !0,
+};
+const embed = {
+  class: Embed,
+  inlineToolbar: true,
   config: {
     services: {
-      youtube: !0,
-      vimeo: !0,
-      twitter: !0,
-      instagram: !0
+      youtube: true,
+      vimeo: true,
+      twitter: true,
+      instagram: true
     }
   }
-}, C = {
-  class: b,
+};
+const quote = {
+  class: Quote,
   config: {
     quotePlaceholder: "引用を追加",
     captionPlaceholder: "キャプションを追加"
   }
-}, E = (e) => ({
-  class: f,
-  config: e
-}), A = (e) => ({
-  class: w,
-  config: e
-}), M = {
-  class: y
-}, P = (e) => ({
-  header: x,
-  link: E(e == null ? void 0 : e.link),
-  list: T,
-  embed: S,
-  image: A(e == null ? void 0 : e.image),
-  quote: C,
-  payment: M
-}), N = u(({ id: e, data: t, onChange: n, config: s }, d) => {
-  const o = g(null);
-  H(() => {
-    if (!o.current && typeof window < "u") {
-      const r = new m({
-        holder: e,
-        tools: P(s),
-        autofocus: !1,
-        data: t,
+};
+const link = (config) => ({
+  class: LinkTool,
+  config
+});
+const image = (config) => ({
+  class: ImageTool,
+  config
+});
+const payment = {
+  class: PaymentLine
+};
+const generateTool = (config) => ({
+  header,
+  link: link(config == null ? void 0 : config.link),
+  list,
+  embed,
+  image: image(config == null ? void 0 : config.image),
+  quote,
+  payment
+});
+const Editor = forwardRef(({ id, data, onChange, config }, ref) => {
+  const editorJs = useRef(null);
+  useEffect(() => {
+    if (!editorJs.current && typeof window !== "undefined") {
+      const editor = new EditorJs({
+        holder: id,
+        tools: generateTool(config),
+        autofocus: false,
+        data,
         placeholder: "文字を入力",
         async onChange() {
-          if (n) {
-            const a = await l();
-            a && n(a);
+          if (onChange) {
+            const res = await save();
+            res && onChange(res);
           }
         },
-        i18n: L
+        i18n
       });
-      o.current = r;
+      editorJs.current = editor;
     }
     return () => {
-      o.current && o.current.destroy();
+      if (editorJs.current) {
+        editorJs.current.destroy();
+      }
     };
   }, []);
-  const l = () => {
-    var r;
-    return ((r = o.current) == null ? void 0 : r.save()) || Promise.reject("Editor not initialized");
+  const save = () => {
+    var _a;
+    return ((_a = editorJs.current) == null ? void 0 : _a.save()) || Promise.reject("Editor not initialized");
   };
-  return h(d, () => ({
-    save: l
-  })), /* @__PURE__ */ c("div", { id: e, className: "w-full" });
+  useImperativeHandle(ref, () => ({
+    save
+  }));
+  return /* @__PURE__ */ jsx("div", { id, className: "w-full" });
 });
 export {
-  N as default
+  Editor as default
 };
 //# sourceMappingURL=index.js.map
