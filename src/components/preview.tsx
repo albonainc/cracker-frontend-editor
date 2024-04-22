@@ -1,6 +1,6 @@
 import type { OutputBlockData } from '@editorjs/editorjs'
 import type { HeaderData } from '@editorjs/header'
-import React from 'react'
+import type { FC } from 'react'
 
 import {
   Parser,
@@ -32,13 +32,13 @@ type Props<Type extends string = string, Data extends object = any> = {
   blocks?: OutputBlockData<Type, Data>[]
 }
 
-const Preview: React.FC<Props> = ({ blocks }) => {
+const Preview: FC<Props> = ({ blocks }) => {
   if (!blocks) return <div />
   const html = editorParser.parse(blocks)
   return <div className="w-full">{html}</div>
 }
 
-const Index: React.FC<Props> = ({ blocks }) => {
+const Index: FC<Props> = ({ blocks }) => {
   if (!blocks) return <div />
   // filterしてるのでasで型キャスト
   const html = indexParser(

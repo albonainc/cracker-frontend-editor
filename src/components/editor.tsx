@@ -1,5 +1,4 @@
-import EditorJs, { OutputData, EditorConfig } from '@editorjs/editorjs'
-import DragDrop from 'editorjs-drag-drop'
+import EditorJs, { OutputData } from '@editorjs/editorjs'
 import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react'
 
 import { i18n } from '../components/config/i18n'
@@ -33,14 +32,11 @@ const Editor = forwardRef<Editor, Props>(({ id, data, onChange, config }: Props,
           }
         },
         i18n,
-        onReady() {
-          new DragDrop(editor as EditorJs & { configuration: EditorConfig })
-        },
       })
       editorJs.current = editor
     }
     return () => {
-      if (editorJs.current && editorJs.current.destroy) {
+      if (editorJs.current) {
         editorJs.current.destroy()
       }
     }
