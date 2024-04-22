@@ -3,7 +3,6 @@ import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react'
 
 import { i18n } from '../components/config/i18n'
 import { generateTool, ToolConfigs } from '../components/editorTools'
-import '../global.css'
 
 type Props = {
   id: string

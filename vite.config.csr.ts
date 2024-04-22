@@ -1,10 +1,9 @@
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), cssInjectedByJsPlugin()],
+  plugins: [react()],
   server: {
     port: 3000,
   },
@@ -23,6 +22,7 @@ export default defineConfig({
         'react',
         'react-dom',
         'classnames',
+        'tailwindcss',
         'react/jsx-runtime',
         '@editorjs/editorjs',
         '@editorjs/header',
@@ -38,6 +38,7 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
           classnames: 'classnames',
+          tailwindcss: 'tailwindcss',
           '@editorjs/editorjs': 'EditorJs',
           '@editorjs/header': 'Header',
           '@editorjs/link': 'LinkTool',

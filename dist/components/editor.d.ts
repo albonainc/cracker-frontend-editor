@@ -1,7 +1,6 @@
 /// <reference types="react" />
 import { OutputData } from '@editorjs/editorjs';
 import { ToolConfigs } from '../components/editorTools';
-import '../global.css';
 type Props = {
     id: string;
     data?: OutputData;
