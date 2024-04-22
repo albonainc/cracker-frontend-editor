@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 
-import { Editor, Preview, OutputData } from './index'
+import { Preview, OutputData } from './index'
+import Editor from './index.editor'
 
 // eslint-disable-next-line react-refresh/only-export-components
 const Main: React.FC = () => {

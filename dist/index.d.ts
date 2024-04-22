@@ -1,12 +1,9 @@
 export { type OutputData } from '@editorjs/editorjs';
-export * from './components/editorTools';
-export * from './components/preview';
-export * from './components/previewTools';
-export * from './components/countTools';
-export * from './components/searchTools';
-import Editor from './components/editor';
+export { type ToolConfigs } from './components/editorTools';
+export { Preview, Index } from './components/preview';
+export { counter, useEditorCounter } from './components/countTools';
+export { isFoundedPreviewURL } from './components/searchTools';
 import SetPaymentLine from './components/setPaymentLine';
-import './global.css';
 export interface OutputBlockData<Type extends string = string, Data extends object | undefined = undefined> {
     id?: string;
     type: Type;
@@ -15,5 +12,5 @@ export interface OutputBlockData<Type extends string = string, Data extends obje
         [name: string]: any;
     };
 }
-export { Editor, SetPaymentLine };
+export { SetPaymentLine };
 //# sourceMappingURL=index.d.ts.map
