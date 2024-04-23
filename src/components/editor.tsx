@@ -1,5 +1,5 @@
 import EditorJs, { OutputData } from '@editorjs/editorjs'
-import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react'
+import { useEffect, useRef, forwardRef, useImperativeHandle, ComponentProps, Ref } from 'react'
 
 import { i18n } from '../components/config/i18n'
 import { generateTool, ToolConfigs } from '../components/editorTools'
@@ -10,11 +10,11 @@ type Props = {
   onChange?: (data: OutputData) => void
   config?: ToolConfigs
 }
-interface Editor {
+export interface EditorImplements {
   save: () => Promise<OutputData>
 }
 
-const Editor = forwardRef<Editor, Props>(({ id, data, onChange, config }: Props, ref) => {
+const Editor = forwardRef<EditorImplements, Props>(({ id, data, onChange, config }: Props, ref) => {
   const editorJs = useRef<EditorJs | null>(null)
 
   useEffect(() => {
@@ -55,4 +55,9 @@ const Editor = forwardRef<Editor, Props>(({ id, data, onChange, config }: Props,
   return <div id={id} className="w-full" />
 })
 
-export default Editor
+// dynamic importではrefという名前のpropsが使えないためwrap
+export const EditorWrap: React.FC<
+  ComponentProps<typeof Editor> & { editorRef?: Ref<EditorImplements> }
+> = ({ editorRef, ...props }) => <Editor {...props} ref={editorRef} />
+
+export default EditorWrap

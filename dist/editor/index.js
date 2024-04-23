@@ -212,7 +212,8 @@ const Editor = forwardRef(({ id, data, onChange, config }, ref) => {
   }));
   return /* @__PURE__ */ jsx("div", { id, className: "w-full" });
 });
+const EditorWrap = ({ editorRef, ...props }) => /* @__PURE__ */ jsx(Editor, { ...props, ref: editorRef });
 export {
-  Editor as default
+  EditorWrap as default
 };
 //# sourceMappingURL=index.js.map

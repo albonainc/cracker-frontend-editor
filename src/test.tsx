@@ -2,12 +2,12 @@ import React, { useRef, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 
 import { Preview, OutputData } from './index'
-import Editor from './index.editor'
+import Editor, { EditorImplements } from './index.editor'
 
 // eslint-disable-next-line react-refresh/only-export-components
 const Main: React.FC = () => {
   const [data, setData] = useState<OutputData>()
-  const ref = useRef<Editor>(null)
+  const ref = useRef<EditorImplements>(null)
 
   const onChange = (value) => {
     setData(value)
@@ -26,7 +26,7 @@ const Main: React.FC = () => {
         </div>
       </div>
       <div className="border">
-        <Editor id="editor" data={data} onChange={onChange} ref={ref} />
+        <Editor id="editor" data={data} onChange={onChange} editorRef={ref} />
       </div>
       <div className="flex w-full justify-center pt-4">
         <button onClick={save} className="rounded border border-solid bg-black px-4 text-white">
