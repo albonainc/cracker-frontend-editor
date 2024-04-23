@@ -37,6 +37,12 @@
 - `src/types/`: editorjsプラグインの型定義ファイル
 - `src/global.css`: editorjsのcss上書きと、プラグインのcss上書きが記載されています
 - `dist/`: 公開されるファイル。公開用のCI/CD環境が作成された場合は、gitignoreしてください
+- `dist/editor`: 公開されるファイル。nextjsでdynamic importしたい箇所
+
+## ビルド注意事項
+
+distとdist/editorが別れている理由は
+CSR必須ではない関数を呼んでもCSRエラーが起きたので原因コンポーネントを分離した。
 
 ## 注意
 
