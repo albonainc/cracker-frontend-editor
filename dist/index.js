@@ -459,7 +459,7 @@ const embedCounter = (data) => {
   return (data == null ? void 0 : data.source.length) ?? 0;
 };
 const quoteCounter = ({ text, caption }) => {
-  return text.length + caption.length;
+  return ((text == null ? void 0 : text.length) ?? 0) + ((caption == null ? void 0 : caption.length) ?? 0);
 };
 const isFoundedPreviewURL = (data) => {
   const regex = /https?:\/\/[\w.-]+(:\d+)?\/article\/preview\/[^/\s?]+(?:[/?][^\s]*)?/g;
