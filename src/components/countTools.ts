@@ -67,5 +67,5 @@ export const embedCounter: Counter<EmbedData | undefined> = (data) => {
 }
 
 export const quoteCounter: Counter<QuoteData> = ({ text, caption }) => {
-  return text.length + caption.length
+  return (text?.length ?? 0) + (caption?.length ?? 0)
 }
