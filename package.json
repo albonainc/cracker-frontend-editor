@@ -32,9 +32,9 @@
     "@editorjs/nested-list": "^1.4.1",
     "@editorjs/paragraph": "^2.11.3",
     "classnames": "^2.2.6",
-    "editorjs-embed": "github:desire-power/editorjs-embed#master",
-    "editorjs-image": "github:desire-power/editorjs-image#master",
-    "editorjs-quote": "github:desire-power/editorjs-quote#master",
+    "editorjs-embed": "github:desire-power/editorjs-embed#8391929a5f622127112c51cc0d77723d04f24539",
+    "editorjs-image": "github:desire-power/editorjs-image#24d49db539a7a956e9a2c9d58a10c16eac65a688",
+    "editorjs-quote": "github:desire-power/editorjs-quote#91265139db9862f8ca420694b9d9718d098a4651",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
